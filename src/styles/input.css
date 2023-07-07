@@ -1,3 +1,14 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn-navBar {
+    @apply border border-black rounded text-center align-middle hover:bg-black hover:text-white transition-all ease-out duration-500 px-[3px] mt-1;
+}
+
+.navbar {
+    @apply flex flex-row justify-between items-center text-4xl  align-middle text-center  border-b border-black pb-2;
+}
