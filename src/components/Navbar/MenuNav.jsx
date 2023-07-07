@@ -1,6 +1,6 @@
 import React from 'react';
 import InfoFooter from '../InfoFooter';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function MenuNav({ showMenu }) {
     const isHidden = showMenu ? 'w-3/4' : 'w-0';
@@ -14,15 +14,15 @@ export default function MenuNav({ showMenu }) {
                     <i class='bx bx-search-alt'></i>
                 </button>
             </div>
-            <Link className='linknavbar' to='/home'>
+            <NavLink className='linknavbar' to='/home'>
                 Home
-            </Link>
-            <Link className='linknavbar' to='/about'>
+            </NavLink>
+            <NavLink className='linknavbar' to='/about'>
                 About
-            </Link>
-            <Link className='linknavbar' to='/contact'>
+            </NavLink>
+            <NavLink className='linknavbar' to='/contact'>
                 Contact
-            </Link>
+            </NavLink>
             <InfoFooter classProps={'pt-48'}/>
         </div>
     )

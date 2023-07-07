@@ -16,3 +16,7 @@
 .linknavbar {
     @apply text-center text-3xl my-5 hover:text-blue-400;
 }
+
+.active {
+    @apply text-blue-400;
+}
