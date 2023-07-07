@@ -8,14 +8,13 @@ export default function NavBar() {
     function handleClickMenu() {
         setShowMenu(prev => !prev);
     }
-
-    const rotateMenuButton = showMenu ? 'rotate-90' : 'rotate-0';
+    const active = showMenu ? 'text-blue-400' : 'text-black';
 
     return (
         <header className='sticky top-0 bg-white'>
             <nav className='navbar'>
-                <button className='btn-navBar ml-3' onClick={handleClickMenu}>
-                    <i className={`bx bx-menu float-none inline text-3xl ${rotateMenuButton}`}></i>
+                <button className={`btn-navBar ml-3 ${active}`} onClick={handleClickMenu}>
+                    <i className='bx bx-menu float-none inline text-3xl'></i>
                 </button>
                 <Link to='/home'>
                     <h1 className='font-logo'> React Shop </h1>

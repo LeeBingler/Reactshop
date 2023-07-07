@@ -2,7 +2,11 @@
 export default {
   content: ['./src/**/*jsx'],
   theme: {
-    extend: {},
+    extend: {
+      transitionDuration: {
+        '400': '400ms',
+      }
+    },
     fontFamily: {
       'logo': ['Oswald', 'sans-serif']
     }
