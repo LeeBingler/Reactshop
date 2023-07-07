@@ -9,11 +9,13 @@ export default function NavBar() {
         setShowMenu(prev => !prev);
     }
 
+    const rotateMenuButton = showMenu ? 'rotate-90' : 'rotate-0';
+
     return (
         <header className='sticky top-0 bg-white'>
             <nav className='navbar'>
                 <button className='btn-navBar ml-3' onClick={handleClickMenu}>
-                    <i className='bx bx-menu float-none inline text-3xl'></i>
+                    <i className={`bx bx-menu float-none inline text-3xl ${rotateMenuButton}`}></i>
                 </button>
                 <Link to='/home'>
                     <h1 className='font-logo'> React Shop </h1>
