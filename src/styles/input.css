@@ -14,5 +14,5 @@
 }
 
 .linknavbar {
-    @apply w-full text-center text-3xl py-4 hover:text-blue-400;
+    @apply text-center text-3xl my-5 hover:text-blue-400;
 }
