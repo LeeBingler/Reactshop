@@ -5,7 +5,9 @@ export default function Home() {
 
   return (
     <main className='bg-slate-600'>
-        <Carousel />
+        <div className='flex content-center justify-center'>
+          <Carousel />
+        </div>
     </main>
   )
 }
