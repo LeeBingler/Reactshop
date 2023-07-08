@@ -1,4 +1,4 @@
-import React , { useState } from 'react'
+import React , { useEffect, useState } from 'react'
 
 export default function Carousel() {
     const [index, setIndex] = useState(0);
@@ -21,6 +21,14 @@ export default function Carousel() {
 
         setIndex(prev => prev + 1);
     }
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+                handleOnClickNext();
+            }, 6000);
+
+        return () => clearTimeout(timer);
+    }, [index]);
 
     return (
         <section>
