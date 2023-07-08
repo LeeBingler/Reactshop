@@ -24,3 +24,7 @@
 .menu-navbar {
     @apply flex flex-col items-center absolute bg-white whitespace-nowrap overflow-hidden h-screen transition-all ease-out duration-400;
 }
+
+.btn-carousel {
+    @apply bg-gray-400 rounded-full p-1 text-2xl opacity-80;
+}

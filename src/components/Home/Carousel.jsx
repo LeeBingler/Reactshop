@@ -43,9 +43,13 @@ export default function Carousel() {
                 </div>
             </div>
 
-            <div className='flex justify-between absolute w-full top-[47%] px-3'>
-                <button onClick={handleOnClickPrev}> Prev </button>
-                <button onClick={handleOnClickNext}> Next </button>
+            <div className='flex justify-between absolute w-full top-[40%] px-3'>
+                <button className='btn-carousel' onClick={handleOnClickPrev}>
+                    <i className='bx bx-chevron-left' ></i>
+                </button>
+                <button className='btn-carousel' onClick={handleOnClickNext}>
+                    <i className='bx bx-chevron-right'></i>
+                </button>
             </div>
         </section>
     )
