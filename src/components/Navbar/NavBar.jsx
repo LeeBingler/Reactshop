@@ -13,7 +13,7 @@ export default function NavBar() {
     return (
         <header className='sticky top-0 bg-white'>
             <nav className='navbar'>
-                <button className={`btn-navBar ml-3 ${active}`} onClick={handleClickMenu}>
+                <button className={`md:hidden btn-navBar ml-3 ${active}`} onClick={handleClickMenu}>
                     <i className='bx bx-menu float-none inline text-3xl'></i>
                 </button>
                 <Link to='/home'>

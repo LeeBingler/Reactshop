@@ -23,7 +23,7 @@ export default function MenuNav({ showMenu }) {
             <NavLink className='linknavbar' to='/contact'>
                 Contact
             </NavLink>
-            <InfoFooter classProps={'pt-48'}/>
+            <InfoFooter classProps={'pt-48 md:hidden'}/>
         </div>
     )
 }
