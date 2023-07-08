@@ -31,7 +31,7 @@ export default function Carousel() {
     }, [index]);
 
     return (
-        <section className='relative'>
+        <section className='relative pt-5 max-w-3xl'>
             <div className='overflow-hidden'>
                 <div
                 className={`flex transition-all ease-out duration-150`}
