@@ -17,15 +17,6 @@ export default function ItemsProvider({ children }) {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const fetchAllItems = async () => {
-        await fetch('https://fakestoreapi.com/products')
-            .then((res) => res.json())
-            .then((data) => {
-                setItems(data);
-            })
-        setLoading(false);
-    };
-
     function getItemById(id) {
         const Items = useItems();
         return Items.filter((item) => {
@@ -34,6 +25,16 @@ export default function ItemsProvider({ children }) {
     };
 
     useEffect(() => {
+        const fetchAllItems = async () => {
+            await fetch('https://fakestoreapi.com/products')
+                .then((res) => res.json())
+                .then((data) => {
+                    setItems(data);
+                    setLoading(false);
+                })
+                .catch((error) => console.log(error));
+        };
+
         fetchAllItems();
     }, []);
 
