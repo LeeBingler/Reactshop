@@ -11,7 +11,7 @@ export default function MenuNav({ showMenu }) {
                 <input className='block border p-2 m-4 border-black' placeholder='Type to search..'>
                 </input>
                 <button className='text-2xl border-2 p-2 m-4 rounded hover:text-blue-400'>
-                    <i class='bx bx-search-alt'></i>
+                    <i className='bx bx-search-alt'></i>
                 </button>
             </div>
             <NavLink className='linknavbar' to='/home'>
