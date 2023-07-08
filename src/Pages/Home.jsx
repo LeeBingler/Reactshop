@@ -5,7 +5,7 @@ export default function Home() {
 
   return (
     <main className='bg-slate-600'>
-        <Carousel className={''}/>
+        <Carousel />
     </main>
   )
 }
