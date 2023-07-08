@@ -1,4 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
+import LoadingScreen from '../Pages/LoadingScreen';
+
 
 export const ItemsContext = React.createContext();
 export const GetItemByIdContext = React.createContext();
@@ -13,6 +15,7 @@ export function useGetItemById() {
 
 export default function ItemsProvider({ children }) {
     const [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const fetchAllItems = async () => {
         await fetch('https://fakestoreapi.com/products')
@@ -20,6 +23,7 @@ export default function ItemsProvider({ children }) {
             .then((data) => {
                 setItems(data);
             })
+        setLoading(false);
     };
 
     function getItemById(id) {
@@ -36,7 +40,7 @@ export default function ItemsProvider({ children }) {
     return (
         <ItemsContext.Provider value={items}>
             <GetItemByIdContext.Provider value={getItemById}>
-                {children}
+                {loading ? <LoadingScreen /> : children}
             </GetItemByIdContext.Provider>
         </ItemsContext.Provider>
     )
