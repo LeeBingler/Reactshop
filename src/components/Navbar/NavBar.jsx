@@ -8,12 +8,12 @@ export default function NavBar() {
     function handleClickMenu() {
         setShowMenu(prev => !prev);
     }
-    const active = showMenu ? 'text-blue-400' : 'text-black';
+    const menuActive = showMenu ? 'text-blue-400' : 'text-black';
 
     return (
         <header className='sticky top-0 bg-white'>
             <nav className='navbar'>
-                <button className={`md:hidden btn-navBar ml-3 ${active}`} onClick={handleClickMenu}>
+                <button className={`md:hidden btn-navBar ml-3 ${menuActive}`} onClick={handleClickMenu}>
                     <i className='bx bx-menu float-none inline text-3xl'></i>
                 </button>
                 <Link to='/home'>
