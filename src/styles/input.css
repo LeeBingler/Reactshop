@@ -20,3 +20,7 @@
 .active {
     @apply text-blue-400;
 }
+
+.menu-navbar {
+    @apply flex flex-col items-center absolute bg-white whitespace-nowrap overflow-hidden h-screen transition-all ease-out duration-400;
+}

@@ -524,16 +524,16 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.absolute{
-  position: absolute;
-}
-
 .sticky{
   position: sticky;
 }
 
 .top-0{
   top: 0px;
+}
+
+.right-0{
+  right: 0px;
 }
 
 .float-none{
@@ -564,10 +564,6 @@ video {
   display: flex;
 }
 
-.h-screen{
-  height: 100vh;
-}
-
 .w-0{
   width: 0px;
 }
@@ -580,24 +576,8 @@ video {
   flex-direction: row;
 }
 
-.flex-col{
-  flex-direction: column;
-}
-
-.items-center{
-  align-items: center;
-}
-
 .justify-around{
   justify-content: space-around;
-}
-
-.overflow-hidden{
-  overflow: hidden;
-}
-
-.whitespace-nowrap{
-  white-space: nowrap;
 }
 
 .rounded{
@@ -612,9 +592,27 @@ video {
   border-width: 2px;
 }
 
+.border-l{
+  border-left-width: 1px;
+}
+
+.border-r{
+  border-right-width: 1px;
+}
+
 .border-black{
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
+.bg-blue-700{
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
+}
+
+.bg-green-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
 }
 
 .bg-red-600{
@@ -630,16 +628,6 @@ video {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-blue-700{
-  --tw-bg-opacity: 1;
-  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
-}
-
-.bg-green-500{
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
 }
 
 .p-2{
@@ -676,20 +664,6 @@ video {
 
 .underline{
   text-decoration-line: underline;
-}
-
-.transition-all{
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.duration-400{
-  transition-duration: 400ms;
-}
-
-.ease-out{
-  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
 .btn-navBar{
@@ -746,6 +720,22 @@ video {
   color: rgb(96 165 250 / var(--tw-text-opacity));
 }
 
+.menu-navbar{
+  position: absolute;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
 .hover\:text-blue-400:hover{
   --tw-text-opacity: 1;
   color: rgb(96 165 250 / var(--tw-text-opacity));
@@ -758,12 +748,6 @@ video {
 
 @media (min-width: 768px){
   .md\:hidden{
-    display: none;
-  }
-}
-
-@media (min-width: 1024px){
-  .lg\:hidden{
     display: none;
   }
 }
