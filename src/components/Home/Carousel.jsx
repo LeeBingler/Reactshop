@@ -31,7 +31,7 @@ export default function Carousel() {
     }, [index]);
 
     return (
-        <section>
+        <section className='relative'>
             <div className='overflow-hidden'>
                 <div
                 className={`flex transition-all ease-out duration-150`}
@@ -43,9 +43,10 @@ export default function Carousel() {
                 </div>
             </div>
 
-            <button onClick={handleOnClickPrev}> Prev </button>
-            <br />
-            <button onClick={handleOnClickNext}> Next </button>
+            <div className='flex justify-between absolute w-full top-[47%] px-3'>
+                <button onClick={handleOnClickPrev}> Prev </button>
+                <button onClick={handleOnClickNext}> Next </button>
+            </div>
         </section>
     )
 }
