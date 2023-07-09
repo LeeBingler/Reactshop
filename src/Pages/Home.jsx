@@ -5,7 +5,7 @@ import Shop from '../components/Home/Shop';
 export default function Home() {
 
   return (
-    <main className='bg-slate-600'>
+    <main>
         <div className='flex content-center justify-center'>
           <Carousel />
         </div>
