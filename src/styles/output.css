@@ -600,6 +600,10 @@ video {
   width: 100vw;
 }
 
+.w-28{
+  width: 7rem;
+}
+
 .max-w-3xl{
   max-width: 48rem;
 }

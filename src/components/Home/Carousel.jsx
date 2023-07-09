@@ -34,7 +34,7 @@ export default function Carousel() {
         <section className='relative pt-5 max-w-3xl'>
             <div className='overflow-hidden'>
                 <div
-                className={`flex transition-all ease-out duration-150`}
+                className='flex transition-all ease-out duration-150'
                 style={{transform: `translateX(-${index * 100}%)`}}>
                     <img src="/banner/banner1.jpg" alt="shopping banner" />
                     <img src="/banner/banner2.jpg" alt="shopping banner" />

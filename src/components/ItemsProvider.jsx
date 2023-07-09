@@ -15,7 +15,7 @@ export function useGetItemById() {
 
 export default function ItemsProvider({ children }) {
     const [items, setItems] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     function getItemById(id) {
         const Items = useItems();
@@ -34,8 +34,7 @@ export default function ItemsProvider({ children }) {
                 })
                 .catch((error) => console.log(error));
         };
-
-        //fetchAllItems();
+        fetchAllItems();
     }, []);
 
     return (
