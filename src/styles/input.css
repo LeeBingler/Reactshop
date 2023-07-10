@@ -28,3 +28,7 @@
 .btn-carousel {
     @apply bg-gray-400 rounded-full p-1 text-2xl opacity-80;
 }
+
+.btn-filter {
+    @apply border rounded border-black p-[3px] m-1 font-logo text-lg hover:text-blue-400;
+}
