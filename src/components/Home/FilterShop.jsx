@@ -16,7 +16,7 @@ function reducerFilterShop(state, action) {
 }
 
 export default function FilterShop({ setItemsDisplay }) {
-    const [state, dispatch] = useReducer(reducerFilterShop, {filterType: 'all'})
+    const [state, dispatch] = useReducer(reducerFilterShop, {filterType: ACTION.ALL})
 
     return (
         <section className='flex justify-center border-black border-b border-t mt-4 py-2'>
