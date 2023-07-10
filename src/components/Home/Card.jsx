@@ -3,7 +3,7 @@ import React from 'react'
 export default function Card({ item }) {
 
     return (
-        <div className='flex flex-col justify-center w-48 h-[360px] bg-white border border-black rounded px-4 m-4 hover:shadow-2xl hover:scale-[1.03] transition-all ease-linear duration-200'>
+        <div className='flex flex-col justify-center w-48 h-[360px] bg-white border border-black rounded px-4 m-4 hover:shadow-2xl hover:scale-[1.02] transition-all ease-linear duration-200'>
             <div className='flex flex-col justify-center items-center'>
                 <p className='text-right pb-5 w-full'> ⭐ {item.rating.rate} </p>
                 <img className='h-40 w-auto' src={item.image} alt={item.title} />

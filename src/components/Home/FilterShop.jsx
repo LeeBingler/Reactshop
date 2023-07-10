@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 
-export default function FilterShop() {
-  return (
-    <div>
-        FilterShop
-    </div>
-  )
+const ACTION = {
+    ALL: 'all',
+}
+
+function reducerFilterShop(state, action) {
+    switch(action.filterType) {
+        default:
+            return state;
+    }
+}
+
+export default function FilterShop({ setItemsDisplay }) {
+    const [state, dispatch] = useReducer(reducerFilterShop, {filterType: 'all'})
+
+    return (
+        <div>
+            FilterShop
+        </div>
+    )
 }

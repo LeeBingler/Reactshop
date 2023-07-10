@@ -8,7 +8,7 @@ export default function Shop() {
 
     return (
         <section>
-            <FilterShop />
+            <FilterShop setItemsDisplay={setItemsDisplay}/>
             <div className='grid grid-cols-2'>
                 {itemsDisplay.map((item) => {
                     return <Card key={item.id} item={item} />
