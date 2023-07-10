@@ -11,7 +11,7 @@ export default function Card({ item }) {
             <h1 className='py-2 overflow-hidden text-ellipsis whitespace-nowrap text-gray-600'> {item.title} </h1>
             <div className='flex flex-col justify-center items-center'>
                 <p> ${item.price} </p>
-                <button className='btn-navBar'> Add to Cart </button>
+                <button className='border border-black rounded text-center align-middle px-[3px] mt-1 text-white bg-blue-400'> Add to Cart </button>
             </div>
         </div>
     )
