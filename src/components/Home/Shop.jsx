@@ -12,25 +12,23 @@ export const ACTION = {
 }
 
 function reducerFilterShop(state, action) {
-    const allItems = useItems();
-
     switch(action.filterType) {
         case ACTION.ALL:
-            return allItems;
+            return action.Items;
         case ACTION.WOMEN:
-            return allItems.filter((item) => {
+            return action.Items.filter((item) => {
                 return item.category === ACTION.WOMEN;
             })
         case ACTION.MEN:
-            return allItems.filter((item) => {
+            return action.Items.filter((item) => {
                 return item.category === ACTION.MEN;
             })
         case ACTION.JEWELERY:
-                return allItems.filter((item) => {
+                return action.Items.filter((item) => {
                     return item.category === ACTION.JEWELERY;
             })
         case ACTION.ELECTRONICS:
-            return allItems.filter((item) => {
+            return action.Items.filter((item) => {
                     return item.category === ACTION.ELECTRONICS;
             })
         default:
