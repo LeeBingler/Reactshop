@@ -35,7 +35,6 @@ export default function ItemsProvider({ children }) {
                 .catch((error) => console.log(error));
         };
         fetchAllItems();
-        console.log(items);
     }, []);
 
     return (

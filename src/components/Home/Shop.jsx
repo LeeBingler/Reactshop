@@ -43,7 +43,7 @@ export default function Shop() {
 
     return (
         <section>
-            <FilterShop filter={dispatch}/>
+            <FilterShop filterFunction={dispatch}/>
             <div className='grid grid-cols-2'>
                 {itemsDisplay.map((item) => {
                     return <Card key={item.id} item={item} />
