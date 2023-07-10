@@ -1,7 +1,6 @@
 import React from 'react'
 import Carousel from '../components/Home/Carousel';
 import Shop from '../components/Home/Shop';
-
 export default function Home() {
 
   return (
