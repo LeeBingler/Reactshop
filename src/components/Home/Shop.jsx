@@ -6,7 +6,7 @@ export default function Shop() {
     const [itemsDisplay, setItemsDisplay] = useState(useItems());
 
     return (
-        <div>
+        <div className='grid grid-cols-2'>
             {itemsDisplay.map((item) => {
                 return <Card key={item.id} item={item} />
             })}
