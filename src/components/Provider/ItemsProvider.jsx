@@ -29,13 +29,17 @@ export default function ItemsProvider({ children }) {
             await fetch('https://fakestoreapi.com/products')
                 .then((res) => res.json())
                 .then((data) => {
+                    data.forEach((item) => {
+                        item.number = 0;
+                        return item;
+                    })
                     setItems(data);
                     setLoading(prev => !prev);
                 })
                 .catch((error) => console.log(error));
         };
         fetchAllItems();
-
+        console.log(items);
         return () => {
             setItems([]);
             setLoading(prev => !prev);

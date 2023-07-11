@@ -9,10 +9,19 @@ export function useCart() {
 export default function CartProvider({ children }) {
     const [cart, setCart] = useState([]);
 
-    function addCartItem(item) {
+    function addCartItem(newItem) {
+
         setCart(prev => {
-            if (prev)
-            return [...prev, item]
+            if (prev.includes(newItem)) {
+                return prev.map((item) => {
+                    if (item === newItem) {
+                        newItem.number += 1;
+                        return newItem
+                    }
+                        return item;
+                })
+            }
+            return [...prev, newItem]
         })
     }
 
