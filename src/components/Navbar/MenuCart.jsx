@@ -15,7 +15,7 @@ export default function MenuCart({ showCart }) {
         })}
         <p className='my-2 text-xl'> {`Total: $${totalPrice}`} </p>
         <button
-        className='rounded border border-black p-[2px]'
+        className='rounded border border-black p-[2px] text-blue-400 font-semibold'
         >
           <Link to='/cart' >
             Go To Cart
