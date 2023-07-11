@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 export const CartContext = React.createContext();
 export const AddCartContext = React.createContext();
 export const RemoveCartContext = React.createContext();
+export const TotalPriceCartContext = React.createContext();
 
 export function useCart() {
     return useContext(CartContext);
@@ -14,6 +15,10 @@ export function useAddItemCart() {
 
 export function useRemoveItemCart () {
     return useContext(RemoveCartContext);
+}
+
+export function useTotalPriceCart () {
+    return useContext(TotalPriceCartContext);
 }
 
 export default function CartProvider({ children }) {
@@ -56,11 +61,23 @@ export default function CartProvider({ children }) {
         });
     };
 
+    function totalPriceCart() {
+        let total = 0;
+
+        cart.forEach(elem => {
+            total += elem.price * elem.number;
+        });
+
+        return total;
+    }
+
     return (
         <CartContext.Provider value={cart}>
             <AddCartContext.Provider value={addItemCart}>
                 <RemoveCartContext.Provider value={removeItemCart} >
-                    { children }
+                    <TotalPriceCartContext.Provider value={totalPriceCart()} >
+                        { children }
+                    </TotalPriceCartContext.Provider>
                 </RemoveCartContext.Provider>
             </AddCartContext.Provider>
         </CartContext.Provider>
