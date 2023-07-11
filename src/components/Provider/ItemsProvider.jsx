@@ -30,7 +30,7 @@ export default function ItemsProvider({ children }) {
                 .then((res) => res.json())
                 .then((data) => {
                     data.forEach((item) => {
-                        item.number = 1;
+                        item.number = 0;
                         return item;
                     })
                     setItems(data);

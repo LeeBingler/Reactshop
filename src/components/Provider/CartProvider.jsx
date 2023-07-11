@@ -19,28 +19,22 @@ export function useRemoveItemCart () {
 export default function CartProvider({ children }) {
     const [cart, setCart] = useState([]);
 
-    function removeItemCart(ItemToRemove) {
-        let numberOfItem = 0;
+    function removeItemCart(ItemToRemove, number) {
 
         setCart(prev => {
             let newArray = prev.map((item) => {
                 if (item.id === ItemToRemove.id && ItemToRemove.number > 0) {
-                    item.number -= 1;
-                    numberOfItem = item.number;
+                    item.number = number;
                 }
                 return item;
             })
 
-            if (numberOfItem === 0) {
-                newArray = newArray.filter((item) => {
-                            return item.id !== ItemToRemove.id;
-                        });
-            }
+            newArray = newArray.filter((item) => item.number > 0);
             return newArray;
         });
     };
 
-    function addItemCart(newItem) {
+    function addItemCart(newItem, number) {
         function checkNewItemInCart(oldCart) {
             const ItemIsIn = oldCart.filter((item) => {
                                 return item.id === newItem.id
@@ -49,15 +43,15 @@ export default function CartProvider({ children }) {
         };
 
         setCart(prev => {
-            if (checkNewItemInCart(prev) !== 0) {
+            if (checkNewItemInCart(prev)) {
                 return prev.map((item) => {
                     if (item.id === newItem.id) {
-                        newItem.number += 1;
-                        return newItem;
+                        item.number = number;
                     }
                     return item;
                 })
             }
+            newItem.number = 1;
             return [...prev, newItem];
         });
     };
