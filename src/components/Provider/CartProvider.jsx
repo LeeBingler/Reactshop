@@ -1,33 +1,46 @@
 import React, { useContext } from 'react'
 
 export const CartContext = React.createContext();
+export const AddCartContext = React.createContext();
 
 export function useCart() {
     return useContext(CartContext);
+};
+
+export function useAddItemToCart() {
+    return useContext(AddCartContext);
 }
 
 export default function CartProvider({ children }) {
     const [cart, setCart] = useState([]);
 
-    function addCartItem(newItem) {
+    function addItemToCart(newItem) {
+        function checkNewItemInCart(oldCart) {
+            const ItemIsIn = oldCart.filter((item) => {
+                                return item.id === newItem.id
+                            });
+            return ItemIsIn.length;
+        }
 
         setCart(prev => {
-            if (prev.includes(newItem)) {
+            if (checkNewItemInCart(prev)) {
                 return prev.map((item) => {
-                    if (item === newItem) {
+                    if (item.id === newItem.id) {
                         newItem.number += 1;
-                        return newItem
+                        return newItem;
                     }
-                        return item;
+                    return item;
                 })
             }
-            return [...prev, newItem]
+            return [...prev, newItem];
         })
-    }
+    };
 
     return (
         <CartContext.Provider value={cart}>
-            { children }
+            <AddCartContext.Provider value={addItemToCart}>
+                { children }
+            </AddCartContext.Provider>
         </CartContext.Provider>
     )
-}
+};
