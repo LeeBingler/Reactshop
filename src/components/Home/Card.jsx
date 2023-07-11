@@ -1,6 +1,8 @@
 import React from 'react'
+import { useAddItemCart } from '../Provider/CartProvider';
 
 export default function Card({ item }) {
+    const onClickHandler = useAddItemCart();
 
     return (
         <div className='flex flex-col justify-center w-48 h-[360px] bg-white border border-black rounded px-4 m-4 hover:shadow-2xl hover:scale-[1.02] transition-all ease-linear duration-200'>
@@ -11,7 +13,12 @@ export default function Card({ item }) {
             <h1 className='py-2 overflow-hidden text-ellipsis whitespace-nowrap text-gray-600'> {item.title} </h1>
             <div className='flex flex-col justify-center items-center'>
                 <p> ${item.price} </p>
-                <button className='border border-black rounded text-center align-middle px-[3px] mt-1 text-white bg-blue-400'> Add to Cart </button>
+                <button
+                className='border border-black rounded text-center align-middle px-[3px] mt-1 text-white bg-blue-400'
+                onClick={() => {onClickHandler(item)}}
+                >
+                    Add to Cart
+                </button>
             </div>
         </div>
     )
