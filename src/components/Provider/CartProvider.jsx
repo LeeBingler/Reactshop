@@ -20,22 +20,24 @@ export default function CartProvider({ children }) {
     const [cart, setCart] = useState([]);
 
     function removeItemCart(ItemToRemove) {
-        let numberIsNotZero = true;
+        let numberIsNotZero = 0;
 
         setCart(prev => {
-            prev.map((item) => {
+            let newArray = [];
+            newArray = prev.map((item) => {
                 if (item.id === ItemToRemove.id && ItemToRemove.number > 0) {
                     item.number -= 1;
-                    numberIsNotZero = false;
+                    numberIsNotZero = item.number;
                 }
                 return item;
             })
 
-            if (numberIsNotZero) {
-                prev.filter((item) => {
-                    return item.id !== ItemToRemove.id;
-                });
+            if (numberIsNotZero === 0) {
+                newArray = newArray.filter((item) => {
+                            return item.id !== ItemToRemove.id;
+                        });
             }
+            return newArray;
         });
     };
 
@@ -48,7 +50,7 @@ export default function CartProvider({ children }) {
         };
 
         setCart(prev => {
-            if (checkNewItemInCart(prev)) {
+            if (checkNewItemInCart(prev) !== 0) {
                 return prev.map((item) => {
                     if (item.id === newItem.id) {
                         newItem.number += 1;
