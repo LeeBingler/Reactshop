@@ -2,6 +2,7 @@
 
 ![Static Badge](https://img.shields.io/badge/dependencies-NPM-black)
 ![Static Badge](https://img.shields.io/badge/license-MIT-red)
+![GitHub repo size](https://img.shields.io/github/repo-size/LeeBingler/ReactShop)
 
 A React Js e-commerce website.
 
