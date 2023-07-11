@@ -1,5 +1,5 @@
 import React, { useReducer, useState } from 'react'
-import { useItems } from '../ItemsProvider'
+import { useItems } from '../Provider/ItemsProvider'
 import Card from './Card';
 import FilterShop from './FilterShop';
 

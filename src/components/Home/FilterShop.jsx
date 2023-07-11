@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react'
 import { ACTION } from './Shop'
-import { useItems } from '../ItemsProvider'
+import { useItems } from '../Provider/ItemsProvider'
 
 export default function FilterShop({ filterFunction }) {
     const AllItems = useItems();

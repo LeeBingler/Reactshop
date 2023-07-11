@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import ItemsProvider from './components/ItemsProvider';
+import ItemsProvider from './components/Provider/ItemsProvider';
 import NoPage from './Pages/NoPage';
 import Home from './Pages/Home';
 import About from './Pages/About';
