@@ -13,7 +13,7 @@ export default function MenuCart({ showCart }) {
         {ItemCart.map((item) => {
           return <CardCart key={item.id * 1000} item={item} />
         })}
-        <h2> {`Total: $${totalPrice}`} </h2>
+        <p className='my-2 text-xl'> {`Total: $${totalPrice}`} </p>
         <button
         className='rounded border border-black p-[2px]'
         >
