@@ -13,9 +13,9 @@ export default function MenuCart({ showCart }) {
         {ItemCart.map((item) => {
           return <CardCart key={item.id * 1000} item={item} />
         })}
-        <p className='my-2 text-xl'> {`Total: $${totalPrice}`} </p>
+        <p className='my-2 text-2xl'> {`Total: $${totalPrice}`} </p>
         <button
-        className='rounded border border-black p-[2px] text-blue-400 font-semibold'
+        className='rounded border border-black p-[2px] text-blue-400 font-semibold text-2xl'
         >
           <Link to='/cart' >
             Go To Cart
