@@ -5,10 +5,10 @@ import CardCart from './CardCart';
 export default function MenuCart({ showCart }) {
   const isHidden = showCart ? 'w-3/4' : 'w-0';
   const ItemCart = useCart();
-  let priceTotal = 0;
+  let totalPrice = 0;
 
   ItemCart.forEach(element => {
-      priceTotal += element.price * element.number;
+      totalPrice += element.price * element.number;
   });
 
   return (
@@ -16,7 +16,7 @@ export default function MenuCart({ showCart }) {
         {ItemCart.map((item) => {
           return <CardCart key={item.id * 1000} item={item} />
         })}
-        <h2> {priceTotal !== 0 ? `Total: $${priceTotal}` : ''} </h2>
+        <h2> {`Total: $${totalPrice}`} </h2>
     </section>
   )
 };
