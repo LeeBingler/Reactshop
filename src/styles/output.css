@@ -581,10 +581,6 @@ video {
   margin-top: 1rem;
 }
 
-.mt-2{
-  margin-top: 0.5rem;
-}
-
 .block{
   display: block;
 }
@@ -603,6 +599,10 @@ video {
 
 .h-10{
   height: 2.5rem;
+}
+
+.h-14{
+  height: 3.5rem;
 }
 
 .h-20{
@@ -838,11 +838,6 @@ video {
   line-height: 2.25rem;
 }
 
-.text-lg{
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
 .text-xl{
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -850,10 +845,6 @@ video {
 
 .font-semibold{
   font-weight: 600;
-}
-
-.font-bold{
-  font-weight: 700;
 }
 
 .text-black{
@@ -961,6 +952,13 @@ video {
   color: rgb(96 165 250 / var(--tw-text-opacity));
 }
 
+@media (min-width: 768px){
+  .linknavbar{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
 .active{
   --tw-text-opacity: 1;
   color: rgb(96 165 250 / var(--tw-text-opacity));
@@ -1032,7 +1030,98 @@ video {
 }
 
 @media (min-width: 768px){
+  .md\:absolute{
+    position: absolute;
+  }
+
+  .md\:left-40{
+    left: 10rem;
+  }
+
+  .md\:top-1{
+    top: 0.25rem;
+  }
+
+  .md\:ml-5{
+    margin-left: 1.25rem;
+  }
+
+  .md\:mr-2{
+    margin-right: 0.5rem;
+  }
+
   .md\:hidden{
     display: none;
+  }
+
+  .md\:h-12{
+    height: 3rem;
+  }
+
+  .md\:h-8{
+    height: 2rem;
+  }
+
+  .md\:w-48{
+    width: 12rem;
+  }
+
+  .md\:w-\[72\%\]{
+    width: 72%;
+  }
+
+  .md\:w-full{
+    width: 100%;
+  }
+
+  .md\:flex-row{
+    flex-direction: row;
+  }
+
+  .md\:justify-end{
+    justify-content: flex-end;
+  }
+
+  .md\:justify-between{
+    justify-content: space-between;
+  }
+
+  .md\:justify-around{
+    justify-content: space-around;
+  }
+
+  .md\:overflow-y-hidden{
+    overflow-y: hidden;
+  }
+
+  .md\:overflow-x-visible{
+    overflow-x: visible;
+  }
+
+  .md\:border-none{
+    border-style: none;
+  }
+
+  .md\:p-1{
+    padding: 0.25rem;
+  }
+
+  .md\:py-1{
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .md\:text-lg{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-xl{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:transition-none{
+    transition-property: none;
   }
 }
