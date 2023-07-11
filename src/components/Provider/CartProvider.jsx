@@ -20,19 +20,18 @@ export default function CartProvider({ children }) {
     const [cart, setCart] = useState([]);
 
     function removeItemCart(ItemToRemove) {
-        let numberIsNotZero = 0;
+        let numberOfItem = 0;
 
         setCart(prev => {
-            let newArray = [];
-            newArray = prev.map((item) => {
+            let newArray = prev.map((item) => {
                 if (item.id === ItemToRemove.id && ItemToRemove.number > 0) {
                     item.number -= 1;
-                    numberIsNotZero = item.number;
+                    numberOfItem = item.number;
                 }
                 return item;
             })
 
-            if (numberIsNotZero === 0) {
+            if (numberOfItem === 0) {
                 newArray = newArray.filter((item) => {
                             return item.id !== ItemToRemove.id;
                         });
