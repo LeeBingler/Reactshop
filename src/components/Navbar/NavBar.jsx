@@ -32,7 +32,7 @@ export default function NavBar() {
                 <Link to='/home'>
                     <h1 className='font-logo'> React Shop </h1>
                 </Link>
-                <button className='btn-navBar mr-3' onClick={handleClickCart}>
+                <button className={`btn-navBar mr-3 ${showCart ? 'text-blue-400' : ''}`} onClick={handleClickCart}>
                     <i className='bx bxs-cart float-none inline text-3xl'></i>
                 </button>
             </nav>
