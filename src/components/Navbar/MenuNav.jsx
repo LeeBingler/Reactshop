@@ -1,5 +1,5 @@
 import React from 'react';
-import InfoFooter from '../InfoFooter';
+import InfoFooter from '../Footer/InfoFooter';
 import { NavLink } from 'react-router-dom';
 
 export default function MenuNav({ showMenu }) {

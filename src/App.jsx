@@ -8,6 +8,7 @@ import About from './Pages/About';
 import Contact from './Pages/Contact';
 import NavBar from './components/Navbar/NavBar';
 import './styles/output.css';
+import Footer from './components/Footer/Footer';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path='*' element={<NoPage />} />
         </Routes>
+        <Footer />
       </CartProvider>
     </ItemsProvider>
   )
