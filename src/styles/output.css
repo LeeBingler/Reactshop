@@ -713,10 +713,6 @@ video {
   border-width: 1px;
 }
 
-.border-2{
-  border-width: 2px;
-}
-
 .border-b{
   border-bottom-width: 1px;
 }
@@ -932,7 +928,7 @@ video {
   border-bottom-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
-  padding-bottom: 0.5rem;
+  padding-bottom: 9px;
   text-align: center;
   vertical-align: middle;
   font-size: 2.25rem;
@@ -956,6 +952,13 @@ video {
   .linknavbar{
     font-size: 1.25rem;
     line-height: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px){
+  .linknavbar{
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
@@ -1034,44 +1037,24 @@ video {
     position: absolute;
   }
 
-  .md\:left-40{
-    left: 10rem;
+  .md\:right-16{
+    right: 4rem;
   }
 
   .md\:top-1{
     top: 0.25rem;
   }
 
-  .md\:right-40{
-    right: 10rem;
-  }
-
-  .md\:right-80{
-    right: 20rem;
-  }
-
-  .md\:right-20{
-    right: 5rem;
-  }
-
-  .md\:right-16{
-    right: 4rem;
-  }
-
-  .md\:ml-5{
-    margin-left: 1.25rem;
-  }
-
-  .md\:mr-2{
-    margin-right: 0.5rem;
+  .md\:ml-0{
+    margin-left: 0px;
   }
 
   .md\:ml-2{
     margin-left: 0.5rem;
   }
 
-  .md\:mr-5{
-    margin-right: 1.25rem;
+  .md\:ml-4{
+    margin-left: 1rem;
   }
 
   .md\:mr-0{
@@ -1082,52 +1065,36 @@ video {
     margin-right: 0.25rem;
   }
 
+  .md\:mr-4{
+    margin-right: 1rem;
+  }
+
   .md\:hidden{
     display: none;
+  }
+
+  .md\:h-10{
+    height: 2.5rem;
   }
 
   .md\:h-12{
     height: 3rem;
   }
 
-  .md\:h-8{
-    height: 2rem;
+  .md\:w-10{
+    width: 2.5rem;
   }
 
   .md\:w-48{
     width: 12rem;
   }
 
-  .md\:w-\[72\%\]{
-    width: 72%;
-  }
-
-  .md\:w-full{
-    width: 100%;
-  }
-
-  .md\:w-\[\]{
-    width: ;
-  }
-
-  .md\:w-\[50\%\]{
-    width: 50%;
-  }
-
   .md\:w-\[70\%\]{
     width: 70%;
   }
 
-  .md\:w-\[75\%\]{
-    width: 75%;
-  }
-
-  .md\:w-\[74\%\]{
-    width: 74%;
-  }
-
-  .md\:w-\[73\%\]{
-    width: 73%;
+  .md\:w-full{
+    width: 100%;
   }
 
   .md\:flex-row{
@@ -1158,16 +1125,6 @@ video {
     border-style: none;
   }
 
-  .md\:bg-red-500{
-    --tw-bg-opacity: 1;
-    background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-  }
-
-  .md\:bg-red-50{
-    --tw-bg-opacity: 1;
-    background-color: rgb(254 242 242 / var(--tw-bg-opacity));
-  }
-
   .md\:p-1{
     padding: 0.25rem;
   }
@@ -1189,5 +1146,11 @@ video {
 
   .md\:transition-none{
     transition-property: none;
+  }
+}
+
+@media (min-width: 1024px){
+  .lg\:w-60{
+    width: 15rem;
   }
 }

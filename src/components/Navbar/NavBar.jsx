@@ -22,7 +22,7 @@ export default function NavBar() {
         };
     	window.addEventListener('resize', updateDimension);
 
-		if (screenSize.width > 765) {
+		if (screenSize.width > 768) {
             setShowMenu(true);
         } else {
             setShowMenu(false);
@@ -56,9 +56,9 @@ export default function NavBar() {
                     <i className='bx bx-menu float-none inline text-3xl'></i>
                 </button>
                 <Link to='/home'>
-                    <h1 className='font-logo'> React Shop </h1>
+                    <h1 className='font-logo md:ml-4'> React Shop </h1>
                 </Link>
-                <button className={`btn-navBar mr-3 ${showCart ? 'text-blue-400' : ''}`} onClick={handleClickCart}>
+                <button className={`btn-navBar mr-3 md:mr-4 ${showCart ? 'text-blue-400' : ''}`} onClick={handleClickCart}>
                     <i className='bx bxs-cart float-none inline text-3xl'></i>
                 </button>
             </nav>

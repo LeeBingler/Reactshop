@@ -10,11 +10,12 @@ export default function MenuNav({ showMenu }) {
         className={`menu-navbar border-r border-black ${isHidden}
             md:transition-none md:absolute md:top-1 md:h-12 md:flex-row-reverse md:border-none
             md:overflow-y-hidden md:w-[70%] md:right-16 md:overflow-x-visible
-            md:justify-between `}>
+            md:justify-between`}>
             <div className='flex items-center'>
                 <input
                 className='block border p-2 m-4 border-black
-                    md:py-1 md:w-48 md:text-lg md:h-10 md:mr-0 md:ml-2'
+                    md:py-1 md:w-48 md:text-lg md:h-10 md:mr-0 md:ml-2
+                    lg:w-60'
                 placeholder='Type to search..'>
                 </input>
                 <button className='text-2xl p-2 m-4 border border-black bg-black text-white hover:text-blue-400
