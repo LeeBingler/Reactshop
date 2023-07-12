@@ -16,7 +16,7 @@ export default function Card({ item }) {
                 md:text-xl'>
                 {item.title}
             </h1>
-            <div className='flex flex-col justify-center items-center'>
+            <div className='flex flex-col justify-center items-center md:text-xl'>
                 <p>
                     ${item.price}
                 </p>

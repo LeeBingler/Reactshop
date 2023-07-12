@@ -4,6 +4,8 @@
 ![Static Badge](https://img.shields.io/badge/license-MIT-red)
 ![GitHub repo size](https://img.shields.io/github/repo-size/LeeBingler/ReactShop)
 
+
+![ReactShop webApp](/ReactShop.png)
 A React Js e-commerce website.
 
 ## Tech Stack
