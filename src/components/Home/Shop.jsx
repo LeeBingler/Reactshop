@@ -40,9 +40,10 @@ export default function Shop() {
     const [itemsDisplay, dispatch] = useReducer(reducerFilterShop, useItems());
 
     return (
-        <section className='flex flex-col md:flex-row md:border-l md:border-black'>
+        <section className='flex flex-col md:flex-row'>
             <FilterShop filterFunction={dispatch}/>
-            <div className='grid grid-cols-2 lg:grid-cols-3'>
+            <div className='grid grid-cols-2
+                md:grid-cols-3 md:border-l md:border-black md:mt-2'>
                 {itemsDisplay.map((item) => {
                     return <Card key={item.id} item={item} />
                 })}
