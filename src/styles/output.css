@@ -544,8 +544,8 @@ video {
   top: 0px;
 }
 
-.top-\[40\%\]{
-  top: 40%;
+.top-\[47\%\]{
+  top: 47%;
 }
 
 .z-50{
@@ -649,8 +649,8 @@ video {
   width: 100vw;
 }
 
-.max-w-3xl{
-  max-width: 48rem;
+.max-w-5xl{
+  max-width: 64rem;
 }
 
 .transform{
@@ -991,6 +991,20 @@ video {
   font-size: 1.5rem;
   line-height: 2rem;
   opacity: 0.8;
+}
+
+@media (min-width: 768px){
+  .btn-carousel{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px){
+  .btn-carousel{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
 }
 
 .btn-filter{
