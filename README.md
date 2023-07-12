@@ -1,11 +1,11 @@
-<img src='https://github.com/LeeBingler/ReactShop/assets/98109693/7f507a9b-7356-42f6-a1e2-98f2ae02514c' alt='ReactShop' width='100%' />
+<img src='https://github.com/LeeBingler/ReactShop/assets/98109693/7f507a9b-7356-42f6-a1e2-98f2ae02514c' alt='ReactShop' width='100%' height='200px'/>
 
 ![Static Badge](https://img.shields.io/badge/dependencies-NPM-black)
 ![Static Badge](https://img.shields.io/badge/license-MIT-red)
 ![GitHub repo size](https://img.shields.io/github/repo-size/LeeBingler/ReactShop)
 
-
-A React Js e-commerce website.
+An ecommerce website build with React.JS and Tailwind 
+![ReactShop](https://github.com/LeeBingler/ReactShop/assets/98109693/2170feb3-5dcc-43d3-aa65-baeca7f81962)
 
 ## Tech Stack
 1. HTML
