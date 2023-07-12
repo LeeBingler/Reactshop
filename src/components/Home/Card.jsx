@@ -10,7 +10,7 @@ export default function Card({ item }) {
                 <p className='text-right pb-5 w-full font-semibold mr-5 md:mr-7 lg:mr-12'>
                     ⭐ {item.rating.rate}
                 </p>
-                <img className='max-h-64 w-auto px-4' src={item.image} alt={item.title} />
+                <img className='max-h-64 w-60 px-4' src={item.image} alt={item.title} />
             </div>
             <h1 className='p-2 overflow-hidden text-ellipsis whitespace-nowrap text-gray-600 text-center
                 md:text-xl'>
