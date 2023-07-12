@@ -4,7 +4,7 @@ import CardCart from './CardCart';
 import { Link } from 'react-router-dom';
 
 export default function MenuCart({ showCart }) {
-  const isHidden = showCart ? 'w-3/4' : 'w-0';
+  const isHidden = showCart ? 'w-3/4 md:w-1/2 lg:w-1/3' : 'w-0';
   const ItemCart = useCart();
   const totalPrice = useTotalPriceCart();
 
