@@ -9,9 +9,7 @@ export default function Home() {
         <div className='flex content-center justify-center'>
           <Carousel />
         </div>
-        <section>
-          <Shop />
-        </section>
+        <Shop />
     </main>
   )
 }

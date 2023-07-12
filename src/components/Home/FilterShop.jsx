@@ -6,7 +6,9 @@ export default function FilterShop({ filterFunction }) {
     const AllItems = useItems();
 
     return (
-        <section className='flex justify-center border-black border-b border-t mt-4 py-2'>
+        <section
+        className='flex justify-center border-black bg-white border-b border-t mt-4 py-2 sticky top-12 whitespace-nowrap z-10
+                md:border-0 md:mt-0 md:h-16 md:w-fit'>
             <button
             className='btn-filter'
             onClick={() => filterFunction({ filterType: ACTION.ALL, Items: AllItems })}
