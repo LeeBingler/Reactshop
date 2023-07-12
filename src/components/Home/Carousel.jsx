@@ -44,10 +44,10 @@ export default function Carousel() {
             </div>
 
             <div className='flex justify-between absolute w-full top-[40%] px-3'>
-                <button className='btn-carousel' onClick={handleOnClickPrev}>
+                <button id='prevBtn' className='btn-carousel' onClick={handleOnClickPrev}>
                     <i className='bx bx-chevron-left' ></i>
                 </button>
-                <button className='btn-carousel' onClick={handleOnClickNext}>
+                <button id='nextBtn' className='btn-carousel' onClick={handleOnClickNext}>
                     <i className='bx bx-chevron-right'></i>
                 </button>
             </div>
