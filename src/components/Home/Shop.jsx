@@ -42,7 +42,7 @@ export default function Shop() {
     return (
         <section className='flex flex-col md:flex-row'>
             <FilterShop filterFunction={dispatch}/>
-            <div className='grid grid-cols-2 gap-y-7
+            <div className='grid grid-cols-2 gap-y-2
                 xl:grid-cols-3 md:border-l md:border-black md:mt-2'>
                 {itemsDisplay.map((item) => {
                     return <Card key={item.id} item={item} />

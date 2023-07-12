@@ -568,6 +568,10 @@ video {
   margin: 1rem;
 }
 
+.m-5{
+  margin: 1.25rem;
+}
+
 .my-2{
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -898,6 +902,14 @@ video {
   row-gap: 1.75rem;
 }
 
+.gap-y-4{
+  row-gap: 1rem;
+}
+
+.gap-y-2{
+  row-gap: 0.5rem;
+}
+
 .overflow-hidden{
   overflow: hidden;
 }
@@ -1013,6 +1025,11 @@ video {
 .px-2{
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.py-10{
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .pb-5{

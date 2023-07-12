@@ -5,7 +5,7 @@ export default function Card({ item }) {
     const onClickHandler = useAddItemCart();
 
     return (
-        <div className='flex flex-col justify-center min-w-[12rem] h-[100%] bg-white border border-black rounded m-4 hover:shadow-2xl hover:scale-[1.02] transition-transform ease-linear duration-200'>
+        <div className='flex flex-col justify-center min-w-[12rem] bg-white border border-black rounded m-4 p-2 py-10 hover:shadow-2xl hover:scale-[1.02] transition-transform ease-linear duration-200'>
             <div className='flex flex-col justify-center items-center'>
                 <p className='text-right pb-5 w-full font-semibold mr-5 md:mr-7 lg:mr-12'>
                     ⭐ {item.rating.rate}
