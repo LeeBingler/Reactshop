@@ -1,5 +1,5 @@
 import React from 'react';
-import InfoFooter from '../Footer/InfoFooter';
+import InfoFooter from './InfoFooter';
 import { NavLink } from 'react-router-dom';
 
 export default function MenuNav({ showMenu }) {
@@ -35,7 +35,7 @@ export default function MenuNav({ showMenu }) {
                     Contact
                 </NavLink>
             </div>
-            <InfoFooter classProps={'pt-48 md:hidden'}/>
+            <InfoFooter classProps={'pt-48 flex flex-col gap-4 md:hidden'}/>
         </div>
     )
 }

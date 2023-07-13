@@ -578,6 +578,10 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.mb-7{
+  margin-bottom: 1.75rem;
+}
+
 .ml-3{
   margin-left: 0.75rem;
 }
@@ -602,18 +606,6 @@ video {
   margin-top: 1rem;
 }
 
-.mt-40{
-  margin-top: 10rem;
-}
-
-.mb-10{
-  margin-bottom: 2.5rem;
-}
-
-.mb-7{
-  margin-bottom: 1.75rem;
-}
-
 .block{
   display: block;
 }
@@ -636,10 +628,6 @@ video {
 
 .h-14{
   height: 3.5rem;
-}
-
-.h-16{
-  height: 4rem;
 }
 
 .h-20{
@@ -670,6 +658,10 @@ video {
   width: 15rem;
 }
 
+.w-\[80\%\]{
+  width: 80%;
+}
+
 .w-full{
   width: 100%;
 }
@@ -678,12 +670,8 @@ video {
   width: 100vw;
 }
 
-.w-80{
-  width: 20rem;
-}
-
-.w-\[80\%\]{
-  width: 80%;
+.w-\[50\%\]{
+  width: 50%;
 }
 
 .min-w-\[12rem\]{
@@ -714,10 +702,6 @@ video {
   flex-direction: column;
 }
 
-.flex-col-reverse{
-  flex-direction: column-reverse;
-}
-
 .content-center{
   align-content: center;
 }
@@ -738,12 +722,16 @@ video {
   justify-content: space-around;
 }
 
-.gap-10{
-  gap: 2.5rem;
-}
-
 .gap-5{
   gap: 1.25rem;
+}
+
+.gap-2{
+  gap: 0.5rem;
+}
+
+.gap-4{
+  gap: 1rem;
 }
 
 .gap-y-2{
@@ -826,11 +814,6 @@ video {
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
-.bg-red-200{
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 202 202 / var(--tw-bg-opacity));
-}
-
 .p-1{
   padding: 0.25rem;
 }
@@ -868,6 +851,16 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.py-6{
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
 .pb-5{
   padding-bottom: 1.25rem;
 }
@@ -882,10 +875,6 @@ video {
 
 .pt-5{
   padding-top: 1.25rem;
-}
-
-.pb-10{
-  padding-bottom: 2.5rem;
 }
 
 .text-center{
@@ -940,11 +929,6 @@ video {
 .text-gray-600{
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));
-}
-
-.text-gray-700{
-  --tw-text-opacity: 1;
-  color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
 .text-white{
@@ -1188,6 +1172,10 @@ video {
     margin-top: 0.5rem;
   }
 
+  .md\:flex{
+    display: flex;
+  }
+
   .md\:hidden{
     display: none;
   }
@@ -1229,6 +1217,10 @@ video {
     width: 100%;
   }
 
+  .md\:w-\[50\%\]{
+    width: 50%;
+  }
+
   .md\:flex-row{
     flex-direction: row;
   }
@@ -1237,8 +1229,16 @@ video {
     flex-direction: row-reverse;
   }
 
+  .md\:flex-col{
+    flex-direction: column;
+  }
+
   .md\:flex-wrap{
     flex-wrap: wrap;
+  }
+
+  .md\:items-center{
+    align-items: center;
   }
 
   .md\:justify-normal{
@@ -1289,6 +1289,10 @@ video {
 
   .md\:pr-4{
     padding-right: 1rem;
+  }
+
+  .md\:text-center{
+    text-align: center;
   }
 
   .md\:text-lg{
