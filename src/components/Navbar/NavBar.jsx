@@ -50,7 +50,7 @@ export default function NavBar() {
     const menuActive = showMenu ? 'text-blue-400' : 'text-black';
 
     return (
-        <header className='fixed w-full top-0 bg-white z-50 h-14'>
+        <header className='fixed w-full top-0 bg-white z-50 h-14 md:shadow-lg'>
             <nav className='navbar'>
                 <button className={`md:hidden btn-navBar ml-3 ${menuActive}`} onClick={handleClickMenu}>
                     <i className='bx bx-menu float-none inline text-3xl'></i>
