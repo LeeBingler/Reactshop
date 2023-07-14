@@ -13,7 +13,7 @@ export default function Footer() {
         </div>
         <p className='text-center'>© 2023 React Shop All Rights Reserved </p>
         <p className='text-center mt-4 text-[15px] w-full bg-black text-white'>
-          Website made by <a className='underline' href="https://github.com/LeeBingler"> Lee Bingler</a> with ❤️
+          Made by <a className='underline' href="https://github.com/LeeBingler"> Lee Bingler</a> with ❤️
         </p>
     </>
   )

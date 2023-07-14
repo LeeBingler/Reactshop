@@ -20,12 +20,19 @@ export default function Card({ item }) {
                 <p>
                     ${item.price}
                 </p>
-                <button
-                className='border border-black rounded text-center align-middle px-[3px] mt-1 text-white bg-blue-400'
-                onClick={() => {onClickHandler(item, item.number + 1)}}
-                >
-                    Add to Cart
-                </button>
+                <div className='flex flex-col gap-2 md:flex-row'>
+                    <button
+                    className='border border-black rounded text-center align-middle px-[3px] mt-1 text-white bg-blue-400'
+                    onClick={() => {onClickHandler(item, item.number + 1)}}
+                    >
+                        Add to Cart
+                    </button>
+                    <button
+                    className='border border-black rounded text-center align-middle px-[3px] mt-1 text-white bg-blue-900'
+                    >
+                        See details
+                    </button>
+                </div>
             </div>
         </div>
     )
