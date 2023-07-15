@@ -724,6 +724,11 @@ video {
   height: 100vh;
 }
 
+.h-fit{
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .max-h-64{
   max-height: 16rem;
 }
@@ -852,6 +857,10 @@ video {
 
 .gap-5{
   gap: 1.25rem;
+}
+
+.gap-7{
+  gap: 1.75rem;
 }
 
 .gap-y-2{
@@ -993,6 +1002,11 @@ video {
   padding-bottom: 1.5rem;
 }
 
+.py-20{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
 .pb-4{
   padding-bottom: 1rem;
 }
@@ -1031,6 +1045,18 @@ video {
 
 .pt-2{
   padding-top: 0.5rem;
+}
+
+.pt-32{
+  padding-top: 8rem;
+}
+
+.pb-20{
+  padding-bottom: 5rem;
+}
+
+.pb-7{
+  padding-bottom: 1.75rem;
 }
 
 .text-center{
@@ -1537,6 +1563,14 @@ video {
 
   .lg\:justify-around{
     justify-content: space-around;
+  }
+
+  .lg\:pt-32{
+    padding-top: 8rem;
+  }
+
+  .lg\:pb-20{
+    padding-bottom: 5rem;
   }
 }
 
