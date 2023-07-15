@@ -733,6 +733,14 @@ video {
   max-width: 64rem;
 }
 
+.max-w-xl{
+  max-width: 36rem;
+}
+
+.max-w-7xl{
+  max-width: 80rem;
+}
+
 .translate-x-2{
   --tw-translate-x: 0.5rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -869,6 +877,11 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-gray-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+
 .bg-\[url\(\'\/public\/blob\.svg\'\)\]{
   background-image: url('/public/blob.svg');
 }
@@ -1001,6 +1014,11 @@ video {
 .text-xl{
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-6xl{
+  font-size: 3.75rem;
+  line-height: 1;
 }
 
 .font-semibold{
