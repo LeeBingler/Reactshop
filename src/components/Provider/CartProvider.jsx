@@ -68,7 +68,7 @@ export default function CartProvider({ children }) {
             total += elem.price * elem.number;
         });
 
-        return total;
+        return total.toFixed(2);
     }
 
     return (
