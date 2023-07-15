@@ -4,7 +4,7 @@ export default function CartCard({ item }) {
 
     return (
         <div className='mt-8 flex'>
-            <img className='h-20 px-4' src={item.image} alt={item.title} />
+            <img className='h-20 px-6' src={item.image} alt={item.title} />
             <div className='flex flex-col w-full max-w-4xl'>
                 <div className='flex justify-between'>
                     <h1 className='text-xl'> {item.title} </h1>
