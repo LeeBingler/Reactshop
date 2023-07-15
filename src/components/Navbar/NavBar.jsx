@@ -63,7 +63,7 @@ export default function NavBar() {
                 </button>
             </nav>
             <MenuNav showMenu={showMenu} />
-            <MenuCart showCart={showCart} />
+            <MenuCart showCart={showCart} hiddenCart={handleClickCart} />
         </header>
     )
 }
