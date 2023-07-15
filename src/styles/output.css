@@ -672,28 +672,8 @@ video {
   height: 100vh;
 }
 
-.h-\[\]{
-  height: ;
-}
-
-.h-\[500\]{
-  height: 500;
-}
-
-.h-\[500px\]{
-  height: 500px;
-}
-
-.h-\[300px\]{
-  height: 300px;
-}
-
 .max-h-64{
   max-height: 16rem;
-}
-
-.min-h-\[500px\]{
-  min-height: 500px;
 }
 
 .min-h-\[300px\]{
@@ -720,6 +700,10 @@ video {
   width: 80%;
 }
 
+.w-\[94\%\]{
+  width: 94%;
+}
+
 .w-fit{
   width: -moz-fit-content;
   width: fit-content;
@@ -733,57 +717,12 @@ video {
   width: 100vw;
 }
 
-.w-\[\]{
-  width: ;
-}
-
-.w-\[500\]{
-  width: 500;
-}
-
-.w-\[500pw\]{
-  width: 500pw;
-}
-
-.w-\[500px\]{
-  width: 500px;
-}
-
-.w-max{
-  width: -moz-max-content;
-  width: max-content;
-}
-
-.w-\[90\%\]{
-  width: 90%;
-}
-
-.w-\[95\%\]{
-  width: 95%;
-}
-
-.w-\[94\%\]{
-  width: 94%;
-}
-
-.w-\[300px\]{
-  width: 300px;
-}
-
 .min-w-\[12rem\]{
   min-width: 12rem;
 }
 
-.min-w-\[500px\]{
-  min-width: 500px;
-}
-
 .min-w-\[300px\]{
   min-width: 300px;
-}
-
-.min-w-\[00px\]{
-  min-width: 00px;
 }
 
 .max-w-4xl{
@@ -843,16 +782,16 @@ video {
   justify-content: space-around;
 }
 
+.gap-2{
+  gap: 0.5rem;
+}
+
 .gap-4{
   gap: 1rem;
 }
 
 .gap-5{
   gap: 1.25rem;
-}
-
-.gap-2{
-  gap: 0.5rem;
 }
 
 .gap-y-2{
@@ -910,6 +849,11 @@ video {
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
 
+.bg-blue-900{
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 58 138 / var(--tw-bg-opacity));
+}
+
 .bg-green-500{
   --tw-bg-opacity: 1;
   background-color: rgb(34 197 94 / var(--tw-bg-opacity));
@@ -925,22 +869,8 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-blue-500{
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
-}
-
-.bg-blue-900{
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 58 138 / var(--tw-bg-opacity));
-}
-
 .bg-\[url\(\'\/public\/blob\.svg\'\)\]{
   background-image: url('/public/blob.svg');
-}
-
-.bg-cover{
-  background-size: cover;
 }
 
 .bg-no-repeat{
@@ -1043,6 +973,11 @@ video {
   line-height: 2.25rem;
 }
 
+.text-4xl{
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .text-\[15px\]{
   font-size: 15px;
 }
@@ -1050,21 +985,6 @@ video {
 .text-xl{
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.text-4xl{
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
-.text-9xl{
-  font-size: 8rem;
-  line-height: 1;
-}
-
-.text-6xl{
-  font-size: 3.75rem;
-  line-height: 1;
 }
 
 .font-semibold{
@@ -1346,10 +1266,6 @@ video {
     margin-top: 0.5rem;
   }
 
-  .md\:block{
-    display: block;
-  }
-
   .md\:flex{
     display: flex;
   }
@@ -1420,10 +1336,6 @@ video {
 
   .md\:justify-normal{
     justify-content: normal;
-  }
-
-  .md\:justify-center{
-    justify-content: center;
   }
 
   .md\:justify-between{

@@ -9,6 +9,7 @@ import Contact from './Pages/Contact';
 import NavBar from './components/Navbar/NavBar';
 import './styles/output.css';
 import Footer from './components/Footer/Footer';
+import Cart from './Pages/Cart';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route index path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/home/cart" element={<Cart/>} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path='*' element={<NoPage />} />

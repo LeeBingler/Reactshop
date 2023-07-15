@@ -17,7 +17,7 @@ export default function MenuCart({ showCart }) {
         <button
         className='rounded border border-black p-[2px] text-blue-400 font-semibold text-2xl'
         >
-          <Link to='/cart' >
+          <Link to='/home/cart' >
             Go To Cart
           </Link>
         </button>
