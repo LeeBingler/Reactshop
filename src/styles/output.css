@@ -717,6 +717,10 @@ video {
   width: 100vw;
 }
 
+.w-40{
+  width: 10rem;
+}
+
 .min-w-\[12rem\]{
   min-width: 12rem;
 }
