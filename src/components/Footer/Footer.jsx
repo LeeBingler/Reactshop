@@ -12,7 +12,7 @@ export default function Footer() {
             <PrivacyFooter />
         </div>
         <p className='text-center'>© 2023 React Shop All Rights Reserved </p>
-        <p className='text-center mt-4 text-[15px] w-full bg-black text-white'>
+        <p className='text-center py-3 mt-4 text-[15px] w-full bg-black text-white'>
           Made by <a className='underline' href="https://github.com/LeeBingler"> Lee Bingler</a> with ❤️
         </p>
     </>
