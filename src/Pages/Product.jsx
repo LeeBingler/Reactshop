@@ -1,13 +1,18 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { useGetItemById } from '../components/Provider/ItemsProvider';
+import { useGetItemById, useItems } from '../components/Provider/ItemsProvider';
 import { useAddItemCart } from '../components/Provider/CartProvider';
+import LoadingScreen from './LoadingScreen';
 
 export default function Product() {
-    const idProduct= useParams();
+    const idProduct= Number(useParams().id);
     const getItemId = useGetItemById();
-    const item = getItemId(Number(idProduct.id))[0];
+    const item = getItemId(idProduct)[0];
+
     const onClickHandler = useAddItemCart();
+
+    if (useItems().length === 0)
+        return <LoadingScreen />;
 
     return (
         <section className='mt-20 flex flex-col items-center lg:flex-row lg:justify-around lg:items-end w-full'>

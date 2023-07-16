@@ -18,7 +18,7 @@ export default function ItemsProvider({ children }) {
     const [loading, setLoading] = useState(true);
 
     function getItemById(id) {
-        const Items = useItems();
+        const Items = items;
         if (typeof id != 'number') {
             console.error('id is not a number');
             return [];
