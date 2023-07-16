@@ -614,6 +614,11 @@ video {
   margin-bottom: 1rem;
 }
 
+.my-9{
+  margin-top: 2.25rem;
+  margin-bottom: 2.25rem;
+}
+
 .mb-5{
   margin-bottom: 1.25rem;
 }
@@ -652,6 +657,14 @@ video {
 
 .mt-4{
   margin-top: 1rem;
+}
+
+.mb-4{
+  margin-bottom: 1rem;
+}
+
+.mt-2{
+  margin-top: 0.5rem;
 }
 
 .block{
@@ -748,6 +761,10 @@ video {
   width: 100vw;
 }
 
+.w-4\/5{
+  width: 80%;
+}
+
 .min-w-\[12rem\]{
   min-width: 12rem;
 }
@@ -770,6 +787,10 @@ video {
 
 .max-w-7xl{
   max-width: 80rem;
+}
+
+.max-w-3xl{
+  max-width: 48rem;
 }
 
 .translate-x-2{
@@ -843,6 +864,10 @@ video {
 
 .overflow-hidden{
   overflow: hidden;
+}
+
+.overflow-visible{
+  overflow: visible;
 }
 
 .text-ellipsis{
@@ -941,6 +966,10 @@ video {
   padding: 2px;
 }
 
+.p-3{
+  padding: 0.75rem;
+}
+
 .px-3{
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -974,6 +1003,16 @@ video {
 .py-6{
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.py-9{
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
 }
 
 .pb-4{
@@ -1012,12 +1051,20 @@ video {
   padding-top: 4.5rem;
 }
 
+.text-left{
+  text-align: left;
+}
+
 .text-center{
   text-align: center;
 }
 
 .text-right{
   text-align: right;
+}
+
+.text-justify{
+  text-align: justify;
 }
 
 .align-middle{
@@ -1455,6 +1502,10 @@ video {
     padding: 0.25rem;
   }
 
+  .md\:p-4{
+    padding: 1rem;
+  }
+
   .md\:py-1{
     padding-top: 0.25rem;
     padding-bottom: 0.25rem;
@@ -1545,6 +1596,10 @@ video {
 
   .lg\:flex-row{
     flex-direction: row;
+  }
+
+  .lg\:items-end{
+    align-items: flex-end;
   }
 
   .lg\:justify-around{
