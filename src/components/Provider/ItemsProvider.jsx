@@ -19,6 +19,11 @@ export default function ItemsProvider({ children }) {
 
     function getItemById(id) {
         const Items = useItems();
+        if (typeof id != 'number') {
+            console.error('id is not a number');
+            return [];
+        }
+
         return Items.filter((item) => {
             return item.id === id;
         })
