@@ -16,7 +16,7 @@ export default function Product() {
         return <LoadingScreen />;
 
     return (
-        <section className='mt-20 flex flex-col items-center lg:flex-row lg:justify-around lg:items-end w-full'>
+        <section className='mt-20 flex flex-col items-center lg:flex-row lg:justify-around lg:items-start w-full'>
             <div className='w-4/5 my-4 max-w-3xl lg:mb-0'>
                 <div className='flex flex-col justify-center items-center'>
                     <img className='max-h-64 w-60 px-4' src={item.image} alt={item.title} />
