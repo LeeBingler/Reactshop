@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useGetItemById, useItems } from '../components/Provider/ItemsProvider';
 import { useAddItemCart } from '../components/Provider/CartProvider';
 import LoadingScreen from './LoadingScreen';
+import { Link } from 'react-router-dom';
 
 export default function Product() {
     const idProduct= Number(useParams().id);
@@ -46,6 +47,13 @@ export default function Product() {
                 onClick={() => {onClickHandler(item, item.number + 1)}}
                 >
                     Add to Cart
+                </button>
+                <button
+                className='text-blue-400 text-xl lg:text-2xl border border-black rounded px-[3px] '
+                >
+                    <Link to={-1}>
+                        Go Back
+                    </Link>
                 </button>
             </div>
         </section>
