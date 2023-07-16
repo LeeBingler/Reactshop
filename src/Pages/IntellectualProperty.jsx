@@ -1,4 +1,5 @@
 import React from 'react'
+import GoBackBtn from '../components/GoBackBtn'
 
 export default function IntellectualProperty() {
   return (
@@ -35,6 +36,7 @@ export default function IntellectualProperty() {
                 </p>
             </div>
         </div>
+        <GoBackBtn />
     </section>
   )
 }

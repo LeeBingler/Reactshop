@@ -1,5 +1,5 @@
 import React from 'react'
-
+import GoBackBtn from '../components/GoBackBtn'
 export default function TermsAndConditions() {
 
     return (
@@ -7,7 +7,7 @@ export default function TermsAndConditions() {
             <h1 className='font-logo text-4xl underline pb-10 lg:pb-16'>
                 Terms and Conditions
             </h1>
-            <div className='max-w-2xl flex flex-col gap-7 px-7'>
+            <div className='max-w-2xl flex flex-col gap-7 px-7 pb-7'>
                 <h2 className='text-2xl underline'>
                     Open Source Software
                 </h2>
@@ -20,6 +20,7 @@ export default function TermsAndConditions() {
                     The terms and conditions of the applicable license for the Open Source Software are available on the LICENSE.txt file, which is provided with the SOFTWARE.
                 </p>
             </div>
+            <GoBackBtn />
         </section>
     )
 }
