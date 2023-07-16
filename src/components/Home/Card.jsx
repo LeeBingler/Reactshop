@@ -31,7 +31,7 @@ export default function Card({ item }) {
                     <button
                     className='md:text-base lg:text-lg border border-black rounded text-center align-middle px-[3px] mt-1 text-white bg-blue-900'
                     >
-                        <Link to={`/home/product/${item.id}`}>
+                        <Link to={`/product/${item.id}`}>
                             See details
                         </Link>
                     </button>
