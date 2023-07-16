@@ -1,6 +1,7 @@
 import React from 'react';
 import { useCart, useTotalPriceCart } from '../components/Provider/CartProvider';
 import CartCard from '../components/Cart/CartCard';
+import GoBackBtn from '../components/GoBackBtn';
 
 export default function Cart() {
   const ItemCart = useCart();
@@ -29,7 +30,7 @@ export default function Cart() {
           </p>
         </div>
 
-        <div className='flex flex-col items-center border border-black bg-white m-4 p-2 h-fit gap-4 min-w-[310px] lg:max-w-md lg:w-full lg:sticky lg:top-16'>
+        <div className='flex flex-col items-center border border-black bg-white m-4 p-2 h-fit gap-2 min-w-[310px] lg:max-w-md lg:w-full lg:sticky lg:top-16'>
           <p className='text-right text-xl whitespace-nowrap'>
             Total ({nbItem()} {nbItem() > 1 ? 'articles' : 'article'}): {totalPrice}$
           </p>
@@ -37,6 +38,7 @@ export default function Cart() {
           className="rounded border border-black p-2 m-2 bg-blue-400 text-white whitespace-nowrap">
             Proceed to Checkout
           </button>
+          <GoBackBtn />
         </div>
       </section>
     )
