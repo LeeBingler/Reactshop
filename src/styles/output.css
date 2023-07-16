@@ -654,10 +654,6 @@ video {
   margin-top: 1rem;
 }
 
-.mt-14{
-  margin-top: 3.5rem;
-}
-
 .block{
   display: block;
 }
@@ -919,11 +915,6 @@ video {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-gray-400{
-  --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\'\/public\/blob\.svg\'\)\]{
@@ -1234,7 +1225,7 @@ video {
 .btn-carousel{
   border-radius: 9999px;
   --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
   padding: 0.25rem;
   font-size: 1.5rem;
   line-height: 2rem;

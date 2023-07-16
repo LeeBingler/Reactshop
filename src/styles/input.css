@@ -26,7 +26,7 @@
 }
 
 .btn-carousel {
-    @apply bg-gray-400 rounded-full p-1 text-2xl opacity-80 md:text-3xl lg:text-4xl;
+    @apply bg-gray-200 rounded-full p-1 text-2xl opacity-80 md:text-3xl lg:text-4xl;
 }
 
 .btn-filter {
