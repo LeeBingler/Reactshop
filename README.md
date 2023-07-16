@@ -16,6 +16,9 @@ An ecommerce website build with React.JS and Tailwind
 1. React
 2. Tailwind
 
+## Testing Librairie
+- Vitest
+
 ## API's
 [Fake Store API](https://fakestoreapi.com/)
 
