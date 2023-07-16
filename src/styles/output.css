@@ -814,6 +814,10 @@ video {
   grid-template-rows: repeat(3, minmax(0, 1fr));
 }
 
+.flex-row{
+  flex-direction: row;
+}
+
 .flex-col{
   flex-direction: column;
 }
@@ -1055,6 +1059,14 @@ video {
 
 .pt-\[4\.5rem\]{
   padding-top: 4.5rem;
+}
+
+.pt-10{
+  padding-top: 2.5rem;
+}
+
+.pb-10{
+  padding-bottom: 2.5rem;
 }
 
 .text-center{
@@ -1644,6 +1656,14 @@ video {
 
   .lg\:pt-32{
     padding-top: 8rem;
+  }
+
+  .lg\:pb-1{
+    padding-bottom: 0.25rem;
+  }
+
+  .lg\:pb-16{
+    padding-bottom: 4rem;
   }
 
   .lg\:text-2xl{

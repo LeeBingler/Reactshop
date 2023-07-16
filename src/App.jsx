@@ -12,6 +12,7 @@ import Footer from './components/Footer/Footer';
 import Cart from './Pages/Cart';
 import Product from './Pages/Product';
 import IntellectualProperty from './Pages/IntellectualProperty';
+import TermsAndConditions from './Pages/TermsAndConditions';
 
 function App() {
 
@@ -27,7 +28,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="intellectual-property" element={<IntellectualProperty />} />
-          <Route path='*' element={<NoPage />} />
+          <Route path="terms-and-conditions" element={<TermsAndConditions /> } />
+          <Route path="*" element={<NoPage />} />
         </Routes>
         <Footer />
       </CartProvider>
