@@ -679,6 +679,10 @@ video {
   display: grid;
 }
 
+.list-item{
+  display: list-item;
+}
+
 .hidden{
   display: none;
 }
@@ -806,6 +810,10 @@ video {
   resize: both;
 }
 
+.list-inside{
+  list-style-position: inside;
+}
+
 .grid-cols-2{
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -824,6 +832,10 @@ video {
 
 .content-center{
   align-content: center;
+}
+
+.items-start{
+  align-items: flex-start;
 }
 
 .items-center{
@@ -856,6 +868,14 @@ video {
 
 .gap-7{
   gap: 1.75rem;
+}
+
+.gap-10{
+  gap: 2.5rem;
+}
+
+.gap-40{
+  gap: 10rem;
 }
 
 .gap-y-2{
@@ -981,6 +1001,11 @@ video {
   padding-right: 1.5rem;
 }
 
+.px-7{
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+
 .px-8{
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1016,9 +1041,13 @@ video {
   padding-bottom: 1.5rem;
 }
 
-.px-7{
-  padding-left: 1.75rem;
-  padding-right: 1.75rem;
+.px-10{
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.pb-10{
+  padding-bottom: 2.5rem;
 }
 
 .pb-4{
@@ -1059,14 +1088,6 @@ video {
 
 .pt-\[4\.5rem\]{
   padding-top: 4.5rem;
-}
-
-.pt-10{
-  padding-top: 2.5rem;
-}
-
-.pb-10{
-  padding-bottom: 2.5rem;
 }
 
 .text-center{
@@ -1155,6 +1176,11 @@ video {
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-purple-500{
+  --tw-text-opacity: 1;
+  color: rgb(168 85 247 / var(--tw-text-opacity));
 }
 
 .underline{
@@ -1342,6 +1368,21 @@ video {
 .hover\:text-gray-700:hover{
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+.hover\:text-gray-200:hover{
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity));
+}
+
+.hover\:text-gray-400:hover{
+  --tw-text-opacity: 1;
+  color: rgb(156 163 175 / var(--tw-text-opacity));
+}
+
+.hover\:text-purple-500:hover{
+  --tw-text-opacity: 1;
+  color: rgb(168 85 247 / var(--tw-text-opacity));
 }
 
 .hover\:shadow-2xl:hover{
@@ -1646,6 +1687,10 @@ video {
     padding-bottom: 0px;
   }
 
+  .lg\:pb-16{
+    padding-bottom: 4rem;
+  }
+
   .lg\:pb-20{
     padding-bottom: 5rem;
   }
@@ -1656,14 +1701,6 @@ video {
 
   .lg\:pt-32{
     padding-top: 8rem;
-  }
-
-  .lg\:pb-1{
-    padding-bottom: 0.25rem;
-  }
-
-  .lg\:pb-16{
-    padding-bottom: 4rem;
   }
 
   .lg\:text-2xl{
