@@ -32,3 +32,11 @@
 .btn-filter {
     @apply border rounded border-black p-[3px] m-1 font-logo text-lg hover:text-blue-400;
 }
+
+.subtitle-about {
+    @apply text-2xl lg:text-3xl;
+}
+
+.container-about {
+    @apply flex flex-col gap-2 lg:gap-4;
+}
