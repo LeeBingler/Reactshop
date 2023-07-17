@@ -26,7 +26,7 @@ export default function Cart() {
           </div>
           <hr className='mx-24 my-10' />
           <p className='text-right text-2xl mb-5 pr-4'>
-            Total ({ItemCart.length} {ItemCart.length > 1 ? 'articles' : 'article'}): {totalPrice}$
+            Total ({nbItem()} {nbItem() > 1 ? 'articles' : 'article'}): {totalPrice}$
           </p>
         </div>
 
