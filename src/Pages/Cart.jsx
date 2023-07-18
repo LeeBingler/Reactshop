@@ -35,7 +35,11 @@ export default function Cart() {
             Total ({nbItem()} {nbItem() > 1 ? 'articles' : 'article'}): {totalPrice}$
           </p>
           <button
-          className="rounded border border-black p-2 m-2 bg-blue-400 text-white whitespace-nowrap">
+          className="rounded border border-black p-2 m-2 bg-blue-400 text-white whitespace-nowrap"
+          onClick={() => {
+            window.alert(`The total amount that you need to pay is ${totalPrice}$`);
+          }}
+          >
             Proceed to Checkout
           </button>
           <GoBackBtn />
