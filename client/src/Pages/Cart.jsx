@@ -16,13 +16,32 @@ export default function Cart() {
     return nb;
   };
 
+  function payement() {
+    fetch(`${import.meta.env.VITE_URL_SERV}/create-checkout-session`, {
+      method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(ItemCart)
+    })
+    .then(res => {
+      if (res.ok)
+        return res.json();
+      return res.json().then(json => Promise.reject(json));
+    }).then(({ url }) => {
+      window.location = url;
+    }).catch(e => {
+      console.error(e.error);
+    })
+  };
+
     return (
       <section className='flex flex-col pt-20 pb-7 lg:pt-32 lg:pb-20 bg-gray-200 lg:flex-row lg:justify-around'>
         <div className='bg-white max-w-7xl border border-black lg:min-w-[700px]'>
           <h1 className='font-logo text-6xl ml-4 mt-4'> Your cart : </h1>
           <hr className='mx-14 mt-10'/>
           <div className='flex flex-col items-center'>
-            {ItemCart.map((item) => <CartCard item={item} /> )}
+            {ItemCart.map((item) => <CartCard key={item.id * 184821} item={item} /> )}
           </div>
           <hr className='mx-24 my-10' />
           <p className='text-right text-2xl mb-5 pr-4'>
@@ -36,9 +55,7 @@ export default function Cart() {
           </p>
           <button
           className="rounded border border-black p-2 m-2 bg-blue-400 text-white whitespace-nowrap"
-          onClick={() => {
-            window.alert(`The total amount that you need to pay is ${totalPrice}$`);
-          }}
+          onClick={payement}
           >
             Proceed to Checkout
           </button>
