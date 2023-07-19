@@ -15,6 +15,7 @@ An ecommerce website build with React.JS and Tailwind
 ## Frameworks and Libraries
 1. React
 2. Tailwind
+3. Node.JS
 
 ## Testing Librairie
 - Vitest
@@ -43,9 +44,12 @@ fetch('https://fakestoreapi.com/products/1')
 - Node.js
 - NPM
 
+##### Client
 ```javascript
+/* First go to the directory client */
+cd client
 
-/* First, Install the needed packages */
+/* After, Install the needed packages */
 npm install
 
 /* Then start the React app */
@@ -53,6 +57,19 @@ npm start
 
 /* To run the tests */
 npm run test
+
+```
+
+##### Server
+```javascript
+/* First go to the directory server */
+cd server
+
+/* After, Install the needed packages */
+npm install
+
+/* Then start the Server */
+npm start
 
 ```
 
