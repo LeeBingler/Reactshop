@@ -58,6 +58,11 @@ npm run server:dev
 /* The Test */
 npm run test
 ```
+## Deployement
+
+```javascript
+npm run build
+```
 
 ### Copyright and license
 
