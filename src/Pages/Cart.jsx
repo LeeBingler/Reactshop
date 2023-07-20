@@ -17,22 +17,7 @@ export default function Cart() {
   };
 
   function payement() {
-    fetch(`${import.meta.env.VITE_URL_SERV}/create-checkout-session`, {
-      method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(ItemCart)
-    })
-    .then(res => {
-      if (res.ok)
-        return res.json();
-      return res.json().then(json => Promise.reject(json));
-    }).then(({ url }) => {
-      window.location = url;
-    }).catch(e => {
-      console.error(e.error);
-    })
+    alert(`You have to pay: ${totalPrice}$`);
   };
 
     return (
