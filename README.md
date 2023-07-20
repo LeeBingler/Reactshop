@@ -51,10 +51,6 @@ npm install
 /* Then run the web App */
 npm run dev
 
-/* You can run only the server or only the app */
-npm run client:dev
-npm run server:dev
-
 /* The Test */
 npm run test
 ```
