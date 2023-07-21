@@ -773,6 +773,10 @@ video {
   width: 100vw;
 }
 
+.w-44{
+  width: 11rem;
+}
+
 .min-w-\[300px\]{
   min-width: 300px;
 }
@@ -951,6 +955,10 @@ video {
 
 .bg-\[url\(\'\/public\/blob\.svg\'\)\]{
   background-image: url('/public/blob.svg');
+}
+
+.bg-\[url\(\'\/blob\.svg\'\)\]{
+  background-image: url('/blob.svg');
 }
 
 .bg-no-repeat{
