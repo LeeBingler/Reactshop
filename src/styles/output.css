@@ -781,6 +781,18 @@ video {
   width: 11rem;
 }
 
+.w-\[896px\]{
+  width: 896px;
+}
+
+.w-\[px\]{
+  width: px;
+}
+
+.w-\[1024px\]{
+  width: 1024px;
+}
+
 .min-w-\[300px\]{
   min-width: 300px;
 }
