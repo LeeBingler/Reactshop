@@ -52,13 +52,13 @@ export default function NavBar() {
     return (
         <header className='fixed w-full top-0 bg-white z-50 h-14 md:shadow-lg'>
             <nav className='navbar'>
-                <button className={`md:hidden btn-navBar ml-3 ${menuActive}`} onClick={handleClickMenu} name='display menu'>
+                <button className={`md:hidden btn-navBar ml-3 ${menuActive}`} onClick={handleClickMenu} aria-label='display menu'>
                     <i className='bx bx-menu float-none inline text-3xl'></i>
                 </button>
                 <Link to='/home'>
                     <h1 className='font-logo md:ml-4'> React Shop </h1>
                 </Link>
-                <button className={`btn-navBar mr-3 md:mr-4 ${showCart ? 'text-blue-400' : ''}`} onClick={handleClickCart} name='display actual cart'>
+                <button className={`btn-navBar mr-3 md:mr-4 ${showCart ? 'text-blue-400' : ''}`} onClick={handleClickCart} aria-label='display actual cart'>
                     <i className='bx bxs-cart float-none inline text-3xl'></i>
                 </button>
             </nav>

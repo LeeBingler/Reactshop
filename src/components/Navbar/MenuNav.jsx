@@ -19,7 +19,7 @@ export default function MenuNav({ showMenu }) {
                 placeholder='Type to search..'>
                 </input>
                 <button
-                name='search button'
+                aria-label='search button'
                 className='text-2xl p-2 mt-4 h-11 border border-black bg-black text-white hover:text-blue-400
                     md:m-4 md:text-xl md:p-1 md:mr-1 md:h-10 md:ml-0 md:w-10'>
                     <i className='bx bx-search-alt'></i>

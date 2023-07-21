@@ -43,7 +43,7 @@ export default function Product() {
                     ${item.price}
                 </p>
                 <button
-                name='add this item to your cart'
+                aria-label='add this item to your cart'
                 className='text-xl lg:text-2xl border border-black rounded text-center align-middle px-[3px] text-white bg-blue-400'
                 onClick={() => {onClickHandler(item, item.number + 1)}}
                 >

@@ -39,7 +39,7 @@ export default function Cart() {
             Total ({nbItem()} {nbItem() > 1 ? 'articles' : 'article'}): {totalPrice}$
           </p>
           <button
-          name='checkout'
+          aria-label='checkout'
           className="rounded border border-black p-2 m-2 bg-blue-400 text-white whitespace-nowrap"
           onClick={payement}
           >

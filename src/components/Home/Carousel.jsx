@@ -44,10 +44,10 @@ export default function Carousel() {
             </div>
 
             <div className='flex justify-between absolute w-full top-[47%] px-3'>
-                <button id='prevBtn' className='btn-carousel' onClick={handleOnClickPrev} name='see previous image'>
+                <button id='prevBtn' className='btn-carousel' onClick={handleOnClickPrev} aria-label='see previous image'>
                     <i className='bx bx-chevron-left' ></i>
                 </button>
-                <button id='nextBtn' className='btn-carousel' onClick={handleOnClickNext} name='see next image'>
+                <button id='nextBtn' className='btn-carousel' onClick={handleOnClickNext} aria-label='see next image'>
                     <i className='bx bx-chevron-right'></i>
                 </button>
             </div>

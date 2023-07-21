@@ -23,14 +23,14 @@ export default function Card({ item }) {
                 </p>
                 <div className='flex flex-col gap-2 md:flex-row'>
                     <button
-                    name='add this item to your cart'
+                    aria-label='add this item to your cart'
                     className='md:text-base lg:text-lg border border-black rounded text-center align-middle px-[3px] mt-1 text-white bg-blue-400'
                     onClick={() => {onClickHandler(item, item.number + 1)}}
                     >
                         Add to Cart
                     </button>
                     <button
-                    name='see more detail item'
+                    aria-label='see more detail item'
                     className='md:text-base lg:text-lg border border-black rounded text-center align-middle px-[3px] mt-1 text-white bg-blue-900'
                     >
                         <Link to={`/product/${item.id}`}>

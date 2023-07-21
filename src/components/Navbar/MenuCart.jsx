@@ -15,7 +15,7 @@ export default function MenuCart({ showCart, hiddenCart }) {
         })}
         <p className='my-2 text-2xl'> {`Total: $${totalPrice}`} </p>
         <button
-        name='go to the cart page'
+        aria-label='go to the cart page'
         className='rounded border border-black p-[2px] text-blue-400 font-semibold text-2xl'
         onClick={() => hiddenCart()}
         >
