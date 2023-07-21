@@ -1654,6 +1654,54 @@ video {
     height: 7rem;
   }
 
+  .lg\:h-1\/3{
+    height: 33.333333%;
+  }
+
+  .lg\:h-2\/3{
+    height: 66.666667%;
+  }
+
+  .lg\:h-screen{
+    height: 100vh;
+  }
+
+  .lg\:h-\[30vh\]{
+    height: 30vh;
+  }
+
+  .lg\:min-h-\[30vh\]{
+    min-height: 30vh;
+  }
+
+  .lg\:min-h-\[40vh\]{
+    min-height: 40vh;
+  }
+
+  .lg\:min-h-\[50vh\]{
+    min-height: 50vh;
+  }
+
+  .lg\:min-h-\[70vh\]{
+    min-height: 70vh;
+  }
+
+  .lg\:min-h-\[60vh\]{
+    min-height: 60vh;
+  }
+
+  .lg\:min-h-\[59vh\]{
+    min-height: 59vh;
+  }
+
+  .lg\:min-h-\[vh\]{
+    min-height: vh;
+  }
+
+  .lg\:min-h-\[55vh\]{
+    min-height: 55vh;
+  }
+
   .lg\:w-1\/2{
     width: 50%;
   }
