@@ -17,12 +17,14 @@ export default function CartCard({ item }) {
                 <p className='text-gray-500 text-sm pt-2 lg:text-base'> {item.description} </p>
                 <div className='flex gap-7 mt-4'>
                     <button
+                    name='remove one item'
                     className='border rounded border-black p-1 m-1'
                     onClick={() => handleClickRemove(item, item.number - 1)}
                     >
                         Remove One
                     </button>
                     <button
+                    name='add one item'
                     className='rounded text-white bg-black p-1 m-1'
                     onClick={() => handleClickAdd(item, item.number + 1)}
                     >

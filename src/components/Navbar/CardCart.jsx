@@ -13,6 +13,7 @@ export default function CardCart({ item }) {
                 <p> x{item.number}</p>
             </div>
             <button
+            name='Remove item'
             className='rounded text-white bg-black p-1 h-10'
             onClick={() => {onClickHandler(item, item.number - 1)}}
             >

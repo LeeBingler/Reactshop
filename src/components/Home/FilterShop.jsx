@@ -11,30 +11,35 @@ export default function FilterShop({ filterFunction }) {
                 md:border-0 md:mt-0 md:h-16 md:w-[1000px] md:flex-wrap md:justify-normal md:pr-4 md:top-16 md:max-w-xs
                 lg:w-1/2'>
             <button
+            name='filter All'
             className='btn-filter'
             onClick={() => filterFunction({ filterType: ACTION.ALL, Items: AllItems })}
             >
                 All
             </button>
             <button
+            name="filter Women's Clothing"
             className='btn-filter'
             onClick={() => filterFunction({ filterType: ACTION.WOMEN, Items: AllItems })}
             >
                 Women's Clothing
             </button>
             <button
+            name="filter Men's Clothing"
             className='btn-filter'
             onClick={() => filterFunction({ filterType: ACTION.MEN, Items: AllItems })}
             >
                 Men's Clothing
             </button>
             <button
+            name="filter Jewelery"
             className='btn-filter'
             onClick={() => filterFunction({ filterType: ACTION.JEWELERY, Items: AllItems })}
             >
                 Jewelery
             </button>
             <button
+            name="filter Electronics"
             className='btn-filter'
             onClick={() => filterFunction({ filterType: ACTION.ELECTRONICS, Items: AllItems })}
             >
