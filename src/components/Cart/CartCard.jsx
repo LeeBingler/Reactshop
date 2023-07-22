@@ -1,6 +1,7 @@
-import { useAddItemCart, useRemoveItemCart } from '../Provider/CartProvider'
+import { PropTypes } from 'prop-types';
+import { useAddItemCart, useRemoveItemCart } from '../Provider/CartProvider';
 
-export default function CartCard({ item }) {
+function CartCard({ item }) {
     const handleClickRemove = useRemoveItemCart();
     const handleClickAdd = useAddItemCart();
 
@@ -33,4 +34,16 @@ export default function CartCard({ item }) {
             </div>
         </div>
     )
-    }
+}
+
+CartCard.propTypes = {
+    item: PropTypes.shape({
+        image: PropTypes.any.isRequired,
+        description: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        number: PropTypes.number.isRequired
+    })
+}
+
+export default CartCard;

@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
 import { useAddItemCart } from '../Provider/CartProvider';
 
-export default function Card({ item }) {
+function Card({ item }) {
     const onClickHandler = useAddItemCart();
 
     return (
@@ -41,3 +42,18 @@ export default function Card({ item }) {
         </div>
     )
 }
+
+Card.propTypes = {
+    item: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        image: PropTypes.any.isRequired,
+        title: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        number: PropTypes.number.isRequired,
+        rating: PropTypes.shape({
+            rate: PropTypes.number.isRequired
+        })
+    })
+}
+
+export default Card;
