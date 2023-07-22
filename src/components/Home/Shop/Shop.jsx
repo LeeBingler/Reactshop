@@ -1,16 +1,9 @@
 import { useReducer } from 'react'
-import { useItems } from '../Provider/ItemsProvider'
-import Card from './Card';
-import FilterShop from './FilterShop';
-import ScrollToTop from '../ScrollToTop';
-
-export const ACTION = {
-    ALL: 'all',
-    WOMEN: `women's clothing`,
-    MEN: `men's clothing`,
-    JEWELERY: 'jewelery',
-    ELECTRONICS: 'electronics'
-};
+import { useItems } from '../../Provider/ItemsProvider'
+import Card from './components/Card';
+import FilterShop from './components/FilterShop';
+import ScrollToTop from '../../ScrollToTop';
+import { ACTION } from './components/Action';
 
 function reducerFilterShop(state, action) {
     switch(action.filterType) {

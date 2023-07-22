@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MenuNav from './MenuNav';
-import MenuCart from './MenuCart';
+import MenuCart from './components/Menucart/MenuCart';
 
 export default function NavBar() {
     const [showMenu, setShowMenu] = useState(false);
