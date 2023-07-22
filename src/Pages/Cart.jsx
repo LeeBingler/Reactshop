@@ -1,4 +1,3 @@
-import React from 'react';
 import { useCart, useTotalPriceCart } from '../components/Provider/CartProvider';
 import CartCard from '../components/Cart/CartCard';
 import GoBackBtn from '../components/GoBackBtn';
@@ -18,7 +17,7 @@ export default function Cart() {
 
   function payement() {
     alert(`You have to pay: ${totalPrice}$`);
-  };
+  }
 
     return (
       <section className='flex flex-col pt-20 pb-7 bg-gray-200 lg:pt-32 lg:pb-20  lg:flex-row lg:justify-around lg:min-h-[60vh]'>
@@ -49,4 +48,4 @@ export default function Cart() {
         </div>
       </section>
     )
-};
+}

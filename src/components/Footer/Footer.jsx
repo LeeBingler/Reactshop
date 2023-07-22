@@ -1,4 +1,3 @@
-import React from 'react';
 import LinkFooter from './LinkFooter';
 import PrivacyFooter from './PrivacyFooter';
 
@@ -17,4 +16,4 @@ export default function Footer() {
         </p>
     </>
   )
-};
+}

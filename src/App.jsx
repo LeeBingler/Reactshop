@@ -1,5 +1,4 @@
 import './styles/output.css';
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ItemsProvider from './components/Provider/ItemsProvider';
 import CartProvider from './components/Provider/CartProvider';

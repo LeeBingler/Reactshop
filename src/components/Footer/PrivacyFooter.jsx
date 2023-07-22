@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function PrivacyFooter() {
@@ -12,4 +11,4 @@ export default function PrivacyFooter() {
         </div>
     </div>
   )
-};
+}

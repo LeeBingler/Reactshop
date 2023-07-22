@@ -1,4 +1,4 @@
-import React , { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Carousel() {
     const [index, setIndex] = useState(0);
@@ -28,7 +28,7 @@ export default function Carousel() {
             }, 6000);
 
         return () => clearTimeout(timer);
-    }, [index]);
+    }, [index, handleOnClickNext]);
 
     return (
         <section className='relative pt-[4.5rem] max-w-5xl'>

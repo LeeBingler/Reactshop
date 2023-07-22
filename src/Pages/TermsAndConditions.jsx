@@ -1,4 +1,3 @@
-import React from 'react'
 import GoBackBtn from '../components/GoBackBtn'
 export default function TermsAndConditions() {
 

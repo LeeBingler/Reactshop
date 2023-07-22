@@ -1,4 +1,3 @@
-import React from 'react';
 import InfoFooter from './InfoFooter';
 import { NavLink } from 'react-router-dom';
 

@@ -1,4 +1,3 @@
-import React from 'react'
 import { useCart, useTotalPriceCart } from '../Provider/CartProvider';
 import CardCart from './CardCart';
 import { Link } from 'react-router-dom';
@@ -25,4 +24,4 @@ export default function MenuCart({ showCart, hiddenCart }) {
         </button>
     </section>
   )
-};
+}

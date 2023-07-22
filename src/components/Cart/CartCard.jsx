@@ -1,4 +1,3 @@
-import React from 'react'
 import { useAddItemCart, useRemoveItemCart } from '../Provider/CartProvider'
 
 export default function CartCard({ item }) {

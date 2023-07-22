@@ -1,4 +1,3 @@
-import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useGetItemById, useItems } from '../components/Provider/ItemsProvider';
 import { useAddItemCart } from '../components/Provider/CartProvider';

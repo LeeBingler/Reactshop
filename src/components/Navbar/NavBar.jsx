@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MenuNav from './MenuNav';
 import MenuCart from './MenuCart';
@@ -20,7 +20,7 @@ export default function NavBar() {
         const updateDimension = () => {
             setScreenSize(getCurrentDimension());
         };
-    	window.addEventListener('resize', updateDimension);
+        window.addEventListener('resize', updateDimension);
 
 		if (screenSize.width > 768) {
             setShowMenu(true);

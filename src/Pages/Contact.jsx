@@ -1,4 +1,3 @@
-import React from 'react'
 import Forms from '../components/Contact/Forms';
 import Blob from '../components/Contact/Blob';
 

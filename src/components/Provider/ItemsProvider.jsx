@@ -27,7 +27,7 @@ export default function ItemsProvider({ children }) {
         return Items.filter((item) => {
             return item.id === id;
         })
-    };
+    }
 
     useEffect(() => {
         const fetchAllItems = async () => {

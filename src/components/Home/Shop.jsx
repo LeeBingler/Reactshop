@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react'
+import { useReducer } from 'react'
 import { useItems } from '../Provider/ItemsProvider'
 import Card from './Card';
 import FilterShop from './FilterShop';
@@ -35,7 +35,7 @@ function reducerFilterShop(state, action) {
         default:
             return state;
     }
-};
+}
 
 export default function Shop() {
     const [itemsDisplay, dispatch] = useReducer(reducerFilterShop, useItems());
@@ -52,4 +52,4 @@ export default function Shop() {
             <ScrollToTop />
         </section>
     )
-};
+}

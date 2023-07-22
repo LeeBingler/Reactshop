@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function NoPage() {
   return (
     <div className='bg-red-600 h-screen flex justify-center items-center'>
