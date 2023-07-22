@@ -2,11 +2,8 @@ import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import { useAddItemCart } from '../../../Provider/CartProvider';
 
-function Card({ item }) {
-    const addItemCart = useAddItemCart();
-    const onClickHandler = () => {
-        addItemCart(item, item.number + 1);
-    }
+function Card({ item }) {;
+    const onClickHandler = useAddItemCart()
 
     return (
         <div className='flex flex-col justify-center bg-white border border-black rounded m-4 p-2 py-10 lg:hover:shadow-2xl lg:hover:scale-[1.02] transition-transform ease-linear duration-200'>

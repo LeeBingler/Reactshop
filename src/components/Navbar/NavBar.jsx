@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MenuNav from './components//MenuNav';
 import MenuCart from './components/Menucart/MenuCart';
+import BtnCart from './components/BtnCart';
 
 export default function NavBar() {
     const [showMenu, setShowMenu] = useState(false);
@@ -58,9 +59,7 @@ export default function NavBar() {
                 <Link to='/home'>
                     <h1 className='font-logo md:ml-4'> React Shop </h1>
                 </Link>
-                <button className={`btn-navBar mr-3 md:mr-4 ${showCart ? 'text-blue-400' : ''}`} onClick={handleClickCart} aria-label='display actual cart'>
-                    <i className='bx bxs-cart float-none inline text-3xl'></i>
-                </button>
+                <BtnCart showCart={showCart} handleClickCart={handleClickCart}/>
             </nav>
             <MenuNav showMenu={showMenu} />
             <MenuCart showCart={showCart} hiddenCart={handleClickCart} />
