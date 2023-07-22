@@ -37,7 +37,7 @@ export default function CartProvider({ children }) {
             newArray = newArray.filter((item) => item.number > 0);
             return newArray;
         })
-    };
+    }
 
     function addItemCart(newItem, number) {
         function checkNewItemInCart(oldCart) {

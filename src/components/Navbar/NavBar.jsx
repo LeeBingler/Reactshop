@@ -28,10 +28,10 @@ export default function NavBar() {
             setShowMenu(false);
         }
 
-    	return(() => {
-        	window.removeEventListener('resize', updateDimension);
-    	})
-  	}, [screenSize]);
+        return(() => {
+            window.removeEventListener('resize', updateDimension);
+        })
+        }, [screenSize]);
 
     function handleClickMenu() {
         setShowMenu(prev => !prev);
