@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import MenuNav from './MenuNav';
+import MenuNav from './components//MenuNav';
 import MenuCart from './components/Menucart/MenuCart';
 
 export default function NavBar() {

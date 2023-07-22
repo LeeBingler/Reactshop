@@ -1,4 +1,4 @@
-import { ACTION } from './Shop';
+import { ACTION } from './Action';
 import { useItems } from '../../../Provider/ItemsProvider';
 import { PropTypes } from 'prop-types';
 

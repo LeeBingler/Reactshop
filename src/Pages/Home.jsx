@@ -1,5 +1,5 @@
 import Carousel from '../components/Home/Carousel';
-import Shop from '../components/Home/Shop';
+import Shop from '../components/Home/Shop/Shop';
 
 export default function Home() {
 

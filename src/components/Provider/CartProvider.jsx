@@ -24,7 +24,6 @@ export function useTotalPriceCart () {
 
 function CartProvider({ children }) {
     const [cart, setCart] = useState([]);
-
     function removeItemCart(ItemToRemove, number) {
 
         setCart(prev => {
@@ -86,7 +85,7 @@ function CartProvider({ children }) {
 }
 
 CartProvider.propTypes = {
-    children: PropTypes.element
+    children: PropTypes.arrayOf(PropTypes.element)
 }
 
 export default CartProvider;
