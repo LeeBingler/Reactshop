@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import { useAddItemCart } from '../../../Provider/CartProvider';
 
-function Card({ item }) {;
+function Card({ item }) {
     const onClickHandler = useAddItemCart()
 
     return (

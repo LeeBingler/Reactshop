@@ -1,4 +1,5 @@
 import { useCart } from '../../Provider/CartProvider'
+import { PropTypes } from 'prop-types';
 
 function BtnCart({ showCart, handleClickCart }) {
     const itemCart = useCart();
@@ -31,6 +32,11 @@ function BtnCart({ showCart, handleClickCart }) {
             }
         </button>
     )
+}
+
+BtnCart.propTypes = {
+    showCart: PropTypes.bool,
+    handleClickCart: PropTypes.func
 }
 
 export default BtnCart
