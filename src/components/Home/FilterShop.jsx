@@ -1,7 +1,8 @@
-import { ACTION } from './Shop'
-import { useItems } from '../Provider/ItemsProvider'
+import { ACTION } from './Shop';
+import { useItems } from '../Provider/ItemsProvider';
+import { PropTypes } from 'prop-types';
 
-export default function FilterShop({ filterFunction }) {
+function FilterShop({ filterFunction }) {
     const AllItems = useItems();
 
     return (
@@ -47,3 +48,9 @@ export default function FilterShop({ filterFunction }) {
         </section>
     )
 }
+
+FilterShop.propTypes = {
+    filterFunction: PropTypes.func.isRequired
+}
+
+export default FilterShop;

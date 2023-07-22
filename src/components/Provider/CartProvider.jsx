@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { PropTypes } from 'prop-types';
 
 export const CartContext = React.createContext();
 export const AddCartContext = React.createContext();
@@ -21,7 +22,7 @@ export function useTotalPriceCart () {
     return useContext(TotalPriceCartContext);
 }
 
-export default function CartProvider({ children }) {
+function CartProvider({ children }) {
     const [cart, setCart] = useState([]);
 
     function removeItemCart(ItemToRemove, number) {
@@ -83,3 +84,9 @@ export default function CartProvider({ children }) {
         </CartContext.Provider>
     )
 }
+
+CartProvider.propTypes = {
+    children: PropTypes.element
+}
+
+export default CartProvider;
