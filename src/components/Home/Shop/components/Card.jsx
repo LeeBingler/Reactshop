@@ -24,7 +24,7 @@ function Card({ item }) {
                 <div className='flex flex-col gap-2 md:flex-row'>
                     <button
                     aria-label='add this item to your cart'
-                    className='px-4 py-1 mt-2 bg-blue-400 rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-75 transition-transform'
+                    className='btn-addToCart'
                     onClick={() => {onClickHandler(item, item.number + 1)}}
                     >
                         Add to Cart
