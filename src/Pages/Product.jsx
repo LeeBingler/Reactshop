@@ -43,7 +43,7 @@ export default function Product() {
                 </p>
                 <button
                 aria-label='add this item to your cart'
-                className='text-xl lg:text-2xl border border-black rounded text-center align-middle px-[3px] text-white bg-blue-400'
+                className='btn-addToCart'
                 onClick={() => {onClickHandler(item, item.number + 1)}}
                 >
                     Add to Cart

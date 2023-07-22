@@ -33,6 +33,10 @@
     @apply border rounded border-black p-[3px] m-1 font-logo text-base lg:text-xl hover:text-blue-400;
 }
 
+.btn-addToCart {
+    @apply px-4 py-1 mt-2 bg-blue-400 rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-75 transition-transform;
+}
+
 .subtitle-about {
     @apply text-2xl lg:text-3xl;
 }
