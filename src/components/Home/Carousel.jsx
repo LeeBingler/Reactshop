@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 export default function Carousel() {
     const [index, setIndex] = useState(0);
@@ -13,14 +13,14 @@ export default function Carousel() {
         setIndex(prev => prev - 1);
     }
 
-    function handleOnClickNext() {
+    const handleOnClickNext = useCallback(() => {
         if (index >= lenghtMax) {
             setIndex(0);
             return;
         }
 
         setIndex(prev => prev + 1);
-    }
+    }, [index])
 
     useEffect(() => {
         const timer = setTimeout(() => {
