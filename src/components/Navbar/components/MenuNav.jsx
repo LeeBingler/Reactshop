@@ -1,8 +1,8 @@
-import React from 'react';
 import InfoFooter from './InfoFooter';
 import { NavLink } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
 
-export default function MenuNav({ showMenu }) {
+function MenuNav({ showMenu }) {
     const isHidden = showMenu ? 'w-3/4' : 'w-0';
 
     return (
@@ -41,3 +41,9 @@ export default function MenuNav({ showMenu }) {
         </div>
     )
 }
+
+MenuNav.propTypes = {
+    showMenu: PropTypes.bool.isRequired
+}
+
+export default MenuNav;

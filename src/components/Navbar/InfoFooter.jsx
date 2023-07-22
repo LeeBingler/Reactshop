@@ -1,7 +1,7 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
 
-export default function InfoFooter({classProps}) {
+function InfoFooter({ classProps }) {
 
     return (
         <section className={classProps} >
@@ -13,3 +13,9 @@ export default function InfoFooter({classProps}) {
         </section>
     )
 }
+
+InfoFooter.propTypes = {
+    classProps: PropTypes.string
+}
+
+export default InfoFooter;

@@ -1,16 +1,9 @@
-import React, { useReducer, useState } from 'react'
-import { useItems } from '../Provider/ItemsProvider'
-import Card from './Card';
-import FilterShop from './FilterShop';
-import ScrollToTop from '../ScrollToTop';
-
-export const ACTION = {
-    ALL: 'all',
-    WOMEN: `women's clothing`,
-    MEN: `men's clothing`,
-    JEWELERY: 'jewelery',
-    ELECTRONICS: 'electronics'
-};
+import { useReducer } from 'react'
+import { useItems } from '../../Provider/ItemsProvider'
+import Card from './components/Card';
+import FilterShop from './components/FilterShop';
+import ScrollToTop from '../../ScrollToTop';
+import { ACTION } from './components/Action';
 
 function reducerFilterShop(state, action) {
     switch(action.filterType) {
@@ -35,7 +28,7 @@ function reducerFilterShop(state, action) {
         default:
             return state;
     }
-};
+}
 
 export default function Shop() {
     const [itemsDisplay, dispatch] = useReducer(reducerFilterShop, useItems());
@@ -52,4 +45,4 @@ export default function Shop() {
             <ScrollToTop />
         </section>
     )
-};
+}

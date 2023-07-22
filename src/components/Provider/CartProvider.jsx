@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { PropTypes } from 'prop-types';
 
 export const CartContext = React.createContext();
 export const AddCartContext = React.createContext();
@@ -7,11 +8,11 @@ export const TotalPriceCartContext = React.createContext();
 
 export function useCart() {
     return useContext(CartContext);
-};
+}
 
 export function useAddItemCart() {
     return useContext(AddCartContext);
-};
+}
 
 export function useRemoveItemCart () {
     return useContext(RemoveCartContext);
@@ -21,7 +22,7 @@ export function useTotalPriceCart () {
     return useContext(TotalPriceCartContext);
 }
 
-export default function CartProvider({ children }) {
+function CartProvider({ children }) {
     const [cart, setCart] = useState([]);
 
     function removeItemCart(ItemToRemove, number) {
@@ -36,16 +37,16 @@ export default function CartProvider({ children }) {
 
             newArray = newArray.filter((item) => item.number > 0);
             return newArray;
-        });
-    };
+        })
+    }
 
     function addItemCart(newItem, number) {
         function checkNewItemInCart(oldCart) {
             const ItemIsIn = oldCart.filter((item) => {
                                 return item.id === newItem.id
-                            });
+                            })
             return ItemIsIn.length;
-        };
+        }
 
         setCart(prev => {
             if (checkNewItemInCart(prev)) {
@@ -58,15 +59,15 @@ export default function CartProvider({ children }) {
             }
             newItem.number = 1;
             return [...prev, newItem];
-        });
-    };
+        })
+    }
 
     function totalPriceCart() {
         let total = 0;
 
         cart.forEach(elem => {
             total += elem.price * elem.number;
-        });
+        })
 
         return total.toFixed(2);
     }
@@ -82,4 +83,10 @@ export default function CartProvider({ children }) {
             </AddCartContext.Provider>
         </CartContext.Provider>
     )
-};
+}
+
+CartProvider.propTypes = {
+    children: PropTypes.element
+}
+
+export default CartProvider;

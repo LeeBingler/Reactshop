@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import LoadingScreen from '../../Pages/LoadingScreen';
+import { PropTypes } from 'prop-types';
 
 
 export const ItemsContext = React.createContext();
@@ -13,7 +14,7 @@ export function useGetItemById() {
     return useContext(GetItemByIdContext);
 }
 
-export default function ItemsProvider({ children }) {
+function ItemsProvider({ children }) {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -27,7 +28,7 @@ export default function ItemsProvider({ children }) {
         return Items.filter((item) => {
             return item.id === id;
         })
-    };
+    }
 
     useEffect(() => {
         const fetchAllItems = async () => {
@@ -58,3 +59,9 @@ export default function ItemsProvider({ children }) {
         </ItemsContext.Provider>
     )
 }
+
+ItemsProvider.propTypes = {
+    children: PropTypes.element
+}
+
+export default ItemsProvider;

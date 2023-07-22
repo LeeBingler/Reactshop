@@ -1,6 +1,5 @@
-import React from 'react';
-import LinkFooter from './LinkFooter';
-import PrivacyFooter from './PrivacyFooter';
+import LinkFooter from './components/LinkFooter';
+import PrivacyFooter from './components/PrivacyFooter';
 
 export default function Footer() {
   return (
@@ -17,4 +16,4 @@ export default function Footer() {
         </p>
     </>
   )
-};
+}

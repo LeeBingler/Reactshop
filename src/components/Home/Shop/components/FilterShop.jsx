@@ -1,8 +1,8 @@
-import React, { useReducer } from 'react'
-import { ACTION } from './Shop'
-import { useItems } from '../Provider/ItemsProvider'
+import { ACTION } from './Shop';
+import { useItems } from '../../../Provider/ItemsProvider';
+import { PropTypes } from 'prop-types';
 
-export default function FilterShop({ filterFunction }) {
+function FilterShop({ filterFunction }) {
     const AllItems = useItems();
 
     return (
@@ -22,14 +22,14 @@ export default function FilterShop({ filterFunction }) {
             className='btn-filter'
             onClick={() => filterFunction({ filterType: ACTION.WOMEN, Items: AllItems })}
             >
-                Women's Clothing
+                Women&apos;s Clothing
             </button>
             <button
             aria-label="filter Men's Clothing"
             className='btn-filter'
             onClick={() => filterFunction({ filterType: ACTION.MEN, Items: AllItems })}
             >
-                Men's Clothing
+                Men&apos;s Clothing
             </button>
             <button
             aria-label="filter Jewelery"
@@ -48,3 +48,9 @@ export default function FilterShop({ filterFunction }) {
         </section>
     )
 }
+
+FilterShop.propTypes = {
+    filterFunction: PropTypes.func.isRequired
+}
+
+export default FilterShop;

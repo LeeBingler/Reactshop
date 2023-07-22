@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MenuNav from './MenuNav';
-import MenuCart from './MenuCart';
+import MenuCart from './components/Menucart/MenuCart';
 
 export default function NavBar() {
     const [showMenu, setShowMenu] = useState(false);
@@ -20,7 +20,7 @@ export default function NavBar() {
         const updateDimension = () => {
             setScreenSize(getCurrentDimension());
         };
-    	window.addEventListener('resize', updateDimension);
+        window.addEventListener('resize', updateDimension);
 
 		if (screenSize.width > 768) {
             setShowMenu(true);
@@ -28,10 +28,10 @@ export default function NavBar() {
             setShowMenu(false);
         }
 
-    	return(() => {
-        	window.removeEventListener('resize', updateDimension);
-    	})
-  	}, [screenSize]);
+        return(() => {
+            window.removeEventListener('resize', updateDimension);
+        })
+        }, [screenSize]);
 
     function handleClickMenu() {
         setShowMenu(prev => !prev);
