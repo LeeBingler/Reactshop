@@ -3,7 +3,10 @@ import { PropTypes } from 'prop-types';
 import { useAddItemCart } from '../../../Provider/CartProvider';
 
 function Card({ item }) {
-    const onClickHandler = useAddItemCart();
+    const addItemCart = useAddItemCart();
+    const onClickHandler = () => {
+        addItemCart(item, item.number + 1);
+    }
 
     return (
         <div className='flex flex-col justify-center bg-white border border-black rounded m-4 p-2 py-10 lg:hover:shadow-2xl lg:hover:scale-[1.02] transition-transform ease-linear duration-200'>
@@ -24,14 +27,14 @@ function Card({ item }) {
                 <div className='flex flex-col gap-2 md:flex-row'>
                     <button
                     aria-label='add this item to your cart'
-                    className='md:text-base lg:text-lg border border-black rounded text-center align-middle px-[3px] mt-1 text-white bg-blue-400'
+                    className='px-4 py-1 mt-2 bg-blue-400 rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-75 transition-transform'
                     onClick={() => {onClickHandler(item, item.number + 1)}}
                     >
                         Add to Cart
                     </button>
                     <button
                     aria-label='see more detail item'
-                    className='md:text-base lg:text-lg border border-black rounded text-center align-middle px-[3px] mt-1 text-white bg-blue-900'
+                    className='px-4 py-1 mt-2 bg-blue-900 rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-75 transition-transform'
                     >
                         <Link to={`/product/${item.id}`}>
                             See details
