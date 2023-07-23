@@ -61,7 +61,7 @@ export default function NavBar() {
                 </Link>
                 <BtnCart showCart={showCart} handleClickCart={handleClickCart}/>
             </nav>
-            <MenuNav showMenu={showMenu} />
+            <MenuNav showMenu={showMenu} handleClickMenu={handleClickMenu} />
             <MenuCart showCart={showCart} hiddenCart={handleClickCart} />
         </header>
     )

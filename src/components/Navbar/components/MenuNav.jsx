@@ -2,7 +2,7 @@ import InfoFooter from '../InfoFooter';
 import { NavLink } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 
-function MenuNav({ showMenu }) {
+function MenuNav({ showMenu, handleClickMenu}) {
     const isHidden = showMenu ? 'w-3/4' : 'w-0';
 
     return (
@@ -28,13 +28,19 @@ function MenuNav({ showMenu }) {
             <div className='flex flex-col
                 md:flex-row md:justify-around md:pl-84 md:w-full'>
                 <NavLink className='linknavbar' to='/home'>
-                    Home
+                    <button onClick={handleClickMenu}>
+                        Home
+                    </button>
                 </NavLink>
                 <NavLink className='linknavbar' to='/about'>
-                    About
+                    <button onClick={handleClickMenu}>
+                        About
+                    </button>
                 </NavLink>
                 <NavLink className='linknavbar' to='/contact'>
-                    Contact
+                    <button onClick={handleClickMenu}>
+                        Contact
+                    </button>
                 </NavLink>
             </div>
             <InfoFooter classProps={'pt-48 flex flex-col gap-4 md:hidden'}/>
@@ -43,7 +49,8 @@ function MenuNav({ showMenu }) {
 }
 
 MenuNav.propTypes = {
-    showMenu: PropTypes.bool.isRequired
+    showMenu: PropTypes.bool.isRequired,
+    handleClickMenu: PropTypes.func.isRequired
 }
 
 export default MenuNav;
