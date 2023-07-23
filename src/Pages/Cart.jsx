@@ -37,13 +37,15 @@ export default function Cart() {
           <p className='text-right text-xl whitespace-nowrap'>
             Total ({nbItem()} {nbItem() > 1 ? 'articles' : 'article'}): {totalPrice}$
           </p>
-          <button
-          aria-label='checkout'
-          className="rounded border border-black p-2 m-2 bg-blue-400 text-white whitespace-nowrap"
-          onClick={payement}
-          >
-            Proceed to Checkout
-          </button>
+          { totalPrice == 0 ? '' :
+            <button
+            aria-label='checkout'
+            className="rounded border border-black p-2 m-2 bg-blue-400 text-white whitespace-nowrap"
+            onClick={payement}
+            >
+              Proceed to Checkout
+            </button>
+          }
           <GoBackBtn />
         </div>
       </section>
