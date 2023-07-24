@@ -4,12 +4,8 @@ import MenuNav from './components//MenuNav';
 import MenuCart from './components/Menucart/MenuCart';
 import BtnCart from './components/BtnCart';
 
-export default function NavBar() {
-    const [showMenu, setShowMenu] = useState(false);
-    const [showCart, setShowCart] = useState(false);
+function useScreenSizeShow(setShowMenu) {
     const [screenSize, setScreenSize] = useState(getCurrentDimension());
-    const navBarRef = useRef(null);
-    const location = useLocation();
 
     function getCurrentDimension(){
         return {
@@ -34,12 +30,20 @@ export default function NavBar() {
         return(() => {
             window.removeEventListener('resize', updateDimension);
         })
-        }, [screenSize]);
+    }, [screenSize, setShowMenu]);
+}
+
+function useCloseMenuLocationChange(setShowMenu) {
+    const location = useLocation();
 
     /* Effect to know when the URL change and to close the menunavbar */
     useEffect(() => {
         setShowMenu(false);
-    }, [location])
+    }, [location, setShowMenu])
+}
+
+function useCloseMenuNotClick (setShowMenu, setShowCart) {
+    const navBarRef = useRef(null);
 
     /* Effect use to close menu if the use click outside of it */
     useEffect(() => {
@@ -54,7 +58,18 @@ export default function NavBar() {
         return () => {
             document.removeEventListener("mousedown", handleClickOutsideNavBar);
         };
-    }, [navBarRef]);
+    }, [navBarRef, setShowMenu, setShowCart]);
+
+    return navBarRef;
+}
+
+export default function NavBar() {
+    const [showMenu, setShowMenu] = useState(false);
+    const [showCart, setShowCart] = useState(false);
+    const navBarRef = useCloseMenuNotClick(setShowMenu, setShowCart);
+
+    useScreenSizeShow(setShowMenu);
+    useCloseMenuLocationChange(setShowMenu);
 
     function handleClickMenu() {
         setShowMenu(prev => !prev);
