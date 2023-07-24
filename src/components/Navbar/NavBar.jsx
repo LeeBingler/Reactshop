@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import MenuNav from './components//MenuNav';
 import MenuCart from './components/Menucart/MenuCart';
 import BtnCart from './components/BtnCart';
@@ -8,6 +8,7 @@ export default function NavBar() {
     const [showMenu, setShowMenu] = useState(false);
     const [showCart, setShowCart] = useState(false);
     const [screenSize, setScreenSize] = useState(getCurrentDimension());
+    const location = useLocation();
 
     function getCurrentDimension(){
         return {
@@ -33,6 +34,11 @@ export default function NavBar() {
             window.removeEventListener('resize', updateDimension);
         })
         }, [screenSize]);
+
+    /* Effect to know when the URL change and to close the menunavbar */
+    useEffect(() => {
+        setShowMenu(false);
+    }, [location])
 
     function handleClickMenu() {
         setShowMenu(prev => !prev);
@@ -61,7 +67,7 @@ export default function NavBar() {
                 </Link>
                 <BtnCart showCart={showCart} handleClickCart={handleClickCart}/>
             </nav>
-            <MenuNav showMenu={showMenu} handleClickMenu={handleClickMenu} />
+            <MenuNav showMenu={showMenu} />
             <MenuCart showCart={showCart} hiddenCart={handleClickCart} />
         </header>
     )
