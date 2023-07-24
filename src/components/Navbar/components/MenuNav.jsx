@@ -44,7 +44,6 @@ function MenuNav({ showMenu }) {
 
 MenuNav.propTypes = {
     showMenu: PropTypes.bool.isRequired,
-    handleClickMenu: PropTypes.func.isRequired
 }
 
 export default MenuNav;

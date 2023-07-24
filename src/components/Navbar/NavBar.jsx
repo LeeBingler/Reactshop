@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import MenuNav from './components//MenuNav';
 import MenuCart from './components/Menucart/MenuCart';
@@ -8,6 +8,7 @@ export default function NavBar() {
     const [showMenu, setShowMenu] = useState(false);
     const [showCart, setShowCart] = useState(false);
     const [screenSize, setScreenSize] = useState(getCurrentDimension());
+    const navBarRef = useRef(null);
     const location = useLocation();
 
     function getCurrentDimension(){
@@ -40,6 +41,21 @@ export default function NavBar() {
         setShowMenu(false);
     }, [location])
 
+    /* Effect use to close menu if the use click outside of it */
+    useEffect(() => {
+        function handleClickOutsideNavBar(event) {
+            if (navBarRef.current && !navBarRef.current.contains(event.target)) {
+                setShowMenu(false);
+                setShowCart(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutsideNavBar);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutsideNavBar);
+        };
+    }, [navBarRef]);
+
     function handleClickMenu() {
         setShowMenu(prev => !prev);
         if (showCart) {
@@ -57,7 +73,10 @@ export default function NavBar() {
     const menuActive = showMenu ? 'text-blue-400' : 'text-black';
 
     return (
-        <header className='fixed w-full top-0 bg-white z-50 h-14 md:shadow-lg'>
+        <header
+        ref={navBarRef}
+        className='fixed w-full top-0 bg-white z-50 h-14 md:shadow-lg'
+        >
             <nav className='navbar'>
                 <button className={`md:hidden btn-navBar ml-3 ${menuActive}`} onClick={handleClickMenu} aria-label='display menu'>
                     <i className='bx bx-menu float-none inline text-3xl'></i>
@@ -67,7 +86,7 @@ export default function NavBar() {
                 </Link>
                 <BtnCart showCart={showCart} handleClickCart={handleClickCart}/>
             </nav>
-            <MenuNav showMenu={showMenu} />
+            <MenuNav showMenu={showMenu} navBarRef={navBarRef} />
             <MenuCart showCart={showCart} hiddenCart={handleClickCart} />
         </header>
     )
