@@ -1,9 +1,11 @@
 import InfoFooter from '../InfoFooter';
+import useDetectKeyboardOpen from "use-detect-keyboard-open";
 import { NavLink } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 
 function MenuNav({ showMenu }) {
-    const isHidden = showMenu ? 'w-3/4' : 'w-0';
+    const isKeyboardOpen = useDetectKeyboardOpen();
+    const isHidden = showMenu || isKeyboardOpen ? 'w-3/4' : 'w-0';
 
     return (
         <div
