@@ -1,5 +1,5 @@
 import { useReducer } from 'react'
-import { useItems } from '../../Provider/Items/Hook'
+import { useItems } from '../../Provider/ItemsProvider/Hook'
 import Card from './components/Card';
 import FilterShop from './components/FilterShop';
 import ScrollToTop from '../../ScrollToTop';

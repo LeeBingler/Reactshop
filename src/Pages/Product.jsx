@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
-import { useGetItemById, useItems } from '../components/Provider/Items/Hook';
-import { useAddItemCart } from '../components/Provider/Cart/Hook';
+import { useGetItemById, useItems } from '../components/Provider/ItemsProvider/Hook';
+import { useAddItemCart } from '../components/Provider/CartProvider/Hook';
 import LoadingScreen from './LoadingScreen';
 import GoBackBtn from '../components/GoBackBtn';
 

@@ -1,5 +1,5 @@
 import { PropTypes } from 'prop-types';
-import { useAddItemCart, useRemoveItemCart } from '../Provider/Cart/Hook';
+import { useAddItemCart, useRemoveItemCart } from '../Provider/CartProvider/Hook';
 
 function CartCard({ item }) {
     const handleClickRemove = useRemoveItemCart();

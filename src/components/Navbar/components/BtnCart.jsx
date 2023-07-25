@@ -1,4 +1,4 @@
-import { useCart } from '../../Provider/Cart/Hook'
+import { useCart } from '../../Provider/CartProvider/Hook'
 import { PropTypes } from 'prop-types';
 
 function BtnCart({ showCart, handleClickCart }) {

@@ -1,5 +1,5 @@
 import { ACTION } from './Action';
-import { useItems } from '../../../Provider/Items/Hook';
+import { useItems } from '../../../Provider/ItemsProvider/Hook';
 import { PropTypes } from 'prop-types';
 
 function FilterShop({ filterFunction }) {

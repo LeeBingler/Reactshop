@@ -1,4 +1,4 @@
-import { useCart, useTotalPriceCart } from '../../../Provider/Cart/Hook';
+import { useCart, useTotalPriceCart } from '../../../Provider/CartProvider/Hook';
 import CardCart from './components/CardCart';
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';

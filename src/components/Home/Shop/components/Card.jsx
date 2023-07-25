@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
-import { useAddItemCart } from '../../../Provider/Cart/Hook';
+import { useAddItemCart } from '../../../Provider/CartProvider/Hook';
 
 function Card({ item }) {
     const onClickHandler = useAddItemCart()

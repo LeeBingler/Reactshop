@@ -1,7 +1,7 @@
 import './styles/output.css';
 import { Routes, Route } from 'react-router-dom';
-import ItemsProvider from './components/Provider/Items/ItemsProvider';
-import CartProvider from './components/Provider/Cart/CartProvider';
+import ItemsProvider from './components/Provider/ItemsProvider/ItemsProvider';
+import CartProvider from './components/Provider/CartProvider/CartProvider';
 import NoPage from './Pages/NoPage';
 import Home from './Pages/Home';
 import About from './Pages/About';
