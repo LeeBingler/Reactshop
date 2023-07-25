@@ -15,7 +15,7 @@ export default function NoPage() {
         404 Not Found!!
       </h1>
       <div className="flex justify-center items-center">
-        <img src="/public/error.jpeg" alt="" style={imageStyle}/>
+        <img src="/error.jpeg" alt="" style={imageStyle}/>
       </div>
 
       <p className="text-2xl font-bold">
