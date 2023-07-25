@@ -54,9 +54,10 @@ But of course, you can finish your contribution and create a PR without notifyin
 - **Step 1** - [Fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks) this repository.
 - **Step 2** - Clone the repository to your local machine.
 - **Step 3** - Add the changes to your repository.
-- **Step 4** - Create a PULL Request from forked project to ReactShop. We may ask for changes to be made before a PR can be merge.
-- **Step 5** - Congratulations 🎉🎉 Your PR is approved and Merged !!!
-- **Step 6** - Thank You, You becomes one of the contributor of ReactShop 🎉🎉 .
+- **Step 4** - run the command `npm run lint` and `npm run test` in order to know that nothing is broken.
+- **Step 5** - Create a PULL Request from forked project to ReactShop. We may ask for changes to be made before a PR can be merge.
+- **Step 6** - Congratulations 🎉🎉 Your PR is approved and Merged !!!
+- **Step 7** - Thank You, You becomes one of the contributor of ReactShop 🎉🎉 .
 
 If the steps above isn't very clear, you can search ["GitHub Forks and Pull Requests" on Youtube](https://www.youtube.com/watch?v=a_FLqX3vGR4).
 
