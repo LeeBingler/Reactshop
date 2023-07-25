@@ -1,4 +1,4 @@
-import { useRemoveItemCart } from '../../../../Provider/CartProvider';
+import { useRemoveItemCart } from '../../../../Provider/Cart/Hook';
 import { PropTypes } from 'prop-types';
 
 function CardCart({ item }) {

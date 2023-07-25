@@ -1,18 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
-import LoadingScreen from '../../Pages/LoadingScreen';
+import React, { useEffect, useState } from 'react';
+import LoadingScreen from '../../../Pages/LoadingScreen';
 import { PropTypes } from 'prop-types';
 
 
 export const ItemsContext = React.createContext();
 export const GetItemByIdContext = React.createContext();
-
-export function useItems() {
-    return useContext(ItemsContext);
-}
-
-export function useGetItemById() {
-    return useContext(GetItemByIdContext);
-}
 
 function ItemsProvider({ children }) {
     const [items, setItems] = useState([]);

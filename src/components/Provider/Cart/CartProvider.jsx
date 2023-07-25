@@ -1,26 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { PropTypes } from 'prop-types';
 
 export const CartContext = React.createContext();
 export const AddCartContext = React.createContext();
 export const RemoveCartContext = React.createContext();
 export const TotalPriceCartContext = React.createContext();
-
-export function useCart() {
-    return useContext(CartContext);
-}
-
-export function useAddItemCart() {
-    return useContext(AddCartContext);
-}
-
-export function useRemoveItemCart () {
-    return useContext(RemoveCartContext);
-}
-
-export function useTotalPriceCart () {
-    return useContext(TotalPriceCartContext);
-}
 
 function CartProvider({ children }) {
     const [cart, setCart] = useState([]);

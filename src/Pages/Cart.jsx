@@ -1,4 +1,4 @@
-import { useCart, useTotalPriceCart } from '../components/Provider/CartProvider';
+import { useCart, useTotalPriceCart } from '../components/Provider/Cart/Hook';
 import CartCard from '../components/Cart/CartCard';
 import GoBackBtn from '../components/GoBackBtn';
 
