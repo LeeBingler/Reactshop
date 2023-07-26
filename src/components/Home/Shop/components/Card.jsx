@@ -7,7 +7,7 @@ function Card({ item }) {
 
     return (
         <div className='flex flex-col justify-center relative bg-white border border-black rounded m-4 p-2 py-10 lg:hover:shadow-2xl lg:hover:scale-[1.02] transition-transform ease-linear duration-200'>
-            <p className='absolute top-2 text-right pb-5 w-[91%] font-semibold mr-5 md:mr-7 lg:mr-12'>
+            <p className='absolute top-2 md:top-4 text-right w-[91%] font-semibold lg:text-lg'>
                     ⭐ {item.rating.rate}
             </p>
             <div className='flex flex-col justify-center items-center'>

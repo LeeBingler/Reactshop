@@ -1552,6 +1552,10 @@ video {
     top: 4rem;
   }
 
+  .md\:top-4 {
+    top: 1rem;
+  }
+
   .md\:col-span-1 {
     grid-column: span 1 / span 1;
   }
@@ -1728,6 +1732,10 @@ video {
 
   .md\:pt-24 {
     padding-top: 6rem;
+  }
+
+  .md\:text-right {
+    text-align: right;
   }
 
   .md\:text-2xl {
