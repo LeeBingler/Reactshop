@@ -11,8 +11,8 @@ function MenuNav({ showMenu }) {
         <div
         className={`menu-navbar border-r border-black ${isHidden}
             md:transition-none md:absolute md:top-1 md:h-12 md:flex-row-reverse md:border-none
-            md:overflow-y-hidden md:w-[70%] md:right-16 md:overflow-x-visible
-            md:justify-between`}>
+            md:overflow-y-hidden md:w-[65%] md:right-16 md:overflow-x-visible
+            md:justify-between md:-z-10`}>
             <div className='flex items-center'>
                 <input
                 className='block border p-2 mt-4 border-black w-44
