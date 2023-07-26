@@ -1395,7 +1395,7 @@ video {
   color: rgb(96 165 250 / var(--tw-text-opacity));
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .btn-filter {
     font-size: 1rem;
     line-height: 1.5rem;
