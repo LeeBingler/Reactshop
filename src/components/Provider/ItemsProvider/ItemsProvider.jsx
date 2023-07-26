@@ -74,10 +74,14 @@ function ItemsProvider({ children }) {
                     if (!res) {
                         fetchAllItems();
                         dataApiToCache('https://fakestoreapi.com/products', 'itemsStore');
+                    } else {
+                        manageApiData('https://fakestoreapi.com/products', 'itemsStore');
                     }
-                });
+                }).catch(error => {
+                    console.log(error);
+                    fetchAllItems();
+                })
             });
-            manageApiData('https://fakestoreapi.com/products', 'itemsStore');
         } else {
             fetchAllItems();
         }
