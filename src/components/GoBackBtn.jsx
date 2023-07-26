@@ -6,7 +6,7 @@ export default function GoBackBtn() {
         <>
             <button
                 aria-label='go to previous page'
-                className='text-blue-400 px-4 py-1 mt-2 text-xl lg:text-2xl border border-black rounded-md focus:ring-4 shadow-lg transform active:scale-75 transition-transform;'
+                className='text-blue-400 px-4 py-1 mt-2 text-xl lg:text-2xl border border-black rounded-md focus:ring-4 shadow-lg transform active:scale-75 transition-transform'
             >
                 <Link
                     to={-1}
