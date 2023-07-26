@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
-/* Font */
-
-/* ! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com */
+/*
+! tailwindcss v3.3.2 | MIT License | https://tailwindcss.com
+*/
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -976,11 +976,6 @@ video {
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
-.bg-red-600{
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
-}
-
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1135,10 +1130,6 @@ video {
   text-align: justify;
 }
 
-.align-middle{
-  vertical-align: middle;
-}
-
 .font-logo{
   font-family: Oswald, sans-serif;
 }
@@ -1182,8 +1173,16 @@ video {
   line-height: 1rem;
 }
 
+.font-bold{
+  font-weight: 700;
+}
+
 .font-semibold{
   font-weight: 600;
+}
+
+.tracking-wider{
+  letter-spacing: 0.05em;
 }
 
 .text-black{
@@ -1693,11 +1692,6 @@ video {
   .md\:text-2xl{
     font-size: 1.5rem;
     line-height: 2rem;
-  }
-
-  .md\:text-base{
-    font-size: 1rem;
-    line-height: 1.5rem;
   }
 
   .md\:text-lg{

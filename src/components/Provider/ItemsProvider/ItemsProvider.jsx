@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import LoadingScreen from '../../../Pages/LoadingScreen';
 import { PropTypes } from 'prop-types';
 
-
 export const ItemsContext = React.createContext();
 export const GetItemByIdContext = React.createContext();
 
@@ -19,28 +18,74 @@ function ItemsProvider({ children }) {
 
         return Items.filter((item) => {
             return item.id === id;
-        })
+        });
     }
 
     useEffect(() => {
-        const fetchAllItems = async () => {
+        function addNumberToData(data) {
+            data.forEach((item) => {
+                item.number = 0;
+                return item;
+            });
+
+            return data;
+        }
+
+        async function fetchAllItems() {
             await fetch('https://fakestoreapi.com/products')
                 .then((res) => res.json())
                 .then((data) => {
-                    data.forEach((item) => {
-                        item.number = 0;
-                        return item;
-                    })
+                    addNumberToData(data);
                     setItems(data);
-                    setLoading(prev => !prev);
+                    setLoading(false);
                 })
                 .catch((error) => console.log(error));
-        };
-        fetchAllItems();
+        }
+
+        function dataApiToCache(apiURL, cacheName) {
+            caches.open(cacheName).then((cache) => {
+                cache.add(apiURL).catch((error) => console.error(error));
+            });
+        }
+
+        async function manageApiData(apiURL, cacheName) {
+            await caches.open(cacheName).then((cache) => {
+                cache
+                    .match(apiURL)
+                    .then((res) => {
+                        if (res) {
+                            return res.json();
+                        }
+                        Promise.reject(new Error('no data in cache'));
+                    })
+                    .then((data) => {
+                        if (!data) return;
+                        addNumberToData(data);
+                        setItems(data);
+                        setLoading(false);
+                    })
+                    .catch((error) => console.log(error));
+            });
+        }
+
+        if ('caches' in window) {
+            caches.open('itemsStore').then((cache) => {
+                cache.match('https://fakestoreapi.com/products').then((res) => {
+                    if (!res) {
+                        fetchAllItems();
+                        dataApiToCache('https://fakestoreapi.com/products', 'itemsStore');
+                    }
+                });
+            });
+            manageApiData('https://fakestoreapi.com/products', 'itemsStore');
+        } else {
+            fetchAllItems();
+        }
+
         return () => {
             setItems([]);
-            setLoading(prev => !prev);
-        }
+            setLoading(true);
+        };
     }, []);
 
     return (
@@ -49,11 +94,11 @@ function ItemsProvider({ children }) {
                 {loading ? <LoadingScreen /> : children}
             </GetItemByIdContext.Provider>
         </ItemsContext.Provider>
-    )
+    );
 }
 
 ItemsProvider.propTypes = {
     children: PropTypes.element
-}
+};
 
 export default ItemsProvider;

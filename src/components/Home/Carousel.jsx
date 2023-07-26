@@ -36,10 +36,10 @@ export default function Carousel() {
                 <div
                 className='flex transition-all ease-out duration-150'
                 style={{transform: `translateX(-${index * 100}%)`}}>
-                    <img src="/banner/banner1.webp" alt="shopping banner 1" />
-                    <img src="/banner/banner2.webp" alt="shopping banner 2" />
-                    <img src="/banner/banner3.webp" alt="shopping banner 3" />
-                    <img src="/banner/banner4.webp" alt="shopping banner 4" />
+                    <img width='1024' height='320' src="/banner/banner1.webp" alt="shopping banner 1" />
+                    <img width='1024' height='320' src="/banner/banner2.webp" alt="shopping banner 2" />
+                    <img width='1024' height='320' src="/banner/banner3.webp" alt="shopping banner 3" />
+                    <img width='1024' height='320' src="/banner/banner4.webp" alt="shopping banner 4" />
                 </div>
             </div>
 
