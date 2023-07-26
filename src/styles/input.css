@@ -29,7 +29,7 @@
 }
 
 .btn-filter {
-    @apply border rounded border-black p-[3px] m-1 font-logo text-base lg:text-xl hover:text-blue-400;
+    @apply border rounded border-black p-[3px] m-1 font-logo text-sm md:text-base lg:text-xl hover:text-blue-400;
 }
 
 .btn-addToCart {

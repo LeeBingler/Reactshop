@@ -12,7 +12,7 @@ function FilterShop({ filterFunction }) {
                 lg:w-1/2'>
             <button
             aria-label='filter All'
-            className='btn-filter'
+            className='btn-filter w-16'
             onClick={() => filterFunction({ filterType: ACTION.ALL, Items: AllItems })}
             >
                 All
