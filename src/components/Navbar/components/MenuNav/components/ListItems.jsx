@@ -1,4 +1,3 @@
-import React from 'react';
 import { useItems } from '../../../../Provider/ItemsProvider/Hook';
 import { PropTypes } from 'prop-types';
 
@@ -33,7 +32,7 @@ function ListItems({ valueSearchBar, setValueSearchBar }) {
     );
 }
 
-ListItems.proptypes = {
+ListItems.propTypes = {
     valueSearchBar: PropTypes.string.isRequired,
     setValueSearchBar: PropTypes.func.isRequired
 };

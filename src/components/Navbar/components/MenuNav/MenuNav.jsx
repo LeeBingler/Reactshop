@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ListItems from './components/ListItems';
+import BtnSearchBar from './components/BtnSearchbar'
 import InfoFooter from '../../InfoFooter';
 import useDetectKeyboardOpen from 'use-detect-keyboard-open';
 import { NavLink } from 'react-router-dom';
@@ -37,13 +38,7 @@ function MenuNav({ showMenu }) {
                     ></input>
                     <ListItems valueSearchBar={valueSearchBar} setValueSearchBar={setValueSearchBar} />
                 </div>
-                <button
-                    aria-label='search button'
-                    className='text-2xl p-2 mt-4 h-11 border border-black bg-black text-white hover:text-blue-400
-                    md:m-4 md:text-xl md:p-1 md:mr-1 md:h-10 md:ml-0 md:w-10'
-                >
-                    <i className='bx bx-search-alt'></i>
-                </button>
+                <BtnSearchBar valueSearchBar={valueSearchBar} />
             </div>
             <div
                 className='flex flex-col
