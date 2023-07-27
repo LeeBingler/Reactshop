@@ -35,7 +35,7 @@ function MenuNav({ showMenu }) {
                         value={valueSearchBar}
                         placeholder='Type to search..'
                     ></input>
-                    <ListItems valueSearchBar={valueSearchBar} />
+                    <ListItems valueSearchBar={valueSearchBar} setValueSearchBar={setValueSearchBar} />
                 </div>
                 <button
                     aria-label='search button'

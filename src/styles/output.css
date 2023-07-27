@@ -823,6 +823,10 @@ video {
   width: 100vw;
 }
 
+.w-40 {
+  width: 10rem;
+}
+
 .min-w-\[300px\] {
   min-width: 300px;
 }
