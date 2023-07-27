@@ -566,24 +566,24 @@ video {
   top: 47%;
 }
 
+.top-7 {
+  top: 1.75rem;
+}
+
+.top-14 {
+  top: 3.5rem;
+}
+
+.left-1 {
+  left: 0.25rem;
+}
+
+.left-2 {
+  left: 0.5rem;
+}
+
 .z-10 {
   z-index: 10;
-}
-
-.z-50 {
-  z-index: 50;
-}
-
-.z-\[\] {
-  z-index: ;
-}
-
-.z-\[100\] {
-  z-index: 100;
-}
-
-.z-\[1000\] {
-  z-index: 1000;
 }
 
 .col-span-full {
@@ -750,10 +750,6 @@ video {
   height: 100vh;
 }
 
-.h-44 {
-  height: 11rem;
-}
-
 .max-h-64 {
   max-height: 16rem;
 }
@@ -823,10 +819,6 @@ video {
   width: 100vw;
 }
 
-.w-40 {
-  width: 10rem;
-}
-
 .min-w-\[300px\] {
   min-width: 300px;
 }
@@ -878,10 +870,6 @@ video {
 
 .grid-rows-3 {
   grid-template-rows: repeat(3, minmax(0, 1fr));
-}
-
-.flex-row {
-  flex-direction: row;
 }
 
 .flex-col {
@@ -1019,39 +1007,9 @@ video {
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
-.bg-red-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(127 29 29 / var(--tw-bg-opacity));
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
-.bg-red-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
-}
-
-.bg-gray-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
-}
-
-.bg-gray-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
-}
-
-.bg-gray-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-}
-
-.bg-gray-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
 .bg-\[url\(\'\/blob\.svg\'\)\] {
@@ -1138,16 +1096,6 @@ video {
   padding-bottom: 1.5rem;
 }
 
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
-
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
 .pb-10 {
   padding-bottom: 2.5rem;
 }
@@ -1162,6 +1110,10 @@ video {
 
 .pb-8 {
   padding-bottom: 2rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
 }
 
 .pr-4 {
@@ -1186,14 +1138,6 @@ video {
 
 .pt-\[4\.5rem\] {
   padding-top: 4.5rem;
-}
-
-.pr-2 {
-  padding-right: 0.5rem;
-}
-
-.pl-2 {
-  padding-left: 0.5rem;
 }
 
 .text-center {
@@ -1600,6 +1544,14 @@ video {
     top: 1rem;
   }
 
+  .md\:top-14 {
+    top: 3.5rem;
+  }
+
+  .md\:left-2 {
+    left: 0.5rem;
+  }
+
   .md\:col-span-1 {
     grid-column: span 1 / span 1;
   }
@@ -1726,10 +1678,6 @@ video {
 
   .md\:justify-around {
     justify-content: space-around;
-  }
-
-  .md\:overflow-y-hidden {
-    overflow-y: hidden;
   }
 
   .md\:overflow-x-visible {

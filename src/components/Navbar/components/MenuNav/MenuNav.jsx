@@ -22,7 +22,7 @@ function MenuNav({ showMenu }) {
         <div
             className={`menu-navbar border-r border-black ${isHidden}
             md:transition-none md:absolute md:top-1 md:h-12 md:flex-row-reverse md:border-none
-            md:overflow-y-hidden md:w-[65%] md:right-16 md:overflow-x-visible
+            md:w-[65%] md:right-16 md:overflow-x-visible
             md:justify-between`}
         >
             <div className='flex items-center'>
