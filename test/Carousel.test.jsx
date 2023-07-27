@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render, screen, fireEvent, mount} from '@testing-library/react';
+import { render, screen, fireEvent, mount } from '@testing-library/react';
 
 import Carousel from '../src/components/Home/Carousel';
 
@@ -8,7 +8,7 @@ describe('Carousel test', () => {
         const wrapper = render(<Carousel />);
         expect(wrapper).toBeTruthy();
     })
-
+    
     it('Carousel: img banner number check', () => {
         render(<Carousel />);
         for (let i = 1; i < 4; i++) {
