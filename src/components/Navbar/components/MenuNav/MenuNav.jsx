@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import InfoFooter from '../InfoFooter';
+import ListItems from './ListItems';
+import InfoFooter from '../../InfoFooter';
 import useDetectKeyboardOpen from 'use-detect-keyboard-open';
 import { NavLink } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
@@ -9,7 +10,7 @@ function MenuNav({ showMenu }) {
     const isHidden = showMenu || isKeyboardOpen ? 'w-3/4' : 'w-0';
     const [valueSearchBar, setValueSearchBar] = useState('');
 
-    const handleOnChangeSearchBar = (e) => {
+    function handleOnChangeSearchBar(e) {
         e.preventDefault();
         setValueSearchBar(e.target.value);
     }
@@ -22,15 +23,18 @@ function MenuNav({ showMenu }) {
             md:justify-between`}
         >
             <div className='flex items-center'>
-                <input
-                    type='text'
-                    className='block border p-2 mt-4 border-black w-44
-                    md:m-4 md:py-1 md:w-48 md:text-lg md:h-10 md:mr-0 md:ml-2
-                    lg:w-60'
-                    onChange={(e) => handleOnChangeSearchBar(e)}
-                    value={valueSearchBar}
-                    placeholder='Type to search..'
-                ></input>
+                <div className='relative'>
+                    <input
+                        type='text'
+                        className='block border p-2 mt-4 border-black w-44
+                        md:m-4 md:py-1 md:w-48 md:text-lg md:h-10 md:mr-0 md:ml-2
+                        lg:w-60'
+                        onChange={(e) => handleOnChangeSearchBar(e)}
+                        value={valueSearchBar}
+                        placeholder='Type to search..'
+                    ></input>
+                    <ListItems valueSearchBar={valueSearchBar} />
+                </div>
                 <button
                     aria-label='search button'
                     className='text-2xl p-2 mt-4 h-11 border border-black bg-black text-white hover:text-blue-400

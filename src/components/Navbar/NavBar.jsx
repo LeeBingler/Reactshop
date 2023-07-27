@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import MenuNav from './components//MenuNav';
+import MenuNav from './components/MenuNav/MenuNav';
 import MenuCart from './components/Menucart/MenuCart';
 import BtnCart from './components/BtnCart';
 
