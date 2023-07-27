@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ListItems from './ListItems';
+import ListItems from './components/ListItems';
 import InfoFooter from '../../InfoFooter';
 import useDetectKeyboardOpen from 'use-detect-keyboard-open';
 import { NavLink } from 'react-router-dom';
@@ -11,8 +11,10 @@ function MenuNav({ showMenu }) {
     const [valueSearchBar, setValueSearchBar] = useState('');
 
     function handleOnChangeSearchBar(e) {
+        let loweredString = e.target.value.toLowerCase();
+
         e.preventDefault();
-        setValueSearchBar(e.target.value);
+        setValueSearchBar(loweredString);
     }
 
     return (
