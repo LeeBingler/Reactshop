@@ -91,7 +91,7 @@ function Carousel({ children }) {
         <section className='relative overflow-hidden'>
             <ul
                 ref={containerRef}
-                className='list-none flex max-w-6xl'
+                className='list-none flex items-center max-w-6xl'
                 style={{
                     transform: `translate3d(-${translateX}px, 0, 0)`,
                     transitionDuration: '400ms'
