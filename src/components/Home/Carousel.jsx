@@ -3,6 +3,8 @@ import { useLayoutEffect, useMemo, useRef, useState, useEffect, useCallback } fr
 
 function Carousel({ children }) {
     const containerRef = useRef(null);
+    const nextBtnRef = useRef(null);
+    const prevBtnRef = useRef(null);
     const [current, setCurrent] = useState(1);
     const [translateX, setTranslateX] = useState(0);
     const slides = useMemo(() => {
@@ -40,6 +42,8 @@ function Carousel({ children }) {
 
     const clickHandlerNextBtn = useCallback(() => {
         containerRef.current.style.transitionDuration = '400ms';
+        nextBtnRef.current.disabled = true;
+        prevBtnRef.current.disabled = true;
         if (current >= children.length) {
             setTranslateX(containerRef.current.clientWidth * (children.length + 1));
             setCurrent(1);
@@ -61,6 +65,8 @@ function Carousel({ children }) {
                 containerRef.current.style.transitionDuration = '0ms';
                 setTranslateX(containerRef.current.clientWidth * children.length);
             }
+            nextBtnRef.current.disabled = false;
+            prevBtnRef.current.disabled = false;
         };
 
         document.addEventListener('transitionend', transitionEnd);
@@ -94,12 +100,14 @@ function Carousel({ children }) {
                 {slides}
             </ul>
             <button
+            ref={prevBtnRef}
                 className='absolute top-1/2 left-2 -translate-y-1/2 bg-gray-400 rounded-full w-10 bg-opacity-70 text-4xl border-0 cursor-pointer z-10'
                 onClick={clickHandlerPrevBtn}
             >
                 {'<'}
             </button>
             <button
+            ref={nextBtnRef}
                 className='absolute top-1/2 right-2 -translate-y-1/2 bg-gray-400 rounded-full w-10 bg-opacity-70 text-4xl border-0 cursor-pointer z-10'
                 onClick={clickHandlerNextBtn}
             >
