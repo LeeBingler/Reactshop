@@ -11,10 +11,10 @@ export default function Home() {
     <main>
         <div className='flex content-center justify-center'>
           <Carousel>
-            <img src={img1} alt="banner 1" />
-            <img src={img2} alt="banner 2" />
-            <img src={img3} alt="banner 3" />
-            <img src={img4} alt="banner 4" />
+            <img src={img1} alt="banner 1" key={789456} />
+            <img src={img2} alt="banner 2" key={789457}/>
+            <img src={img3} alt="banner 3" key={789458} />
+            <img src={img4} alt="banner 4" key={789459} />
           </Carousel>
         </div>
         <Shop />
