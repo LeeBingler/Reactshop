@@ -1,56 +1,124 @@
-import { useCallback, useEffect, useState } from 'react'
+import { PropTypes } from 'prop-types';
+import { useLayoutEffect, useMemo, useRef, useState, useEffect, useCallback } from 'react';
 
-export default function Carousel() {
-    const [index, setIndex] = useState(0);
-    const lenghtMax = 3;
+function Carousel({ children }) {
+    const containerRef = useRef(null);
+    const nextBtnRef = useRef(null);
+    const prevBtnRef = useRef(null);
+    const [current, setCurrent] = useState(1);
+    const [translateX, setTranslateX] = useState(0);
+    const slides = useMemo(() => {
+        if (children.length > 1) {
+            let items = children.map((child, index) => (
+                <li key={index * 8 + 2} className='slideCarousel'>
+                    {child}
+                </li>
+            ));
 
-    function handleOnClickPrev() {
-        if (index < 0) {
-            setIndex(lenghtMax);
-            return;
+            return [
+                <li key={children.length + 1} className='slideCarousel'>
+                    {children[children.length - 1]}
+                </li>,
+                ...items,
+                <li key={children.length + 2} className='slideCarousel'>
+                    {children[0]}
+                </li>
+            ];
         }
 
-        setIndex(prev => prev - 1);
-    }
+        return <li className='slideCarousel'> children[0] </li>;
+    }, [children]);
 
-    const handleOnClickNext = useCallback(() => {
-        if (index >= lenghtMax) {
-            setIndex(0);
-            return;
+    const clickHandlerPrevBtn = useCallback(() => {
+        containerRef.current.style.transitionDuration = '400ms';
+        if (current <= 1) {
+            setTranslateX(0);
+            setCurrent(children.length);
+        } else {
+            setTranslateX(containerRef.current.clientWidth * (current - 1));
+            setCurrent((prev) => prev - 1);
         }
+    }, [children, current]);
 
-        setIndex(prev => prev + 1);
-    }, [index])
+    const clickHandlerNextBtn = useCallback(() => {
+        containerRef.current.style.transitionDuration = '400ms';
+        nextBtnRef.current.disabled = true;
+        prevBtnRef.current.disabled = true;
+        if (current >= children.length) {
+            setTranslateX(containerRef.current.clientWidth * (children.length + 1));
+            setCurrent(1);
+        } else {
+            setTranslateX(containerRef.current.clientWidth * (current + 1));
+            setCurrent((prev) => prev + 1);
+        }
+    }, [children, current]);
 
+    // smooth scroll
+    useLayoutEffect(() => {
+        const transitionEnd = () => {
+            if (current <= 1) {
+                containerRef.current.style.transitionDuration = '0ms';
+                setTranslateX(containerRef.current.clientWidth);
+            }
+
+            if (current >= children.length) {
+                containerRef.current.style.transitionDuration = '0ms';
+                setTranslateX(containerRef.current.clientWidth * children.length);
+            }
+            nextBtnRef.current.disabled = false;
+            prevBtnRef.current.disabled = false;
+        };
+
+        document.addEventListener('transitionend', transitionEnd);
+
+        return () => {
+            document.removeEventListener('transitionend', transitionEnd);
+        };
+    }, [current, children]);
+
+    // autoslide
     useEffect(() => {
-        const timer = setTimeout(() => {
-                handleOnClickNext();
-            }, 6000);
+        const interval = setInterval(() => {
+            clickHandlerNextBtn();
+        }, 4000);
 
-        return () => clearTimeout(timer);
-    }, [index, handleOnClickNext]);
+        return () => {
+            clearInterval(interval);
+        };
+    }, [clickHandlerNextBtn]);
 
     return (
-        <section className='relative pt-[4.5rem] max-w-5xl'>
-            <div className='overflow-hidden'>
-                <div
-                className='flex transition-all ease-out duration-150'
-                style={{transform: `translateX(-${index * 100}%)`}}>
-                    <img width='1024' height='320' src="/banner/banner1.webp" alt="shopping banner 1" />
-                    <img width='1024' height='320' src="/banner/banner2.webp" alt="shopping banner 2" />
-                    <img width='1024' height='320' src="/banner/banner3.webp" alt="shopping banner 3" />
-                    <img width='1024' height='320' src="/banner/banner4.webp" alt="shopping banner 4" />
-                </div>
-            </div>
-
-            <div className='flex justify-between absolute w-full top-[47%] px-3'>
-                <button id='prevBtn' className='btn-carousel' onClick={handleOnClickPrev} aria-label='see previous image'>
-                    <i className='bx bx-chevron-left' ></i>
-                </button>
-                <button id='nextBtn' className='btn-carousel' onClick={handleOnClickNext} aria-label='see next image'>
-                    <i className='bx bx-chevron-right'></i>
-                </button>
-            </div>
+        <section className='relative overflow-hidden'>
+            <ul
+                ref={containerRef}
+                className='list-none flex items-center max-w-6xl'
+                style={{
+                    transform: `translate3d(-${translateX}px, 0, 0)`,
+                    transitionDuration: '400ms'
+                }}
+            >
+                {slides}
+            </ul>
+            <button
+            ref={prevBtnRef}
+                className='absolute top-1/2 left-2 -translate-y-1/2 bg-gray-400 rounded-full w-10 bg-opacity-70 text-4xl border-0 cursor-pointer z-10'
+                onClick={clickHandlerPrevBtn}
+            >
+                {'<'}
+            </button>
+            <button
+            ref={nextBtnRef}
+                className='absolute top-1/2 right-2 -translate-y-1/2 bg-gray-400 rounded-full w-10 bg-opacity-70 text-4xl border-0 cursor-pointer z-10'
+                onClick={clickHandlerNextBtn}
+            >
+                {'>'}
+            </button>
         </section>
-    )
+    );
 }
+
+Carousel.propTypes = {
+    children: PropTypes.arrayOf(PropTypes.node)
+};
+
+export default Carousel;
