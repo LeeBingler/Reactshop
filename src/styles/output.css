@@ -566,22 +566,6 @@ video {
   top: 47%;
 }
 
-.top-7 {
-  top: 1.75rem;
-}
-
-.top-14 {
-  top: 3.5rem;
-}
-
-.left-1 {
-  left: 0.25rem;
-}
-
-.left-2 {
-  left: 0.5rem;
-}
-
 .z-10 {
   z-index: 10;
 }
@@ -1528,6 +1512,10 @@ video {
     position: absolute;
   }
 
+  .md\:left-2 {
+    left: 0.5rem;
+  }
+
   .md\:right-16 {
     right: 4rem;
   }
@@ -1536,20 +1524,16 @@ video {
     top: 0.25rem;
   }
 
+  .md\:top-14 {
+    top: 3.5rem;
+  }
+
   .md\:top-16 {
     top: 4rem;
   }
 
   .md\:top-4 {
     top: 1rem;
-  }
-
-  .md\:top-14 {
-    top: 3.5rem;
-  }
-
-  .md\:left-2 {
-    left: 0.5rem;
   }
 
   .md\:col-span-1 {
