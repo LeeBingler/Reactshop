@@ -90,7 +90,7 @@ export default function NavBar() {
     return (
         <header
         ref={navBarRef}
-        className='fixed w-full top-0 bg-white z-10 h-14 md:shadow-lg'
+        className='fixed w-full top-0 bg-white z-20 h-14 md:shadow-lg'
         >
             <nav className='navbar'>
                 <button className={`md:hidden btn-navBar ml-3 ${menuActive}`} onClick={handleClickMenu} aria-label='display menu'>

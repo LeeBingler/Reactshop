@@ -29,26 +29,27 @@ function Carousel({ children }) {
 
     const clickHandlerPrevBtn = useCallback(() => {
         containerRef.current.style.transitionDuration = '400ms';
-        if(current <= 1) {
+        if (current <= 1) {
             setTranslateX(0);
             setCurrent(children.length);
         } else {
             setTranslateX(containerRef.current.clientWidth * (current - 1));
-            setCurrent(prev => prev - 1);
+            setCurrent((prev) => prev - 1);
         }
     }, [children, current]);
 
     const clickHandlerNextBtn = useCallback(() => {
         containerRef.current.style.transitionDuration = '400ms';
-        if(current >= children.length) {
+        if (current >= children.length) {
             setTranslateX(containerRef.current.clientWidth * (children.length + 1));
             setCurrent(1);
         } else {
             setTranslateX(containerRef.current.clientWidth * (current + 1));
-            setCurrent(prev => prev + 1);
+            setCurrent((prev) => prev + 1);
         }
-    }, [children, current])
+    }, [children, current]);
 
+    // smooth scroll
     useEffect(() => {
         const transitionEnd = () => {
             if (current <= 0) {
@@ -60,15 +61,16 @@ function Carousel({ children }) {
                 containerRef.current.style.transitionDuration = '0ms';
                 setTranslateX(containerRef.current.clientWidth * children.length);
             }
-        }
+        };
 
         document.addEventListener('transitionend', transitionEnd);
 
         return () => {
             document.removeEventListener('transitionend', transitionEnd);
-        }
+        };
     }, [current, children]);
 
+    // autoslide
     useEffect(() => {
         const interval = setInterval(() => {
             clickHandlerNextBtn();
@@ -76,35 +78,38 @@ function Carousel({ children }) {
 
         return () => {
             clearInterval(interval);
-        }
-    }, [])
+        };
+    }, [clickHandlerNextBtn]);
 
     useLayoutEffect(() => {
         setTranslateX(containerRef.current.clientWidth * current);
 
         return () => {
             setTranslateX(0);
-        }
-    }, []);
+        };
+    }, [current]);
 
     return (
         <section className='relative overflow-hidden'>
             <ul
                 ref={containerRef}
                 className='list-none flex'
-                style={{ transform: `translate3d(-${translateX}px, 0, 0)`, transitionDuration:'400ms' }}
+                style={{
+                    transform: `translate3d(-${translateX}px, 0, 0)`,
+                    transitionDuration: '400ms'
+                }}
             >
                 {slides}
             </ul>
             <button
-                className='absolute top-1/2 left-0 -translate-y-1/2 bg-red-400 text-yellow-300 text-4xl border-0 cursor-pointer z-10'
-                onClick={() => clickHandlerPrevBtn('prev')}
+                className='absolute top-1/2 left-2 -translate-y-1/2 bg-gray-400 rounded-full w-10 bg-opacity-70 text-4xl border-0 cursor-pointer z-10'
+                onClick={clickHandlerPrevBtn}
             >
                 {'<'}
             </button>
             <button
-                className='absolute top-1/2 right-0 -translate-y-1/2 bg-red-400 text-yellow-300 text-4xl border-0 cursor-pointer z-10'
-                onClick={() => clickHandlerNextBtn('next')}
+                className='absolute top-1/2 right-2 -translate-y-1/2 bg-gray-400 rounded-full w-10 bg-opacity-70 text-4xl border-0 cursor-pointer z-10'
+                onClick={clickHandlerNextBtn}
             >
                 {'>'}
             </button>
