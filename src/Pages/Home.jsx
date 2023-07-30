@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <main>
-        <div className='flex items-center justify-center'>
+        <div className='flex items-center content-center justify-center pt-16'>
           <Carousel>
             <img src={img1} alt="banner 1" key={789456} style={{width: '100%', height: '100%'}}/>
             <img src={img2} alt="banner 2" key={789457} style={{width: '100%', height: '100%'}}/>

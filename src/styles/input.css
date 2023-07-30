@@ -45,5 +45,5 @@
 }
 
 .slideCarousel {
-    @apply bg-red-400 h-40;
+    @apply shrink-0 h-full w-full;
 }
