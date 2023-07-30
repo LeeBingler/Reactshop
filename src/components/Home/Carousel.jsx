@@ -50,11 +50,11 @@ function Carousel({ children }) {
     }, [children, current]);
 
     // smooth scroll
-    useEffect(() => {
+    useLayoutEffect(() => {
         const transitionEnd = () => {
-            if (current <= 0) {
+            if (current <= 1) {
                 containerRef.current.style.transitionDuration = '0ms';
-                setTranslateX(containerRef.current.clientWidth * current);
+                setTranslateX(containerRef.current.clientWidth);
             }
 
             if (current >= children.length) {
@@ -81,19 +81,11 @@ function Carousel({ children }) {
         };
     }, [clickHandlerNextBtn]);
 
-    useLayoutEffect(() => {
-        setTranslateX(containerRef.current.clientWidth * current);
-
-        return () => {
-            setTranslateX(0);
-        };
-    }, [current]);
-
     return (
         <section className='relative overflow-hidden'>
             <ul
                 ref={containerRef}
-                className='list-none flex'
+                className='list-none flex max-w-6xl'
                 style={{
                     transform: `translate3d(-${translateX}px, 0, 0)`,
                     transitionDuration: '400ms'
