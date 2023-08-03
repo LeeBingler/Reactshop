@@ -26,7 +26,7 @@ describe('Carousel test', () => {
         render(<Carousel />);
         for (let i = 0; i < 4; i++)
             fireEvent.click(document.getElementById('nextBtn'));
-    })
+    }) 
 
     it('Carousel: btn prev press 4 times', async () => {
         render(<Carousel />);

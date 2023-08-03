@@ -26,6 +26,10 @@ describe('Navbar test', () => {
 		const About = screen.getByText(/about/i)
 		const contact = screen.getByText(/contact/i)
 
+		fireEvent.click(document.getElementById('nextBtn'));
+		fireEvent.click(document.getElementById('nextBtn'));
+		fireEvent.click(document.getElementById('nextBtn'));
+
 		expect(home.href).toContain('/home')
 		expect(About.href).toContain('/about')
 		expect(contact.href).toContain('/contact')
@@ -47,20 +51,25 @@ describe('Navbar test', () => {
 		// expect().toBeUndefined()
 
 	})
+
+	it('test cart icon count', () => {
+		fireEvent.click(document.getElementById('nextBtn'));
+	})
+
 	it('test_handle_cart_with_many_items', () => {
 
 	})
 
 	it('test remove button on all items in cart', () => {
-
+		fireEvent.click(document.getElementById('nextBtn'));
 	})
-	
+
 	it('test the total from cart items', () => {
 		expect(' ').toBe(3)
 	})
 
 	it('test the go to cart button redirect', () => {
-
+		fireEvent.click(document.getElementById('nextBtn'));
 	})
 	// beforeEach(() => {
 	// 	render(<Accordion title='Testing'><h4>Content</h4></Accordion>);
