@@ -11,13 +11,20 @@ describe('Navbar test', () => {
 	})
 
 	it('test_display_title', () => {
-		render(<NavBar />);
-		
+		render(<NavBar />); 
+		const title = screen.getByText(/lReact Shop/i)
 		// expect(wrapper).toBeTruthy();
+		expect(title).toBeInTheDocument()
 	})
 
-	it('test_toggle_menu', () => {
-
+	it('test_toggle_menu if url is correct', () => {
+		render(<NavBar />); 
+			const home = screen.getByText(/home/i)
+			const About = screen.getByText(/about/i)
+			const contact = screen.getByText(/contact/i)
+			expect(home.href).toContain('/home')
+			expect(About.href).toContain('/about')
+			expect(contact.href).toContain('/contact')
 	})	
 
 	it('test_toggle_cart', () => {
