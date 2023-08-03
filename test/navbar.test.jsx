@@ -11,31 +11,47 @@ describe('Navbar test', () => {
 	})
 
 	it('test_display_title', () => {
-		render(<NavBar />); 
+		render(<NavBar />);
 		const title = screen.getByText(/lReact Shop/i)
-		// expect(wrapper).toBeTruthy();
+		expect(title).toBeDefined()
 		expect(title).toBeInTheDocument()
 	})
 
 	it('test_toggle_menu if url is correct', () => {
-		render(<NavBar />); 
-			const home = screen.getByText(/home/i)
-			const About = screen.getByText(/about/i)
-			const contact = screen.getByText(/contact/i)
-			expect(home.href).toContain('/home')
-			expect(About.href).toContain('/about')
-			expect(contact.href).toContain('/contact')
-	})	
+		render(<NavBar />);
+		const home = screen.getByText(/home/i)
+		const About = screen.getByText(/about/i)
+		const contact = screen.getByText(/contact/i)
 
-	it('test_toggle_cart', () => {
+		expect(home.href).toContain('/home')
+		expect(About.href).toContain('/about')
+		expect(contact.href).toContain('/contact')
+	})
 
-	})	
-	it('test_handle_empty_cart', () => {
+	it('checks if all product id is available on search input', () => {
 
-	})	
+	})
+
+	it('search button takes you to selected product', () => {
+		fireEvent.click(document.getElementById('nextBtn'));
+		expect(screen.getByDisplayValue('test')).toBeInTheDocument();
+	})
+	test("should not show the cart at the start", () => {
+		const cart = screen.getByText(/Content/i)
+		// expect().toBeUndefined()
+
+	})
 	it('test_handle_cart_with_many_items', () => {
 
-	})	
+	})
+
+	it('test remove button on all items in cart', () => {
+
+	})
+
+	it('test the go to cart button redirect', () => {
+
+	})
 	// beforeEach(() => {
 	// 	render(<Accordion title='Testing'><h4>Content</h4></Accordion>);
 	// });
