@@ -31,6 +31,8 @@ function Carousel({ children }) {
 
     const clickHandlerPrevBtn = useCallback(() => {
         containerRef.current.style.transitionDuration = '400ms';
+        nextBtnRef.current.disabled = true;
+        prevBtnRef.current.disabled = true;
         if (current <= 1) {
             setTranslateX(0);
             setCurrent(children.length);

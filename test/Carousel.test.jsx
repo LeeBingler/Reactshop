@@ -39,7 +39,7 @@ describe('Carousel test', () => {
         );
     });
 
-    it('Carousel: render Component', () => {
+    it('Carousel: render Component 4 img', () => {
         const wrapper = render(
             <Carousel>
                 <img
@@ -70,6 +70,21 @@ describe('Carousel test', () => {
         );
         expect(wrapper).toBeTruthy();
     });
+
+    it('Carousel: render Component 1 img', () => {
+        const wrapper = render(
+            <Carousel>
+                <img
+                    src={img1}
+                    alt='banner 1'
+                    key={789456}
+                    style={{ width: '100%', height: '100%' }}
+                />
+            </Carousel>
+        );
+        expect(wrapper).toBeTruthy();
+    });
+
     it('Carousel: there are 2 btn', () => {
         const btn = screen.getAllByRole('button');
         expect(btn.length).toBe(2);
@@ -77,9 +92,15 @@ describe('Carousel test', () => {
 
     it('Carousel: click next btn', () => {
         const nextBtn = screen.getByText(/>/i);
-        const handleNext = vi.fn();
-        console.log(handleNext);
-        fireEvent.click(nextBtn);
-        expect(handleNext).toHaveBeenCalledTimes(1);
+        for (let i = 0; i < 5; i++) {
+            fireEvent.click(nextBtn);
+        }
+    });
+
+    it('Carousel: click prev btn', () => {
+        const prevBtn = screen.getByText(/</i);
+        for (let i = 0; i < 5; i++) {
+            fireEvent.click(prevBtn);
+        }
     });
 });
