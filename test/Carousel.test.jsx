@@ -1,36 +1,85 @@
 import * as React from 'react';
-import { render, screen, fireEvent, mount } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
+import img1 from '/src/images/banner1.webp';
+import img2 from '/src/images/banner2.webp';
+import img3 from '/src/images/banner3.webp';
+import img4 from '/src/images/banner4.webp';
 
 import Carousel from '../src/components/Home/Carousel';
 
 describe('Carousel test', () => {
+    beforeEach(() => {
+        render(
+            <Carousel>
+                <img
+                    src={img1}
+                    alt='banner 1'
+                    key={789456}
+                    style={{ width: '100%', height: '100%' }}
+                />
+                <img
+                    src={img2}
+                    alt='banner 2'
+                    key={789457}
+                    style={{ width: '100%', height: '100%' }}
+                />
+                <img
+                    src={img3}
+                    alt='banner 3'
+                    key={789458}
+                    style={{ width: '100%', height: '100%' }}
+                />
+                <img
+                    src={img4}
+                    alt='banner 4'
+                    key={789459}
+                    style={{ width: '100%', height: '100%' }}
+                />
+            </Carousel>
+        );
+    });
+
     it('Carousel: render Component', () => {
-        const wrapper = render(<Carousel />);
+        const wrapper = render(
+            <Carousel>
+                <img
+                    src={img1}
+                    alt='banner 1'
+                    key={789456}
+                    style={{ width: '100%', height: '100%' }}
+                />
+                <img
+                    src={img2}
+                    alt='banner 2'
+                    key={789457}
+                    style={{ width: '100%', height: '100%' }}
+                />
+                <img
+                    src={img3}
+                    alt='banner 3'
+                    key={789458}
+                    style={{ width: '100%', height: '100%' }}
+                />
+                <img
+                    src={img4}
+                    alt='banner 4'
+                    key={789459}
+                    style={{ width: '100%', height: '100%' }}
+                />
+            </Carousel>
+        );
         expect(wrapper).toBeTruthy();
-    })
-    
-    it('Carousel: img banner number check', () => {
-        render(<Carousel />);
-        for (let i = 1; i < 4; i++) {
-            expect(screen.getByAltText(`shopping banner ${i}`)).toBeInTheDocument();
-        }
-    })
+    });
+    it('Carousel: there are 2 btn', () => {
+        const btn = screen.getAllByRole('button');
+        expect(btn.length).toBe(2);
+    });
 
-    it('Carousel: btn number check', () => {
-        render(<Carousel />);
-
-        expect(screen.getAllByRole('button').length).toBe(2);
-    })
-
-    it('Carousel: btn next press 4 times', async () => {
-        render(<Carousel />);
-        for (let i = 0; i < 4; i++)
-            fireEvent.click(document.getElementById('nextBtn'));
-    }) 
-
-    it('Carousel: btn prev press 4 times', async () => {
-        render(<Carousel />);
-        for (let i = 0; i < 4; i++)
-            fireEvent.click(document.getElementById('prevBtn'));
-    })
+    it('Carousel: click next btn', () => {
+        const nextBtn = screen.getByText(/>/i);
+        const handleNext = vi.fn();
+        console.log(handleNext);
+        fireEvent.click(nextBtn);
+        expect(handleNext).toHaveBeenCalledTimes(1);
+    });
 });
