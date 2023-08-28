@@ -23,7 +23,6 @@ To enhance the development process and user experience, the following frameworks
 
 1. **React:** A popular JavaScript library for building user interfaces, enabling fast and dynamic updates to the website.
 2. **Tailwind:** A utility-first CSS framework that streamlines styling and allows for the creation of clean and responsive designs.
-3. **Node.JS:** A server-side JavaScript runtime that enables running JavaScript on the server, facilitating the development of scalable applications.
 
 ## Testing Library
 
