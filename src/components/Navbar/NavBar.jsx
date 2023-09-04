@@ -90,14 +90,14 @@ export default function NavBar() {
     return (
         <header
         ref={navBarRef}
-        className='fixed w-full top-0 bg-white z-20 h-14 md:shadow-lg'
+        className='fixed w-full top-0 bg-white z-20 h-16'
         >
             <nav className='navbar'>
                 <button className={`md:hidden btn-navBar ml-3 ${menuActive}`} onClick={handleClickMenu} aria-label='display menu'>
                     <i className='bx bx-menu float-none inline text-3xl'></i>
                 </button>
                 <Link to='/home'>
-                    <h1 className='font-logo md:ml-4'> React Shop </h1>
+                    <h1 className='mt-3 font-logo text-4xl md:ml-4'> ReactShop </h1>
                 </Link>
                 <BtnCart showCart={showCart} handleClickCart={handleClickCart}/>
             </nav>

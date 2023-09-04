@@ -22,7 +22,7 @@ export default function Cart() {
     return (
       <section className='flex flex-col pt-20 pb-7 bg-gray-200 lg:pt-32 lg:pb-20  lg:flex-row lg:justify-around lg:min-h-[60vh]'>
         <div className='bg-white max-w-7xl border border-black lg:min-w-[700px]'>
-          <h1 className='font-logo text-6xl ml-4 mt-4'> Your cart : </h1>
+          <h1 className='font-subFont text-6xl ml-4 mt-4'> Your cart : </h1>
           <hr className='mx-14 mt-10'/>
           <div className='flex flex-col items-center'>
             {ItemCart.map((item) => <CartCard key={item.id * 184821} item={item} /> )}
