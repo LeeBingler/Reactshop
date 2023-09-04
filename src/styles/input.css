@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 .btn-navBar {
     @apply border border-black rounded text-center align-middle hover:text-blue-400 transition-all ease-out duration-300 px-[3px] mt-1;
 }
 
 .navbar {
-    @apply flex flex-row justify-between items-center text-4xl  align-middle text-center  border-b border-black pb-[9px];
+    @apply flex flex-row justify-between items-center text-4xl  align-middle text-center  border-b border-black pb-[10px];
 }
 
 .linknavbar {
@@ -29,7 +30,7 @@
 }
 
 .btn-filter {
-    @apply border rounded border-black p-[3px] m-1 font-logo text-sm sm:text-base lg:text-xl hover:text-blue-400;
+    @apply border rounded border-black p-[3px] m-1 font-subFont text-sm sm:text-base lg:text-xl hover:text-blue-400;
 }
 
 .btn-addToCart {

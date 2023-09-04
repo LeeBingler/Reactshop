@@ -11,7 +11,8 @@ export default {
       }
     },
     fontFamily: {
-      'logo': ['Oswald', 'sans-serif']
+      'logo': ['Pacifico', 'cursive'],
+      'subFont': ['Oswald', 'sans-serif']
     }
   },
   plugins: [],
