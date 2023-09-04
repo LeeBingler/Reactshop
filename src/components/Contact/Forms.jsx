@@ -10,22 +10,22 @@ export default function Forms() {
                 <div className='flex flex-col w-full col-span-full md:col-span-1'>
                     <label className='text-blue-500 translate-x-2' htmlFor='name'> Fullname </label>
                     <input name='name' {...register('Name')} placeholder='Your Name'
-                    className='border border-black rounded p-2 m-2'/>
+                    className='border border-black rounded p-2 m-2' required/>
                 </div>
                 <div className='flex flex-col w-full col-span-full md:col-span-1'>
                     <label className='text-blue-500 translate-x-2' htmlFor="email"> Email </label>
                     <input name='email' {...register('email')} placeholder='Your Email'
-                    className='border border-black rounded p-2 m-2'/>
+                    className='border border-black rounded p-2 m-2' required/>
                 </div>
                 <div className='flex flex-col w-full col-span-full'>
                     <label className='text-blue-500 translate-x-2' htmlFor="subject"> Subject </label>
                     <input name='subject' {...register('subject')} placeholder='The subject of your mail'
-                    className='border border-black rounded p-2 m-2'/>
+                    className='border border-black rounded p-2 m-2' required/>
                 </div>
             </div>
             <label className='text-blue-500 translate-x-2' htmlFor="content"> Content</label>
             <textarea name='content' {...register('Content')} placeholder='the Content'
-            className='border border-black rounded p-2 m-2 h-48' />
+            className='border border-black rounded p-2 m-2 h-48' required/>
             <div className='flex items-center justify-center w-full my-4'>
                 <input type="submit" className='border border-black rounded w-fit p-1 text-blue-400 hover:cursor-pointer'/>
             </div>
