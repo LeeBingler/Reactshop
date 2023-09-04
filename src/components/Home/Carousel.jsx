@@ -102,18 +102,18 @@ function Carousel({ children }) {
                 {slides}
             </ul>
             <button
-            ref={prevBtnRef}
-                className='absolute top-1/2 left-2 -translate-y-1/2 bg-gray-400 rounded-full w-10 bg-opacity-70 text-4xl border-0 cursor-pointer z-10'
+                ref={prevBtnRef}
+                className='absolute top-1/2 left-2 -translate-y-1/2 bg-gray-400 rounded-3xl w-10 bg-opacity-70 text-4xl border-0 cursor-pointer z-10'
                 onClick={clickHandlerPrevBtn}
             >
-                {'<'}
+                <i class='bx bxs-chevron-left'></i>
             </button>
             <button
-            ref={nextBtnRef}
-                className='absolute top-1/2 right-2 -translate-y-1/2 bg-gray-400 rounded-full w-10 bg-opacity-70 text-4xl border-0 cursor-pointer z-10'
+                ref={nextBtnRef}
+                className='absolute top-1/2 right-2 -translate-y-1/2 bg-gray-400 rounded-3xl w-10 bg-opacity-70 text-4xl border-0 cursor-pointer z-10'
                 onClick={clickHandlerNextBtn}
             >
-                {'>'}
+                <i class='bx bxs-chevron-right'></i>
             </button>
         </section>
     );
