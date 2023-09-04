@@ -33,7 +33,7 @@ export default function Cart() {
           </p>
         </div>
 
-        <div className='flex flex-col items-center border border-black bg-white m-4 p-2 h-fit gap-2 min-w-[310px] lg:max-w-md lg:w-full lg:sticky lg:top-16'>
+        <div className='flex flex-col items-center border border-black bg-white m-4 p-2 h-fit gap-2 min-w-[310px] lg:max-w-md lg:w-full lg:sticky lg:top-20'>
           <p className='text-right text-xl whitespace-nowrap'>
             Total ({nbItem()} {nbItem() > 1 ? 'articles' : 'article'}): {totalPrice}$
           </p>

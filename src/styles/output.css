@@ -969,16 +969,8 @@ video {
   border-radius: 50%;
 }
 
-.rounded-full {
-  border-radius: 9999px;
-}
-
 .rounded-md {
   border-radius: 0.375rem;
-}
-
-.rounded-2xl {
-  border-radius: 1rem;
 }
 
 .border {
@@ -1795,8 +1787,16 @@ video {
     position: sticky;
   }
 
-  .lg\:top-16 {
-    top: 4rem;
+  .lg\:top-1 {
+    top: 0.25rem;
+  }
+
+  .lg\:top-2 {
+    top: 0.5rem;
+  }
+
+  .lg\:top-20 {
+    top: 5rem;
   }
 
   .lg\:mb-0 {
