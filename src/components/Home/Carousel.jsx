@@ -90,7 +90,7 @@ function Carousel({ children }) {
     }, [clickHandlerNextBtn]);
 
     return (
-        <section className='relative overflow-hidden'>
+        <section className='relative overflow-hidden mt-7'>
             <ul
                 ref={containerRef}
                 className='list-none flex items-center max-w-6xl'

@@ -11,7 +11,7 @@ export default {
       }
     },
     fontFamily: {
-      'logo': ['Pacifico', 'cursive'],
+      'logo': ['Overpass', 'sans-serif'],
       'subFont': ['Oswald', 'sans-serif']
     }
   },
