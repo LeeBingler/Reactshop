@@ -3,7 +3,7 @@ export default function TermsAndConditions() {
 
     return (
         <section className='pt-20 flex flex-col items-center'>
-            <h1 className='font-logo text-4xl underline pb-10 lg:pb-16'>
+            <h1 className='font-subFont text-4xl underline pb-10 lg:pb-16'>
                 Terms and Conditions
             </h1>
             <div className='max-w-2xl flex flex-col gap-7 px-7 pb-7'>

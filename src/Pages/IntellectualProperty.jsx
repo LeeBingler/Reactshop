@@ -3,7 +3,7 @@ import GoBackBtn from '../components/GoBackBtn'
 export default function IntellectualProperty() {
   return (
     <section className='pt-20 flex flex-col gap-7 items-center'>
-        <h1 className='text-4xl font-logo text-center'>
+        <h1 className='text-4xl font-subFont text-center'>
             Intellectual Property Notice
         </h1>
         <div className='px-7'>
