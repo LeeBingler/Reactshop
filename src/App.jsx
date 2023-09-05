@@ -1,39 +1,41 @@
+import { lazy } from 'react';
 import './styles/output.css';
 import { Routes, Route } from 'react-router-dom';
 import ItemsProvider from './components/Provider/ItemsProvider/ItemsProvider';
 import CartProvider from './components/Provider/CartProvider/CartProvider';
-import NoPage from './Pages/NoPage';
-import Home from './Pages/Home';
-import About from './Pages/About';
-import Contact from './Pages/Contact';
 import NavBar from './components/Navbar/NavBar';
-import Footer from './components/Footer/Footer';
-import Cart from './Pages/Cart';
-import Product from './Pages/Product';
-import IntellectualProperty from './Pages/IntellectualProperty';
-import TermsAndConditions from './Pages/TermsAndConditions';
+
+const Home = lazy(() => import('./Pages/Home'));
+const About = lazy(() => import('./Pages/About'));
+const NoPage = lazy(() => import('./Pages/NoPage'));
+const Contact = lazy(() => import('./Pages/Contact'));
+const Footer = lazy(() => import('./components/Footer/Footer'));
+const Cart = lazy(() => import('./Pages/Cart'));
+const Product = lazy(() => import('./Pages/Product'));
+const IntellectualProperty = lazy(() => import('./Pages/IntellectualProperty'));
+const TermsAndConditions = lazy(() => import('./Pages/TermsAndConditions'));
 
 function App() {
-
-  return (
-    <ItemsProvider>
-      <CartProvider>
-        <NavBar />
-        <Routes>
-          <Route index path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/home/cart" element={<Cart/>} />
-          <Route path="/product/:id" element={<Product />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="intellectual-property" element={<IntellectualProperty />} />
-          <Route path="terms-and-conditions" element={<TermsAndConditions /> } />
-          <Route path="*" element={<NoPage />} />
-        </Routes>
-        <Footer />
-      </CartProvider>
-    </ItemsProvider>
-  )
+    return (
+        <ItemsProvider>
+            <CartProvider>
+                <Routes>
+                    <Route path='/' element={<NavBar />}>
+                        <Route path='/' element={<Home />} />
+                        <Route path='/home' element={<Home />} />
+                        <Route path='/home/cart' element={<Cart />} />
+                        <Route path='/product/:id' element={<Product />} />
+                        <Route path='/about' element={<About />} />
+                        <Route path='/contact' element={<Contact />} />
+                        <Route path='intellectual-property' element={<IntellectualProperty />} />
+                        <Route path='terms-and-conditions' element={<TermsAndConditions />} />
+                        <Route path='*' element={<NoPage />} />
+                    </Route>
+                </Routes>
+                <Footer />
+            </CartProvider>
+        </ItemsProvider>
+    );
 }
 
 export default App;

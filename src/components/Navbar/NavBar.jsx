@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect, useRef, Suspense } from 'react';
+import { Link, Outlet, useLocation } from 'react-router-dom';
+import LoadingScreen from '../../Pages/LoadingScreen';
 import MenuNav from './components/MenuNav/MenuNav';
 import MenuCart from './components/Menucart/MenuCart';
 import BtnCart from './components/BtnCart';
@@ -7,11 +8,11 @@ import BtnCart from './components/BtnCart';
 function useScreenSizeShow(setShowMenu) {
     const [screenSize, setScreenSize] = useState(getCurrentDimension());
 
-    function getCurrentDimension(){
+    function getCurrentDimension() {
         return {
-              width: window.innerWidth,
-              height: window.innerHeight
-        }
+            width: window.innerWidth,
+            height: window.innerHeight
+        };
     }
 
     /* Effect to know when the resize as occur */
@@ -21,15 +22,15 @@ function useScreenSizeShow(setShowMenu) {
         };
         window.addEventListener('resize', updateDimension);
 
-		if (screenSize.width > 768) {
+        if (screenSize.width > 768) {
             setShowMenu(true);
         } else {
             setShowMenu(false);
         }
 
-        return(() => {
+        return () => {
             window.removeEventListener('resize', updateDimension);
-        })
+        };
     }, [screenSize, setShowMenu]);
 }
 
@@ -39,10 +40,10 @@ function useCloseMenuLocationChange(setShowMenu) {
     /* Effect to know when the URL change and to close the menunavbar */
     useEffect(() => {
         setShowMenu(false);
-    }, [location, setShowMenu])
+    }, [location, setShowMenu]);
 }
 
-function useCloseMenuNotClick (setShowMenu, setShowCart) {
+function useCloseMenuNotClick(setShowMenu, setShowCart) {
     const navBarRef = useRef(null);
 
     /* Effect use to close menu if the use click outside of it */
@@ -53,10 +54,10 @@ function useCloseMenuNotClick (setShowMenu, setShowCart) {
                 setShowCart(false);
             }
         }
-        document.addEventListener("mousedown", handleClickOutsideNavBar);
+        document.addEventListener('mousedown', handleClickOutsideNavBar);
 
         return () => {
-            document.removeEventListener("mousedown", handleClickOutsideNavBar);
+            document.removeEventListener('mousedown', handleClickOutsideNavBar);
         };
     }, [navBarRef, setShowMenu, setShowCart]);
 
@@ -72,37 +73,47 @@ export default function NavBar() {
     useCloseMenuLocationChange(setShowMenu);
 
     function handleClickMenu() {
-        setShowMenu(prev => !prev);
+        setShowMenu((prev) => !prev);
         if (showCart) {
-            setShowCart(prev => !prev)
+            setShowCart((prev) => !prev);
         }
     }
 
     function handleClickCart() {
-        setShowCart(prev => !prev)
+        setShowCart((prev) => !prev);
         if (showMenu) {
-            setShowMenu(prev => !prev)
+            setShowMenu((prev) => !prev);
         }
     }
 
     const menuActive = showMenu ? 'text-blue-400' : 'text-black';
 
     return (
-        <header
-        ref={navBarRef}
-        className='fixed w-full top-0 bg-white z-20 h-18'
-        >
-            <nav className='navbar'>
-                <button className={`md:hidden btn-navBar ml-3 ${menuActive}`} onClick={handleClickMenu} aria-label='display menu'>
-                    <i className='bx bx-menu float-none inline text-3xl'></i>
-                </button>
-                <Link to='/home'>
-                    <h1 className='mt-2 font-logo text-4xl md:ml-4 border border-black rounded-3xl p-2'> Reactshop </h1>
-                </Link>
-                <BtnCart showCart={showCart} handleClickCart={handleClickCart}/>
-            </nav>
-            <MenuNav showMenu={showMenu} navBarRef={navBarRef} />
-            <MenuCart showCart={showCart} hiddenCart={handleClickCart} />
-        </header>
-    )
+        <>
+            <header ref={navBarRef} className='fixed w-full top-0 bg-white z-20 h-18'>
+                <nav className='navbar'>
+                    <button
+                        className={`md:hidden btn-navBar ml-3 ${menuActive}`}
+                        onClick={handleClickMenu}
+                        aria-label='display menu'
+                    >
+                        <i className='bx bx-menu float-none inline text-3xl'></i>
+                    </button>
+                    <Link to='/home'>
+                        <h1 className='mt-2 font-logo text-4xl md:ml-4 border border-black rounded-3xl p-2'>
+                            {' '}
+                            Reactshop{' '}
+                        </h1>
+                    </Link>
+                    <BtnCart showCart={showCart} handleClickCart={handleClickCart} />
+                </nav>
+                <MenuNav showMenu={showMenu} navBarRef={navBarRef} />
+                <MenuCart showCart={showCart} hiddenCart={handleClickCart} />
+            </header>
+
+            <Suspense fallback={<LoadingScreen />}>
+                <Outlet />
+            </Suspense>
+        </>
+    );
 }
