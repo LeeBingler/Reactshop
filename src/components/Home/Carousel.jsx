@@ -105,6 +105,7 @@ function Carousel({ children }) {
                 ref={prevBtnRef}
                 className='absolute top-1/2 left-2 -translate-y-1/2 bg-gray-400 rounded-3xl w-10 bg-opacity-70 text-4xl border-0 cursor-pointer z-10'
                 onClick={clickHandlerPrevBtn}
+                aria-label='go previous button image caroussel'
             >
                 <i className='bx bxs-chevron-left'></i>
             </button>
@@ -112,6 +113,7 @@ function Carousel({ children }) {
                 ref={nextBtnRef}
                 className='absolute top-1/2 right-2 -translate-y-1/2 bg-gray-400 rounded-3xl w-10 bg-opacity-70 text-4xl border-0 cursor-pointer z-10'
                 onClick={clickHandlerNextBtn}
+                aria-label='go next button image caroussel'
             >
                 <i className='bx bxs-chevron-right'></i>
             </button>
