@@ -1,68 +1,12 @@
-import { useState, useEffect, useRef, Suspense } from 'react';
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { useState, Suspense } from 'react';
+import { Link, Outlet } from 'react-router-dom';
 import LoadingScreen from '../../Pages/LoadingScreen';
 import MenuNav from './components/MenuNav/MenuNav';
 import MenuCart from './components/Menucart/MenuCart';
 import BtnCart from './components/BtnCart';
-
-function useScreenSizeShow(setShowMenu) {
-    const [screenSize, setScreenSize] = useState(getCurrentDimension());
-
-    function getCurrentDimension() {
-        return {
-            width: window.innerWidth,
-            height: window.innerHeight
-        };
-    }
-
-    /* Effect to know when the resize as occur */
-    useEffect(() => {
-        const updateDimension = () => {
-            setScreenSize(getCurrentDimension());
-        };
-        window.addEventListener('resize', updateDimension);
-
-        if (screenSize.width > 768) {
-            setShowMenu(true);
-        } else {
-            setShowMenu(false);
-        }
-
-        return () => {
-            window.removeEventListener('resize', updateDimension);
-        };
-    }, [screenSize, setShowMenu]);
-}
-
-function useCloseMenuLocationChange(setShowMenu) {
-    const location = useLocation();
-
-    /* Effect to know when the URL change and to close the menunavbar */
-    useEffect(() => {
-        setShowMenu(false);
-    }, [location, setShowMenu]);
-}
-
-function useCloseMenuNotClick(setShowMenu, setShowCart) {
-    const navBarRef = useRef(null);
-
-    /* Effect use to close menu if the use click outside of it */
-    useEffect(() => {
-        function handleClickOutsideNavBar(event) {
-            if (navBarRef.current && !navBarRef.current.contains(event.target)) {
-                setShowMenu(false);
-                setShowCart(false);
-            }
-        }
-        document.addEventListener('mousedown', handleClickOutsideNavBar);
-
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutsideNavBar);
-        };
-    }, [navBarRef, setShowMenu, setShowCart]);
-
-    return navBarRef;
-}
+import useScreenSizeShow from './hooks/useScreenSizeShow';
+import useCloseMenuLocationChange from './hooks/useCloseMenuLocationChange';
+import useCloseMenuNotClick from './hooks/useCloseMenuNotClick';
 
 export default function NavBar() {
     const [showMenu, setShowMenu] = useState(false);
@@ -101,8 +45,7 @@ export default function NavBar() {
                     </button>
                     <Link to='/home'>
                         <h1 className='mt-2 font-logo text-4xl md:ml-4 border border-black rounded-3xl p-2'>
-                            {' '}
-                            Reactshop{' '}
+                            Reactshop
                         </h1>
                     </Link>
                     <BtnCart showCart={showCart} handleClickCart={handleClickCart} />

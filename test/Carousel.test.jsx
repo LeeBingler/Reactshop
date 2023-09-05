@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
+import { beforeEach, describe, expect } from 'vitest';
 import img1 from '/src/images/banner1.webp';
 import img2 from '/src/images/banner2.webp';
 import img3 from '/src/images/banner3.webp';
@@ -91,14 +92,14 @@ describe('Carousel test', () => {
     });
 
     it('Carousel: click next btn', () => {
-        const nextBtn = screen.getByText(/>/i);
+        const nextBtn = screen.getByLabelText('go next button image caroussel')
         for (let i = 0; i < 5; i++) {
             fireEvent.click(nextBtn);
         }
     });
 
     it('Carousel: click prev btn', () => {
-        const prevBtn = screen.getByText(/</i);
+        const prevBtn = screen.getByLabelText('go previous button image caroussel')
         for (let i = 0; i < 5; i++) {
             fireEvent.click(prevBtn);
         }
