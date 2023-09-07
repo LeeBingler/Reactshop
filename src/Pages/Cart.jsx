@@ -20,11 +20,11 @@ export default function Cart() {
     }
 
     return (
-        <section className='flex flex-col pt-20 pb-7 bg-gray-200 lg:pt-32 lg:pb-20  lg:flex-row lg:justify-around lg:min-h-[60vh]'>
-            <div className='bg-white max-w-7xl border border-black lg:min-w-[700px]'>
+        <section className='flex flex-col items-start justify-center px-5 pt-28 pb-7 bg-gray-200 lg:pt-32 lg:pb-20  lg:flex-row lg:justify-around lg:min-h-[60vh]'>
+            <div className='bg-white w-full max-w-3xl lg:min-w-[700px] lg:max-w-6xl'>
                 <h1 className='font-subFont text-6xl ml-4 mt-4'> Your cart : </h1>
                 <hr className='mx-14 mt-10' />
-                <div className='flex flex-col items-center'>
+                <div className='flex flex-col items-center px-4'>
                     {ItemCart.length != 0 ? (
                         ItemCart.map((item) => <CartCard key={item.id * 184821} item={item} />)
                     ) : (
@@ -37,7 +37,7 @@ export default function Cart() {
                 </p>
             </div>
 
-            <div className='flex flex-col items-center border border-black bg-white m-4 p-2 h-fit gap-2 min-w-[310px] lg:max-w-md lg:w-full lg:sticky lg:top-20'>
+            <div className='flex flex-col items-center bg-white p-4 m-10 h-fit gap-2 min-w-[310px] lg:max-w-md lg:w-full lg:sticky lg:top-28 lg:my-0'>
                 <p className='text-right text-xl whitespace-nowrap'>
                     Total ({nbItem()} {nbItem() > 1 ? 'articles' : 'article'}): {totalPrice}$
                 </p>
@@ -46,7 +46,7 @@ export default function Cart() {
                 ) : (
                     <button
                         aria-label='checkout'
-                        className='rounded border border-black p-2 m-2 bg-blue-400 text-white whitespace-nowrap'
+                        className='rounded  p-2 m-2 bg-blue-400 text-white whitespace-nowrap hover:bg-blue-500'
                         onClick={payement}
                     >
                         Proceed to Checkout

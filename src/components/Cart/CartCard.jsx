@@ -1,41 +1,49 @@
 import { PropTypes } from 'prop-types';
 import { useAddItemCart, useRemoveItemCart } from '../Provider/CartProvider/Hook';
-
-
-/* Copie le pd: https://clone-6ae22.web.app/ */
+import BtnCartCard from './BtnCartCard';
 function CartCard({ item }) {
     const handleClickRemove = useRemoveItemCart();
     const handleClickAdd = useAddItemCart();
 
     return (
-        <div className='mt-10 lg:mt-14 flex'>
-            <img className='h-20 w-28 px-6 lg:h-28' src={item.image} alt={item.title} />
-            <div className='flex flex-col w-full max-w-4xl'>
+        <div className='mt-10 lg:mt-14 flex flex-row h-[200px] justify-around w-full'>
+            <div className='w-[30%] flex justify-center items-center pr-8'>
+                <img className='h-min max-h-full' src={item.image} alt={item.title} />
+            </div>
+
+            <div className='flex flex-col w-[70%] max-w-4xl'>
                 <div className='flex justify-between'>
-                    <h1 className='text-xl lg:text-2xl'> {item.title} </h1>
-                    <p className='pr-4'> x{item.number}</p>
+                    <h1 className='font-medium mr-2 text-base lg:text-2xl h-[72px] overflow-hidden'> {item.title} </h1>
+                    <p className='font-bold text-lg lg:text-xl ml-3'> ${item.price} </p>
                 </div>
-                <p className='lg:text-xl'> ${item.price} </p>
-                <p className='text-gray-500 text-sm pt-2 lg:text-base'> {item.description} </p>
-                <div className='flex gap-7 mt-4'>
+                <p className='text-blue-400 mt-2'> In stock </p>
+                <div className='mt-4 flex justify-between'>
+                    <div className='flex items-center text-lg lg:gap-3 lg:text-xl'>
+                        <BtnCartCard
+                            ariaLabel={'remove one item cart'}
+                            onClick={() => handleClickRemove(item, item.number - 1)}
+                        >
+                            -
+                        </BtnCartCard>
+                        <p className='px-4'>{item.number}</p>
+                        <BtnCartCard
+                            ariaLabel={'add one item'}
+                            onClick={() => handleClickAdd(item, item.number + 1)}
+                        >
+                            +
+                        </BtnCartCard>
+                    </div>
+
                     <button
-                    aria-label='remove one item'
-                    className='border rounded border-black p-1 m-1'
-                    onClick={() => handleClickRemove(item, item.number - 1)}
+                        aria-label='remove all items'
+                        onClick={() => handleClickRemove(item, 0)}
                     >
-                        Remove One
-                    </button>
-                    <button
-                    aria-label='add one item'
-                    className='rounded text-white bg-black p-1 m-1'
-                    onClick={() => handleClickAdd(item, item.number + 1)}
-                    >
-                        Add One
+                        <i className='bx bxs-trash-alt hover:text-blue-400 text-2xl lg:text-4xl'></i>
                     </button>
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 CartCard.propTypes = {
@@ -46,6 +54,6 @@ CartCard.propTypes = {
         price: PropTypes.number.isRequired,
         number: PropTypes.number.isRequired
     })
-}
+};
 
 export default CartCard;
