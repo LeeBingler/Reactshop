@@ -22,7 +22,7 @@ export default function Cart() {
     return (
         <section className='flex flex-col items-start justify-center px-5 pt-28 pb-7 bg-gray-200 lg:pt-32 lg:pb-20  lg:flex-row lg:justify-around lg:min-h-[60vh]'>
             <div className='bg-white w-full max-w-3xl lg:min-w-[700px] lg:max-w-6xl'>
-                <h1 className='font-subFont text-6xl ml-4 mt-4'> Your cart : </h1>
+                <h1 className='font-subFont text-6xl ml-4 mt-4'> Your cart </h1>
                 <hr className='mx-14 mt-10' />
                 <div className='flex flex-col items-center px-4'>
                     {ItemCart.length != 0 ? (

@@ -13,7 +13,9 @@ function CartCard({ item }) {
 
             <div className='flex flex-col w-[70%] max-w-4xl'>
                 <div className='flex justify-between'>
-                    <h1 className='font-medium mr-2 text-base lg:text-2xl h-[72px] overflow-hidden'> {item.title} </h1>
+                    <h1 className='font-medium mr-2 text-base lg:text-2xl h-[72px] overflow-hidden'>
+                        {item.title}
+                    </h1>
                     <p className='font-bold text-lg lg:text-xl ml-3'> ${item.price} </p>
                 </div>
                 <p className='text-blue-400 mt-2'> In stock </p>
