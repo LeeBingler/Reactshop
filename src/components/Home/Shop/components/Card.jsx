@@ -11,11 +11,13 @@ function Card({ item }) {
                 ⭐ {item.rating.rate}
             </p>
             <div className='flex flex-col justify-center items-center'>
-                <img
-                    className='h-40 mt-1 md:px-2 md:h-52 lg:h-60 lg:px-20'
-                    src={item.image}
-                    alt={item.title}
-                />
+                <Link to={`/product/${item.id}`} className='cursor-pointer'>
+                    <img
+                        className='h-40 mt-1 md:px-2 md:h-52 lg:h-60 lg:px-20'
+                        src={item.image}
+                        alt={item.title}
+                    />
+                </Link>
             </div>
             <h1
                 className='p-2 overflow-hidden text-ellipsis whitespace-nowrap text-gray-600 text-center
