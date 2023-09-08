@@ -16,7 +16,7 @@ function MenuCart({ showCart, hiddenCart }) {
             <p className='my-2 text-2xl'> {`Total: $${totalPrice}`} </p>
             <button
                 aria-label='go to the cart page'
-                className='text-blue-400 px-4 py-1 mt-2 mb-4 lg:text-2xl border border-black rounded-md focus:ring-4 shadow-lg transform active:scale-75 transition-transform;font-semibold text-2xl'
+                className='text-blue-400 px-4 py-1 mt-2 mb-4 lg:text-2xl border border-black rounded-md focus:ring-4 transform active:scale-75 transition-transform font-semibold text-2xl hover:bg-gray-200'
                 onClick={hiddenCart}
             >
                 <Link to='/home/cart'>Go To Cart</Link>
