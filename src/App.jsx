@@ -4,13 +4,13 @@ import { Routes, Route } from 'react-router-dom';
 import ItemsProvider from './components/Provider/ItemsProvider/ItemsProvider';
 import CartProvider from './components/Provider/CartProvider/CartProvider';
 import NavBar from './components/Navbar/NavBar';
+import Cart from './Pages/Cart';
 
 const Home = lazy(() => import('./Pages/Home'));
 const About = lazy(() => import('./Pages/About'));
 const NoPage = lazy(() => import('./Pages/NoPage'));
 const Contact = lazy(() => import('./Pages/Contact'));
 const Footer = lazy(() => import('./components/Footer/Footer'));
-const Cart = lazy(() => import('./Pages/Cart'));
 const Product = lazy(() => import('./Pages/Product'));
 const IntellectualProperty = lazy(() => import('./Pages/IntellectualProperty'));
 const TermsAndConditions = lazy(() => import('./Pages/TermsAndConditions'));
