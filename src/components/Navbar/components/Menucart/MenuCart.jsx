@@ -9,7 +9,7 @@ function MenuCart({ showCart, hiddenCart }) {
     const totalPrice = useTotalPriceCart();
 
     return (
-        <section className={`menu-navbar h-[91.2vh] border-l border-black ${isHidden}`}>
+        <section className={`menu-navbar right-0 h-[91.2vh] border-l border-black ${isHidden}`}>
             {ItemCart.map((item) => {
                 return <CardCart key={item.id * 1000} item={item} />;
             })}
