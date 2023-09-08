@@ -21,7 +21,7 @@
 }
 
 .menu-navbar {
-    @apply flex flex-col items-center absolute bg-white whitespace-nowrap overflow-x-hidden h-screen transition-all ease-out duration-400;
+    @apply flex flex-col items-center absolute right-0 bg-white whitespace-nowrap overflow-x-hidden transition-all ease-out duration-400;
 }
 
 .btn-carousel {
