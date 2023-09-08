@@ -19,7 +19,7 @@ function CardCart({ item }) {
             <button
             aria-label='Remove item'
             className='rounded text-white bg-black p-1 h-10'
-            onClick={() => {onClickHandler(item, item.number - 1)}}
+            onClick={() => {onClickHandler(item, 0)}}
             >
                 Remove
             </button>
