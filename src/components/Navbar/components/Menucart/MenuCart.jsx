@@ -9,14 +9,14 @@ function MenuCart({ showCart, hiddenCart }) {
     const totalPrice = useTotalPriceCart();
 
     return (
-        <section className={`menu-navbar right-0 border-l border-black ${isHidden}`}>
+        <section className={`menu-navbar h-[91.2vh] border-l border-black ${isHidden}`}>
             {ItemCart.map((item) => {
                 return <CardCart key={item.id * 1000} item={item} />;
             })}
             <p className='my-2 text-2xl'> {`Total: $${totalPrice}`} </p>
             <button
                 aria-label='go to the cart page'
-                className='text-blue-400 px-4 py-1 mt-2 lg:text-2xl border border-black rounded-md focus:ring-4 shadow-lg transform active:scale-75 transition-transform;font-semibold text-2xl'
+                className='text-blue-400 px-4 py-1 mt-2 mb-4 lg:text-2xl border border-black rounded-md focus:ring-4 shadow-lg transform active:scale-75 transition-transform;font-semibold text-2xl'
                 onClick={hiddenCart}
             >
                 <Link to='/home/cart'>Go To Cart</Link>

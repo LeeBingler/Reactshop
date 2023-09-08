@@ -554,10 +554,6 @@ video {
   left: 0.5rem;
 }
 
-.right-0{
-  right: 0px;
-}
-
 .right-2{
   right: 0.5rem;
 }
@@ -761,6 +757,38 @@ video {
 
 .h-screen{
   height: 100vh;
+}
+
+.h-\[\]{
+  height: ;
+}
+
+.h-\[80\]{
+  height: 80;
+}
+
+.h-\[80vh\]{
+  height: 80vh;
+}
+
+.h-\[90vh\]{
+  height: 90vh;
+}
+
+.h-\[92vh\]{
+  height: 92vh;
+}
+
+.h-\[91vh\]{
+  height: 91vh;
+}
+
+.h-\[91\.2vh\]{
+  height: 91.2vh;
+}
+
+.h-\[91\.1vh\]{
+  height: 91.1vh;
 }
 
 .max-h-64{
@@ -1421,8 +1449,8 @@ video {
 
 .menu-navbar{
   position: absolute;
+  right: 0px;
   display: flex;
-  height: 100vh;
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
