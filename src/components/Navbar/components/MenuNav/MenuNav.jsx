@@ -20,7 +20,7 @@ function MenuNav({ showMenu }) {
 
     return (
         <div
-            className={`menu-navbar border-r border-black ${isHidden}
+            className={`menu-navbar left-0 h-screen border-r border-black ${isHidden}
             md:transition-none md:absolute md:top-4 md:h-12 md:flex-row-reverse md:border-none
             md:w-[65%] md:right-16 md:overflow-x-visible
             md:justify-between`}
