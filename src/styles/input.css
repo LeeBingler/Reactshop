@@ -33,7 +33,7 @@
 }
 
 .btn-addToCart {
-    @apply px-4 py-1 mt-2 bg-blue-400 rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-75 transition-transform;
+    @apply px-4 py-1 mt-2 bg-blue-400 rounded-md text-white outline-none hover:bg-blue-500 focus:ring-4 shadow-lg transform active:scale-75 transition-transform;
 }
 
 .subtitle-about {

@@ -34,6 +34,7 @@ function CartCard({ item }) {
                     <p className='font-bold text-lg lg:text-xl ml-3'> ${item.price} </p>
                 </div>
                 <p className='text-blue-400 mt-2'> In stock </p>
+
                 <div className='mt-4 flex justify-between'>
                     <div className='flex items-center text-lg lg:gap-3 lg:text-xl'>
                         <BtnCartCard

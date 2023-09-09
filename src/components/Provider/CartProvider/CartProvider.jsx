@@ -41,7 +41,7 @@ function CartProvider({ children }) {
                     return item;
                 });
             }
-            newItem.number = 1;
+            newItem.number = number;
             return [...prev, newItem];
         });
     }
