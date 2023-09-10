@@ -12,11 +12,11 @@ function RatingStars({ rating }) {
         let cpyRate = Number(rate);
 
 
-        for (; cpyRate > 1; cpyRate--) {
+        for (; cpyRate >= 1; cpyRate--) {
             arrayStar.push(fullStar);
         }
 
-        if (arrayStar.length != 5 && (cpyRate > 0.5 && cpyRate < 0.9)) {
+        if (arrayStar.length != 5 && (cpyRate >= 0.5 && cpyRate < 0.9)) {
             arrayStar.push(halfStar);
         }
 
