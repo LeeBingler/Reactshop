@@ -1,11 +1,11 @@
 import LinkFooter from './components/LinkFooter';
 import PrivacyFooter from './components/PrivacyFooter';
+import GoToTopBtn from './components/GoToTopBtn';
 
 export default function Footer() {
   return (
     <>
-        <hr className='border-black mx-14 mt-20'/>
-
+        <GoToTopBtn />
         <div className='py-6 w-full md:flex md:justify-around md:items-center'>
             <LinkFooter />
             <PrivacyFooter />
