@@ -8,11 +8,11 @@ export default function About() {
                     <div className="flex flex-col gap-1 lg:gap-2 lg:text-lg">
                         <p>
                             Our mission is to sell you what you really need at a fair cost. We take
-                            pride in offering you a wide range of high-quality products, including Men's
-                            and Women's Clothing, Jewelery and Electronics item.
+                            pride in offering you a wide range of high-quality products, including Men&apos;s
+                            and Women&apos;s Clothing, Jewelery and Electronics item.
                         </p>
                         <p>
-                            Our company was born out of an ideal futur for all the customer. Since then, we've evolved to
+                            Our company was born out of an ideal futur for all the customer. Since then, we&apos;ve evolved to
                             become a major player in the industry, consistently focusing on our core
                             values of sincerity, fair cost for everyone and a good services.
                         </p>

@@ -4,6 +4,7 @@ import { useAddItemCart } from '../components/Provider/CartProvider/Hook';
 import LoadingScreen from './LoadingScreen';
 import GoBackBtn from '../components/GoBackBtn';
 import { useState } from 'react';
+import RatingStars from '../components/Product/RatingStars';
 
 export default function Product() {
     const [numberOfItemToAdd, setnumberOfItemToAdd] = useState(1);
@@ -42,10 +43,7 @@ export default function Product() {
 
             <div className='w-4/5 my-4 max-w-3xl lg:mb-0'>
                 <h1 className='py-5 font-medium text-2xl lg:text-2xl'>{item.title}</h1>
-                <div className='flex py-3 gap-6'>
-                    <p className='font-semibold md:ml-4'>⭐ {item.rating.rate} </p>
-                    <p className='text-blue-800'> {item.rating.count} ratings </p>
-                </div>
+                <RatingStars rating={item.rating} />
                 <div className='border-t border-b border-gray-400 my-4 py-6 lg:mb-0 lg:pb-0'>
                     <h2 className='mb-4 mt-1 text-xl font-medium'> About this item </h2>
                     <p className='text-gray-600 text-justify md:text-xl md:p-4'>
@@ -95,7 +93,7 @@ export default function Product() {
                     Buy Now
                 </button>
                 <div className='flex py-2 items-center gap-2'>
-                    <i class='bx bxs-lock-alt'></i>
+                    <i className='bx bxs-lock-alt'></i>
                     <p className='text-blue-700'> Secure transaction </p>
                 </div>
                 <div className='text-gray-800 text-sm'>

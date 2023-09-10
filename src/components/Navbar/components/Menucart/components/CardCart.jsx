@@ -40,6 +40,7 @@ function CardCart({ item }) {
 CardCart.propTypes = {
     item: PropTypes.shape({
         image: PropTypes.any.isRequired,
+        id: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,
         price: PropTypes.number.isRequired,
         number: PropTypes.number.isRequired
