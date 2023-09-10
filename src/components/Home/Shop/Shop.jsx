@@ -2,7 +2,6 @@ import { useReducer } from 'react'
 import { useItems } from '../../Provider/ItemsProvider/Hook'
 import Card from './components/Card';
 import FilterShop from './components/FilterShop';
-import ScrollToTop from '../../ScrollToTop';
 import { ACTION } from './components/Action';
 
 function reducerFilterShop(state, action) {
@@ -42,7 +41,6 @@ export default function Shop() {
                     return <Card key={item.id} item={item} />
                 })}
             </div>
-            <ScrollToTop />
         </section>
     )
 }

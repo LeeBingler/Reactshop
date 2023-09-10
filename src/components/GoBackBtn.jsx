@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import ScrollToTop from './ScrollToTop';
 import { PropTypes } from 'prop-types';
 
 function GoBackBtn({ className }) {
@@ -18,7 +17,6 @@ function GoBackBtn({ className }) {
                     Go Back
                 </Link>
             </button>
-            <ScrollToTop />
         </>
     );
 }
