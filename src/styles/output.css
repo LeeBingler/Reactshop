@@ -879,6 +879,14 @@ video {
   width: 100vw;
 }
 
+.w-4{
+  width: 1rem;
+}
+
+.w-32{
+  width: 8rem;
+}
+
 .min-w-\[300px\]{
   min-width: 300px;
 }
@@ -905,6 +913,10 @@ video {
 
 .max-w-full{
   max-width: 100%;
+}
+
+.max-w-lg{
+  max-width: 32rem;
 }
 
 .-translate-y-1\/2{

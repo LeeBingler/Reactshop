@@ -1,37 +1,14 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useGetItemById, useItems } from '../components/Provider/ItemsProvider/Hook';
-import { useAddItemCart } from '../components/Provider/CartProvider/Hook';
 import LoadingScreen from './LoadingScreen';
 import GoBackBtn from '../components/GoBackBtn';
-import { useState } from 'react';
 import RatingStars from '../components/Product/RatingStars';
+import CTAsection from '../components/Product/CTAsection';
 
 export default function Product() {
-    const [numberOfItemToAdd, setnumberOfItemToAdd] = useState(1);
     const idProduct = Number(useParams().id);
     const getItemId = useGetItemById();
     const item = getItemId(idProduct)[0];
-    const navigate = useNavigate();
-
-    const onClickHandler = useAddItemCart();
-
-    function handleOnClickBtnPlus() {
-        setnumberOfItemToAdd((prev) => {
-            if (prev < 10) {
-                return prev + 1;
-            }
-            return prev;
-        });
-    }
-
-    function handleOnClickBtnMinus() {
-        setnumberOfItemToAdd((prev) => {
-            if (prev > 1) {
-                return prev - 1;
-            }
-            return prev;
-        });
-    }
 
     if (useItems().length === 0) return <LoadingScreen />;
 
@@ -52,63 +29,10 @@ export default function Product() {
                 </div>
             </div>
 
-            <div className='flex flex-col gap-3 border-black border rounded py-4 px-8 mb-10 w-4/5 lg:pl-5 lg:py-8'>
-                <div className='flex flex-col gap-3 items-center'>
-                    <p className='text-xl md:text-2xl lg:text-3xl'>
-                        Price : <span className='text-blue-900'> ${item.price} </span>
-                    </p>
-                    <div className='flex w-1/2 justify-between content-center items-center'>
-                        <button
-                            className='text-4xl border rounded border-black pb-1 px-4 align-middle text-center  hover:bg-gray-200  transition-all 0.5s'
-                            onClick={handleOnClickBtnMinus}
-                        >
-                            -
-                        </button>
-                        <p className='text-2xl'> {numberOfItemToAdd} </p>
-                        <button
-                            className='text-4xl border rounded border-black pb-1 px-3 align-middle text-center  hover:bg-gray-200  transition-all 0.5s'
-                            onClick={handleOnClickBtnPlus}
-                        >
-                            +
-                        </button>
-                    </div>
-                </div>
-
-                <button
-                    aria-label='add this item to your cart'
-                    className='btn-addToCart'
-                    onClick={() => {
-                        onClickHandler(item, item.number + numberOfItemToAdd);
-                    }}
-                >
-                    Add to Cart
-                </button>
-                <button
-                    className='bg-blue-900 rounded-md px-4 py-1 mt-2 text-white hover:bg-blue-950'
-                    onClick={() => {
-                        onClickHandler(item, item.number + 1);
-                        navigate('/home/cart');
-                    }}
-                >
-                    Buy Now
-                </button>
-                <div className='flex py-2 items-center gap-2'>
-                    <i className='bx bxs-lock-alt'></i>
-                    <p className='text-blue-700'> Secure transaction </p>
-                </div>
-                <div className='text-gray-800 text-sm'>
-                    <div className='flex justify-between'>
-                        <p> Ships from </p>
-                        <p> Reactshop.com </p>
-                    </div>
-                    <div className='flex justify-between'>
-                        <p> Sold by </p>
-                        <p> Reactshop.com </p>
-                    </div>
-                </div>
+            <div className='flex flex-col w-4/5 justify-center items-center'>
+                <CTAsection item={item} />
+                <GoBackBtn  className='w-32' />
             </div>
-
-            <GoBackBtn />
         </section>
     );
 }

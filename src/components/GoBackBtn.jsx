@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import ScrollToTop from './ScrollToTop';
+import { PropTypes } from 'prop-types';
 
-export default function GoBackBtn() {
+function GoBackBtn({ className }) {
     return (
         <>
             <button
                 aria-label='go to previous page'
-                className='text-blue-400 px-4 py-1 mt-2 text-xl lg:text-2xl border border-black rounded-md focus:ring-4 transform active:scale-75 transition-transform hover:bg-gray-200'
+                className={`${className} text-blue-400 px-4 py-1 mt-2 text-xl lg:text-2xl border border-black rounded-md focus:ring-4 transform active:scale-75 transition-transform hover:bg-gray-200`}
             >
                 <Link
                     to={-1}
@@ -21,3 +22,9 @@ export default function GoBackBtn() {
         </>
     );
 }
+
+GoBackBtn.propTypes = {
+    className: PropTypes.string
+}
+
+export default GoBackBtn;
