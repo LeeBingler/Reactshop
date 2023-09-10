@@ -7,6 +7,7 @@ import BtnCart from './components/BtnCart';
 import useScreenSizeShow from './hooks/useScreenSizeShow';
 import useCloseMenuLocationChange from './hooks/useCloseMenuLocationChange';
 import useCloseMenuNotClick from './hooks/useCloseMenuNotClick';
+import useScrollToTop from './hooks/useScrollToTop';
 
 export default function NavBar() {
     const [showMenu, setShowMenu] = useState(false);
@@ -15,6 +16,7 @@ export default function NavBar() {
 
     useScreenSizeShow(setShowMenu);
     useCloseMenuLocationChange(setShowMenu);
+    useScrollToTop();
 
     function handleClickMenu() {
         setShowMenu((prev) => !prev);
