@@ -1,10 +1,8 @@
 import { PropTypes } from 'prop-types';
+import { HalfStar, EmptyStar, FullStar } from './Stars';
 
 function RatingStars({ rating }) {
     const {rate, count} = rating;
-    const fullStar = <i className='bx bxs-star'></i>
-    const emptyStar = <i className='bx bx-star' ></i>
-    const halfStar = <i className='bx bxs-star-half' ></i>
     const arrayStar = setArrayStar();
 
     function setArrayStar () {
@@ -13,15 +11,15 @@ function RatingStars({ rating }) {
 
 
         for (; cpyRate >= 1; cpyRate--) {
-            arrayStar.push(fullStar);
+            arrayStar.push(<FullStar key={cpyRate * 78945} />);
         }
 
         if (arrayStar.length != 5 && (cpyRate >= 0.5 && cpyRate < 0.9)) {
-            arrayStar.push(halfStar);
+            arrayStar.push(<HalfStar key={cpyRate * 10 * 4854} />);
         }
 
         while (arrayStar.length < 5) {
-            arrayStar.push(emptyStar);
+            arrayStar.push(<EmptyStar key={arrayStar.length * 48951} />);
         }
 
         return arrayStar;

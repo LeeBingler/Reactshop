@@ -1,22 +1,11 @@
-import { useState } from 'react';
-import ListItems from './components/ListItems';
-import BtnSearchBar from './components/BtnSearchbar'
 import InfoFooter from '../../InfoFooter';
 import useDetectKeyboardOpen from 'use-detect-keyboard-open';
 import { NavLink } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
-
+import SearchBar from './components/SearchBar';
 function MenuNav({ showMenu }) {
     const isKeyboardOpen = useDetectKeyboardOpen();
     const isHidden = showMenu || isKeyboardOpen ? 'w-3/4' : 'w-0';
-    const [valueSearchBar, setValueSearchBar] = useState('');
-
-    function handleOnChangeSearchBar(e) {
-        let loweredString = e.target.value.toLowerCase();
-
-        e.preventDefault();
-        setValueSearchBar(loweredString);
-    }
 
     return (
         <div
@@ -25,24 +14,10 @@ function MenuNav({ showMenu }) {
             md:w-[65%] md:right-16 md:overflow-x-visible
             md:justify-between`}
         >
-            <div className='flex items-center'>
-                <div className='relative'>
-                    <input
-                        type='text'
-                        className='block border p-2 mt-4 border-black w-44
-                        md:m-4 md:py-1 md:w-48 md:text-lg md:h-10 md:mr-0 md:ml-2
-                        lg:w-60'
-                        onChange={(e) => handleOnChangeSearchBar(e)}
-                        value={valueSearchBar}
-                        placeholder='Type to search..'
-                    ></input>
-                    <ListItems valueSearchBar={valueSearchBar} setValueSearchBar={setValueSearchBar} />
-                </div>
-                <BtnSearchBar valueSearchBar={valueSearchBar} />
-            </div>
+            <SearchBar />
             <div
-                className='flex flex-col
-                md:flex-row md:justify-around md:pl-84 md:w-full'
+                className='flex flex-col mt-4
+                md:flex-row md:justify-around md:pl-84 md:w-full md:mt-0'
             >
                 <NavLink className='linknavbar' to='/home'>
                     Home

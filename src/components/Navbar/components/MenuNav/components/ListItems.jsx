@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useItems } from '../../../../Provider/ItemsProvider/Hook';
 import { PropTypes } from 'prop-types';
 
@@ -16,17 +17,21 @@ function ListItems({ valueSearchBar, setValueSearchBar }) {
     }
 
     return (
-        <div className='absolute md:top-14 md:left-2 flex flex-col overflow-scroll h-fit w-44 md:w-48 lg:w-60 bg-white pl-2 border-b border-x border-black'>
+        <div
+            className={`absolute flex flex-col w-full overflow-scroll h-fit bg-white pl-2 border-x border-black
+        md:top-14 md:left-2 md:w-48 lg:w-60 ${filteredData.length != 0 ? 'border-b' : null}`}
+        >
             {filteredData.map((item) => {
                 return (
-                    <button
+                    <Link
                         aria-label={`auto complete searchbar btn for ${item.title}`}
                         key={item.id * 7872}
                         className='overflow-hidden text-ellipsis whitespace-nowrap py-2'
-                        onClick={() => setValueSearchBar(item.title)}
+                        to={`/product/${item.id}`}
+                        onClick={() => setValueSearchBar('')}
                     >
                         {item.title}
-                    </button>
+                    </Link>
                 );
             })}
         </div>

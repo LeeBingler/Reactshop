@@ -1,13 +1,11 @@
-import React from 'react';
 import axios from 'axios';
+import { PropTypes } from 'prop-types';
 
 function CheckoutBtn({ itemCart }) {
-
     async function handleClick() {
         await axios
             .post(`${import.meta.env.VITE_SERVER_URL}/create-checkout-session`, { items: itemCart })
             .then((res) => {
-                console.log('response: ', res);
                 if (res.statusText == 'OK') return JSON.parse(res.request.response);
                 return res.json().then((json) => Promise.reject(json));
             })
@@ -29,5 +27,9 @@ function CheckoutBtn({ itemCart }) {
         </button>
     );
 }
+
+CheckoutBtn.propTypes = {
+    itemCart: PropTypes.array.isRequired
+};
 
 export default CheckoutBtn;
