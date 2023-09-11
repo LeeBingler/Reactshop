@@ -71,8 +71,6 @@ To run the server, follow these steps:
 3. Run the web application using `npm run start:server`.
 
 
-For deployment, execute `npm run build`. The generated build files can then be hosted on a web server or a platform like Netlify for public access.
-
 ## Copyright and License
 
 The ReactShop project is open-source and distributed under the MIT License, granting users the freedom to use, modify, and distribute the code. For more details, refer to the License File provided in the project.
