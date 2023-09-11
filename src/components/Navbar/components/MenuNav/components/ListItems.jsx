@@ -16,7 +16,8 @@ function ListItems({ valueSearchBar, setValueSearchBar }) {
     }
 
     return (
-        <div className='absolute md:top-14 md:left-2 flex flex-col overflow-scroll h-fit w-44 md:w-48 lg:w-60 bg-white pl-2 border-b border-x border-black'>
+        <div className={`absolute flex flex-col w-full overflow-scroll h-fit bg-white pl-2 border-x border-black
+        md:top-14 md:left-2 md:w-48 lg:w-60 ${filteredData.length === 1 ? 'border-b' : null}`}>
             {filteredData.map((item) => {
                 return (
                     <button
