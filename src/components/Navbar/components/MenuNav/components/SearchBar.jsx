@@ -13,7 +13,7 @@ function SearchBar() {
     }
 
     return (
-        <div className='flex items-center relative'>
+        <div className='flex items-center relative mt-4 md:mt-0'>
             <BtnSearchBar valueSearchBar={valueSearchBar} />
             <div className='relative'>
                 <input

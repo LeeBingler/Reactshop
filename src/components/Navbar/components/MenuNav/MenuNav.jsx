@@ -16,8 +16,8 @@ function MenuNav({ showMenu }) {
         >
             <SearchBar />
             <div
-                className='flex flex-col
-                md:flex-row md:justify-around md:pl-84 md:w-full'
+                className='flex flex-col mt-4
+                md:flex-row md:justify-around md:pl-84 md:w-full md:mt-0'
             >
                 <NavLink className='linknavbar' to='/home'>
                     Home
