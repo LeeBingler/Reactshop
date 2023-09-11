@@ -12,7 +12,8 @@ export default {
     },
     fontFamily: {
       'logo': ['Overpass', 'sans-serif'],
-      'subFont': ['Oswald', 'sans-serif']
+      'subFont': ['Oswald', 'sans-serif'],
+      'aboutTitle': ['Volkhov', 'serif'],
     }
   },
   plugins: [],
