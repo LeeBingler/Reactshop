@@ -38,8 +38,8 @@ app.post('/create-checkout-session', async (req, res) => {
                     quantity: item.number
                 }
             }),
-            success_url: `${process.env.CLIENT_URL}/home`,
-            cancel_url: `${process.env.CLIENT_URL}/home`
+            success_url: `${process.env.CLIENT_URL}`,
+            cancel_url: `${process.env.CLIENT_URL}`
         });
 
         res.status(200).send({ url: session.url });

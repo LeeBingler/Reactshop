@@ -23,7 +23,7 @@ function CheckoutBtn({ itemCart }) {
         <button
             onClick={handleClick}
             aria-label='checkout'
-            className='rounded  p-2 m-2 bg-blue-400 text-white whitespace-nowrap hover:bg-blue-500'
+            className='rounded p-2 m-2 text-2xl w-[70%] bg-blue-400 text-white whitespace-nowrap hover:bg-blue-500'
         >
             Checkout
         </button>
