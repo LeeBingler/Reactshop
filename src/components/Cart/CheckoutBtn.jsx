@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 
 function CheckoutBtn({ itemCart }) {
-    console.log(itemCart);
 
     async function handleClick() {
         await axios
