@@ -10,9 +10,14 @@
     "preview": "vite preview",
     "build-css": "tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css --watch",
     "test": "vitest",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "build:server": "cd server/ && npm i",
+    "start:server": "cd server/ && node server.js"
   },
   "dependencies": {
+    "@stripe/react-stripe-js": "^2.2.0",
+    "@stripe/stripe-js": "^2.1.2",
+    "axios": "^1.5.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

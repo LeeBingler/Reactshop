@@ -1,6 +1,7 @@
 import { useCart, useTotalPriceCart } from '../components/Provider/CartProvider/Hook';
 import CartCard from '../components/Cart/CartCard';
 import GoBackBtn from '../components/GoBackBtn';
+import CheckoutBtn from '../components/Cart/CheckoutBtn';
 
 export default function Cart() {
     const ItemCart = useCart();
@@ -15,9 +16,6 @@ export default function Cart() {
         return nb;
     };
 
-    function payement() {
-        alert(`You have to pay: ${totalPrice}$`);
-    }
 
     return (
         <section className='flex flex-col items-center justify-center px-5 pt-28 pb-7 bg-gray-200 lg:pt-32 lg:pb-20  lg:flex-row lg:justify-around lg:min-h-[60vh] lg:items-start'>
@@ -44,13 +42,7 @@ export default function Cart() {
                 {totalPrice == 0 ? (
                     ''
                 ) : (
-                    <button
-                        aria-label='checkout'
-                        className='rounded  p-2 m-2 bg-blue-400 text-white whitespace-nowrap hover:bg-blue-500'
-                        onClick={payement}
-                    >
-                        Proceed to Checkout
-                    </button>
+                    <CheckoutBtn itemCart={ItemCart} />
                 )}
                 <GoBackBtn />
             </div>
