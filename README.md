@@ -67,7 +67,7 @@ For deployment, execute `npm run build`. The generated build files can then be h
 
 To run the server, follow these steps:
 1. Clone the repository and navigate to the project folder.
-2. Install the project dependencies using `npm build:server`.
+2. Install the project dependencies using `npm run build:server`.
 3. Run the web application using `npm run start:server`.
 
 
