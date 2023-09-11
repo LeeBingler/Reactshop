@@ -10,7 +10,7 @@ ReactShop is an impressive e-commerce website built with React.JS and Tailwind. 
 
 ## Tech Stack
 
-ReactShop is developed using the following technologies:
+Reactshop is developed using the following technologies:
 
 1. **HTML:** The backbone of the web pages, providing the structure and content.
 2. **CSS:** Responsible for the visual styling and layout of the website.
@@ -22,6 +22,7 @@ To enhance the development process and user experience, the following frameworks
 
 1. **React:** A popular JavaScript library for building user interfaces, enabling fast and dynamic updates to the website.
 2. **Tailwind:** A utility-first CSS framework that streamlines styling and allows for the creation of clean and responsive designs.
+3. **Node.js** an open source, cross-platform runtime environment for executing JavaScript code it is used extensively for server-side programming.
 
 ## Testing Library
 
@@ -29,7 +30,7 @@ ReactShop uses the "Vitest" testing library to ensure the stability and correctn
 
 ## API Integration
 
-The website is integrated with the [Fake Store API](https://fakestoreapi.com/), a fictional API that provides product data. Two main API endpoints are used:
+The website is integrated with the [Stripe](https://stripe.com/en-fr) API, a payment processing platform that lets your business safely and effectively accept online and credit card payments, and the [Fake Store API](https://fakestoreapi.com/), a fictional API that provides product data. Two main API endpoints are used:
 
 1. **Get all products:** Fetches a list of all available products from the API.
 2. **Get a single product:** Retrieves detailed information about a specific product from the API.
@@ -50,12 +51,25 @@ fetch('https://fakestoreapi.com/products/1')
 
 ## Build/Run and Deployment
 
-To set up the project locally, you need Node.js and NPM installed on your machine. Follow these steps:
+To set up the project locally, you need Node.js and NPM installed on your machine.
 
+### Website:
+
+To run the website, follow these steps:
 1. Clone the repository and navigate to the project folder.
 2. Install the project dependencies using `npm install`.
 3. Run the web application using `npm run dev`.
 4. Run tests with `npm run test`.
+
+For deployment, execute `npm run build`. The generated build files can then be hosted on a web server or a platform like Netlify for public access.
+
+### Server:
+
+To run the server, follow these steps:
+1. Clone the repository and navigate to the project folder.
+2. Install the project dependencies using `npm build:server`.
+3. Run the web application using `npm run start:server`.
+
 
 For deployment, execute `npm run build`. The generated build files can then be hosted on a web server or a platform like Netlify for public access.
 
