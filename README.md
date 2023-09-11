@@ -3,7 +3,6 @@
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 ![Static Badge](https://img.shields.io/badge/Dependencies-NPM-black)
 ![GitHub repo size](https://img.shields.io/github/repo-size/LeeBingler/ReactShop)
-![Netlify](https://img.shields.io/netlify/f6254914-d42a-40d0-8c8e-71f0b483b68d)
 
 # ReactShop - An E-commerce Website
 
