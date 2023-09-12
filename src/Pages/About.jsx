@@ -61,10 +61,10 @@ export default function About() {
 
                 <hr className='border-b border-black w-[70%] m-auto h-[1px]' />
 
-                <div className='flex flex-col gap-10'>
+                <div className='flex flex-col gap-10 max-w-7xl'>
                     <div className='container-about'>
                         <h2 className='subtitle-about'>Dev Notice :</h2>
-                        <div className='lg:text-lg'>
+                        <div className='text-lg lg:text-xl'>
                             <p>
                                 The ReactShop is a project made by{' '}
                                 <a
