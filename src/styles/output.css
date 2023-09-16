@@ -905,6 +905,10 @@ video {
   max-width: 72rem;
 }
 
+.max-w-7xl{
+  max-width: 80rem;
+}
+
 .max-w-full{
   max-width: 100%;
 }
@@ -915,14 +919,6 @@ video {
 
 .max-w-sm{
   max-width: 24rem;
-}
-
-.max-w-xl{
-  max-width: 36rem;
-}
-
-.max-w-7xl{
-  max-width: 80rem;
 }
 
 .-translate-y-1\/2{
