@@ -4,6 +4,7 @@ import LoadingScreen from './LoadingScreen';
 import GoBackBtn from '../components/GoBackBtn';
 import RatingStars from '../components/Product/RatingStars';
 import CTAsection from '../components/Product/CTAsection';
+import DescriptionItem from '../components/Product/DescriptionItem';
 
 export default function Product() {
     const idProduct = Number(useParams().id);
@@ -21,12 +22,7 @@ export default function Product() {
             <div className='w-4/5 my-4 max-w-3xl lg:mb-0 lg:mt-0 lg:ml-5'>
                 <h1 className='py-5 font-medium text-2xl lg:text-2xl lg:mx-4 lg:pt-0'>{item.title}</h1>
                 <RatingStars rating={item.rating} />
-                <div className='border-t border-b border-gray-400 my-4 py-6 lg:mb-0 lg:pb-0 lg:mx-4'>
-                    <h2 className='mb-4 mt-1 text-xl font-medium'> About this item </h2>
-                    <p className='text-gray-600 text-justify 2xl:text-xl md:p-4'>
-                        {item.description}
-                    </p>
-                </div>
+                <DescriptionItem description={item.description} />
             </div>
 
             <div className='flex flex-col w-4/5 justify-center items-center'>
