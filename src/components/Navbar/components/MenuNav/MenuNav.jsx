@@ -8,7 +8,6 @@ function MenuNav({ showMenu }) {
     const { pathname } = location;
     const isKeyboardOpen = useDetectKeyboardOpen();
     const isHidden = showMenu || isKeyboardOpen ? 'w-3/4' : 'w-0';
-    console.log();
 
     return (
         <div
