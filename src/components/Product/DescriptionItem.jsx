@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 
 function DescriptionItem({description}) {
     return (
@@ -7,6 +8,10 @@ function DescriptionItem({description}) {
             <p className='text-gray-600 text-justify 2xl:text-xl md:p-4'>{description}</p>
         </div>
     );
+}
+
+DescriptionItem.propTypes = {
+    description: PropTypes.string.isRequired
 }
 
 export default DescriptionItem;
