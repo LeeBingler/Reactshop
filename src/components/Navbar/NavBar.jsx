@@ -46,9 +46,10 @@ export default function NavBar() {
                         <i className='bx bx-menu float-none inline text-3xl'></i>
                     </button>
                     <Link to='/home'>
-                        <h1 className='mt-2 font-logo text-4xl md:ml-4 border border-black rounded-3xl p-2'>
-                            Reactshop
-                        </h1>
+                        <img
+                        src='/Logo.png'
+                        className='mt-2 md:ml-4 p-2 h-16'
+                        />
                     </Link>
                     <BtnCart showCart={showCart} handleClickCart={handleClickCart} />
                 </nav>
