@@ -812,8 +812,24 @@ video {
   height: 100vh;
 }
 
+.h-80{
+  height: 20rem;
+}
+
 .max-h-full{
   max-height: 100%;
+}
+
+.max-h-6{
+  max-height: 1.5rem;
+}
+
+.max-h-80{
+  max-height: 20rem;
+}
+
+.max-h-96{
+  max-height: 24rem;
 }
 
 .min-h-\[12rem\]{
@@ -939,6 +955,10 @@ video {
 
 .max-w-sm{
   max-width: 24rem;
+}
+
+.max-w-7xl{
+  max-width: 80rem;
 }
 
 .-translate-y-1\/2{
