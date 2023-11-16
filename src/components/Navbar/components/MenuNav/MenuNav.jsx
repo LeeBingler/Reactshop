@@ -1,9 +1,11 @@
 import InfoFooter from '../../InfoFooter';
 import useDetectKeyboardOpen from 'use-detect-keyboard-open';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, Link } from 'react-router-dom';
 import { PropTypes } from 'prop-types';
 import SearchBar from './components/SearchBar';
 function MenuNav({ showMenu }) {
+    const location = useLocation();
+    const { pathname } = location;
     const isKeyboardOpen = useDetectKeyboardOpen();
     const isHidden = showMenu || isKeyboardOpen ? 'w-3/4' : 'w-0';
 
@@ -19,9 +21,14 @@ function MenuNav({ showMenu }) {
                 className='flex flex-col mt-4
                 md:flex-row md:justify-around md:pl-84 md:w-full md:mt-0'
             >
-                <NavLink className='linknavbar' to='/home'>
+                <Link
+                    className={`linknavbar ${
+                        pathname == '/' || pathname == '/home' ? 'active' : ''
+                    }`}
+                    to='/home'
+                >
                     Home
-                </NavLink>
+                </Link>
                 <NavLink className='linknavbar' to='/about'>
                     About
                 </NavLink>
