@@ -762,6 +762,10 @@ video {
   height: 3rem;
 }
 
+.h-16{
+  height: 4rem;
+}
+
 .h-24{
   height: 6rem;
 }
@@ -814,10 +818,6 @@ video {
 
 .h-screen{
   height: 100vh;
-}
-
-.h-16{
-  height: 4rem;
 }
 
 .max-h-full{
@@ -2028,6 +2028,10 @@ video {
 
   .md\:pb-16{
     padding-bottom: 4rem;
+  }
+
+  .md\:pl-4{
+    padding-left: 1rem;
   }
 
   .md\:pr-4{
