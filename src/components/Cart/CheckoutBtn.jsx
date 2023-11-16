@@ -24,7 +24,7 @@ function CheckoutBtn({ itemCart }) {
             });
     }
 
-    return loading ? (
+    return !loading ? (
         <button
             onClick={handleClick}
             aria-label='checkout button'
