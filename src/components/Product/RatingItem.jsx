@@ -5,7 +5,7 @@ import RatingStars from './RatingStars';
 function RatingItem({ rating }) {
     return (
         <div className='flex gap-10'>
-            <RatingStars rating={rating} />
+            <RatingStars rate={rating.rate} />
             <p className='text-blue-700'>{rating.count} ratings</p>
         </div>
     );

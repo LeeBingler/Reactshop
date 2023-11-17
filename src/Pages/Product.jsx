@@ -2,10 +2,10 @@ import { useParams } from 'react-router-dom';
 import { useGetItemById, useItems } from '../components/Provider/ItemsProvider/Hook';
 import LoadingScreen from './LoadingScreen';
 import GoBackBtn from '../components/GoBackBtn';
-import RatingStars from '../components/Product/RatingStars';
 import CTAsection from '../components/Product/CTAsection';
 import DescriptionItem from '../components/Product/DescriptionItem';
 import RatingItem from '../components/Product/RatingItem';
+import Reviews from '../components/Product/Reviews/Reviews';
 
 export default function Product() {
     const idProduct = Number(useParams().id);
@@ -25,19 +25,16 @@ export default function Product() {
                     <h2 className='py-5 font-medium text-2xl lg:text-2xl lg:mx-4 lg:pt-0'>
                         {item.title}
                     </h2>
-                    <RatingItem rating={item.rating}/>
+                    <RatingItem rating={item.rating} />
                     <DescriptionItem description={item.description} />
                 </article>
 
                 <article className='flex flex-col w-4/5 justify-center items-center'>
                     <CTAsection item={item} />
-                    <GoBackBtn className='w-32' />
                 </article>
             </section>
-            <section>
-                <h2>Reviews</h2>
-                <RatingStars rating={item.rating} />
-            </section>
+
+            <Reviews rate={item.rating.rate} title={item.title} />
         </>
     );
 }
