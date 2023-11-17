@@ -1,5 +1,5 @@
-import React from 'react';
 import RatingStars from '../RatingStars';
+import PropTypes from 'prop-types';
 
 function CardReview({ children, name, reviewTitle, className }) {
     function getRandomInt(min, max) {
@@ -21,6 +21,13 @@ function CardReview({ children, name, reviewTitle, className }) {
             </div>
         </div>
     );
+}
+
+CardReview.propTypes = {
+    children: PropTypes.any.isRequired,
+    name: PropTypes.string.isRequired,
+    reviewTitle: PropTypes.string.isRequired,
+    className: PropTypes.string
 }
 
 export default CardReview;

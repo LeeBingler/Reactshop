@@ -109,7 +109,7 @@ export default function About() {
                             <p>
                                 ReactShop is an impressive e-commerce website built with React.JS
                                 and Tailwind. It allows users to browse through various products and
-                                make purchases. The project's code is licensed under the MIT
+                                make purchases. The project&apos;s code is licensed under the MIT
                                 License, providing flexibility for usage and distribution.
                             </p>
                         </div>

@@ -1,7 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useGetItemById, useItems } from '../components/Provider/ItemsProvider/Hook';
 import LoadingScreen from './LoadingScreen';
-import GoBackBtn from '../components/GoBackBtn';
 import CTAsection from '../components/Product/CTAsection';
 import DescriptionItem from '../components/Product/DescriptionItem';
 import RatingItem from '../components/Product/RatingItem';
