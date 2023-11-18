@@ -33,10 +33,10 @@ export default function Shop() {
     const [itemsDisplay, dispatch] = useReducer(reducerFilterShop, useItems());
 
     return (
-        <section className=' max-w-full flex flex-col md:flex-row'>
+        <section className='max-w-full flex flex-col md:flex-row'>
             <FilterShop filterFunction={dispatch} />
             <div
-                className='grid grid-cols-2 gap-y-2
+                className='grid grid-cols-2 gap-y-2 w-full
                 xl:grid-cols-3 md:border-l md:border-black md:mt-2'
             >
                 {itemsDisplay.map((item) => {
