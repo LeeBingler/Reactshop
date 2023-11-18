@@ -21,6 +21,10 @@
     @apply text-blue-400;
 }
 
+.filter-active {
+    @apply  border rounded border-black p-[3px] m-1 font-subFont text-base lg:text-xl hover:text-black bg-blue-400 text-white;
+}
+
 .menu-navbar {
     @apply flex flex-col items-center absolute bg-white whitespace-nowrap overflow-x-hidden transition-all ease-out duration-400;
 }
