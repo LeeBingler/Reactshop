@@ -48,7 +48,7 @@ export default function NavBar() {
                     <Link to='/home'>
                         <img
                         src='/Logo.png'
-                        className='mt-2 md:ml-4 p-2 h-16'
+                        className='mt-2 lg:ml-4 p-2 h-14 lg:h-16'
                         />
                     </Link>
                     <BtnCart showCart={showCart} handleClickCart={handleClickCart} />
