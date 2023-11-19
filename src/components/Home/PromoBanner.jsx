@@ -6,9 +6,9 @@ function PromoBanner({ children, className, classBtn }) {
 
     if (isOpen) {
         return (
-            <div className={`${className || ''} absolute bottom-0 left-0`}>
+            <div className={`${className || 'w-[100vw] h-16 flex justify-center items-center bg-black text-white lg:text-xl'} fixed bottom-0 left-0`}>
                 {children}
-                <button className={classBtn} onClick={() => setIsOpen(false)}>
+                <button className={classBtn || 'py-1 px-2 hover:text-gray-500 ml-4'} onClick={() => setIsOpen(false)}>
                     X
                 </button>
             </div>
