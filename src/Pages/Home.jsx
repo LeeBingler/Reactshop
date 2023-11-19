@@ -1,4 +1,5 @@
 import Carousel from '../components/Home/Carousel';
+import PromoBanner from '../components/Home/PromoBanner';
 import Shop from '../components/Home/Shop/Shop';
 import img1 from '/src/images/banner1.webp';
 import img2 from '/src/images/banner2.webp'
@@ -18,6 +19,9 @@ export default function Home() {
           </Carousel>
         </div>
         <Shop />
+        <PromoBanner>
+          LIMITED TIME OFFER SALE DISCOUNT UP TO 50% OFF !!!
+        </PromoBanner>
     </main>
   )
 }
