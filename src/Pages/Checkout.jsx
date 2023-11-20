@@ -1,11 +1,20 @@
 import { useState } from "react"
 import EmailForm from "../components/Checkout/EmailForm";
+import AdressForm from "../components/Checkout/AdressForm";
 
 function Checkout() {
-    const [email, setEmail] = useState('');
+    const [data, setData] = useState({
+        email: '',
+        adress: '',
+        country: ''
+    });
 
     return (
-        <EmailForm email={email} setEmail={setEmail}/>
+        <section className="pt-32">
+            <EmailForm email={data.email} setData={setData}/>
+            <AdressForm adress={data.adress} setData={setData} />
+            
+        </section>
     )
 }
 

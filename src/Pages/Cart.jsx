@@ -2,6 +2,7 @@ import { useCart, useTotalPriceCart } from '../components/Provider/CartProvider/
 import CartCard from '../components/Cart/CartCard';
 import GoBackBtn from '../components/GoBackBtn';
 import CheckoutBtn from '../components/Cart/CheckoutBtn';
+import { Link } from 'react-router-dom';
 
 export default function Cart() {
     const ItemCart = useCart();
@@ -42,7 +43,8 @@ export default function Cart() {
                 {totalPrice == 0 ? (
                     ''
                 ) : (
-                    <CheckoutBtn itemCart={ItemCart} />
+                    <Link to={'/checkout'} className='btn-addToCart text-xl lg:text-2xl'> Checkout </Link>
+                    //<CheckoutBtn itemCart={ItemCart} />
                 )}
                 <GoBackBtn />
             </div>
