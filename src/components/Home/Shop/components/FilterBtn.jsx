@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 
 function FilterBtn({ children, onClick, number, whichIsActive }) {
     return (
@@ -10,6 +10,13 @@ function FilterBtn({ children, onClick, number, whichIsActive }) {
             {children}
         </button>
     );
+}
+
+FilterBtn.propTypes = {
+    children: PropTypes.any,
+    onClick: PropTypes.func,
+    number: PropTypes.number,
+    whichIsActive: PropTypes.number,
 }
 
 export default FilterBtn;
