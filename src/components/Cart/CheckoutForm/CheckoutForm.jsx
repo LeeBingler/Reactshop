@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import InputForm from './components/InputForm';
+import PropTypes from 'prop-types';
 
 const styleInput ='flex flex-col gap-2 lg:text-lg';
 
@@ -28,6 +28,11 @@ function CheckoutForm({data, setData}) {
             />
         </form>
     );
+}
+
+CheckoutForm.propTypes = {
+    data: PropTypes.object,
+    setData: PropTypes.func
 }
 
 export default CheckoutForm;
