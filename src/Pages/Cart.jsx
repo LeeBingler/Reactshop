@@ -1,9 +1,18 @@
 import { useCart, useTotalPriceCart } from '../components/Provider/CartProvider/Hook';
 import CartCard from '../components/Cart/CartCard';
 import GoBackBtn from '../components/GoBackBtn';
-import { Link } from 'react-router-dom';
+import CheckoutBtn from '../components/Cart/CheckoutBtn';
+import CheckoutForm from '../components/Cart/CheckoutForm/CheckoutForm';
+import { useState } from 'react';
 
 export default function Cart() {
+    const [data, setData] = useState({
+        email: '',
+        address: '',
+        country: ''
+    });
+    let re =
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const ItemCart = useCart();
     const totalPrice = useTotalPriceCart();
     const nbItem = () => {
@@ -15,7 +24,6 @@ export default function Cart() {
 
         return nb;
     };
-
 
     return (
         <section className='flex flex-col items-center justify-center px-5 pt-28 pb-7 bg-gray-200 lg:pt-32 lg:pb-20  lg:flex-row lg:justify-around lg:min-h-[60vh] lg:items-start'>
@@ -35,15 +43,19 @@ export default function Cart() {
                 </p>
             </div>
 
-            <div className='flex flex-col items-center bg-white p-4 m-10 h-fit gap-2 min-w-[310px] lg:max-w-md lg:w-full lg:sticky lg:top-28 lg:my-0'>
-                <p className='text-right text-xl whitespace-nowrap'>
+            <div className='flex flex-col items-center justify-center bg-white p-4 m-10 h-fit gap-2 min-w-[310px] lg:max-w-md lg:w-full lg:sticky lg:top-28 lg:my-0'>
+                <CheckoutForm data={data} setData={setData} />
+                <p className='text-right text-xl whitespace-nowrap pt-8'>
                     Total ({nbItem()} {nbItem() > 1 ? 'articles' : 'article'}): {totalPrice}$
                 </p>
-                {totalPrice == 0 ? (
+                {totalPrice == 0 ||
+                data.address == '' ||
+                data.country == '' ||
+                data.email == '' ||
+                !re.test(data.email) ? (
                     ''
                 ) : (
-                    <Link to={'/checkout'} className='btn-addToCart text-xl lg:text-2xl'> Checkout </Link>
-                    //<CheckoutBtn itemCart={ItemCart} />
+                    <CheckoutBtn itemCart={ItemCart} />
                 )}
                 <GoBackBtn />
             </div>

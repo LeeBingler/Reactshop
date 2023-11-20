@@ -1360,22 +1360,6 @@ video {
   padding-top: 2rem;
 }
 
-.pt-1{
-  padding-top: 0.25rem;
-}
-
-.pt-32{
-  padding-top: 8rem;
-}
-
-.pt-6{
-  padding-top: 1.5rem;
-}
-
-.pt-64{
-  padding-top: 16rem;
-}
-
 .text-center{
   text-align: center;
 }
