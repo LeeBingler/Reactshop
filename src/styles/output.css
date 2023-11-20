@@ -1482,6 +1482,10 @@ video {
   text-transform: uppercase;
 }
 
+.capitalize{
+  text-transform: capitalize;
+}
+
 .tracking-wider{
   letter-spacing: 0.05em;
 }

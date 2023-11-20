@@ -1,22 +1,28 @@
-import { useState } from "react"
-import EmailForm from "../components/Checkout/EmailForm";
-import AdressForm from "../components/Checkout/AdressForm";
-import CountryForm from "../components/Checkout/CountryForm";
+import { useState } from 'react';
+import CheckoutBtn from '../components/Checkout/CheckoutBtn';
+import { useCart } from '../components/Provider/CartProvider/Hook';
+import InputForm from '../components/Checkout/InputForm';
 
 function Checkout() {
+    const itemCart = useCart();
     const [data, setData] = useState({
         email: '',
-        adress: '',
+        address: '',
         country: ''
     });
 
+    console.log(data);
+
     return (
-        <section className="pt-32">
-            <EmailForm email={data.email} setData={setData}/>
-            <AdressForm adress={data.adress} setData={setData} />
-            <CountryForm country={data.country} setData={setData} />
+        <section className='pt-32'>
+            <InputForm title='email' dataToChange={data.email} setDataToChange={setData} />
+            <InputForm title={'address'} dataToChange={data.address} setDataToChange={setData} />
+            <InputForm title={'country'} dataToChange={data.country} setDataToChange={setData} />
+            {data.email != '' && data.address != '' && data.country != '' && (
+                <CheckoutBtn itemCart={itemCart} />
+            )}
         </section>
-    )
+    );
 }
 
-export default Checkout
+export default Checkout;

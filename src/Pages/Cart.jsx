@@ -1,7 +1,6 @@
 import { useCart, useTotalPriceCart } from '../components/Provider/CartProvider/Hook';
 import CartCard from '../components/Cart/CartCard';
 import GoBackBtn from '../components/GoBackBtn';
-import CheckoutBtn from '../components/Cart/CheckoutBtn';
 import { Link } from 'react-router-dom';
 
 export default function Cart() {
