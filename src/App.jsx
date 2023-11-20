@@ -14,6 +14,7 @@ const Footer = lazy(() => import('./components/Footer/Footer'));
 const Product = lazy(() => import('./Pages/Product'));
 const IntellectualProperty = lazy(() => import('./Pages/IntellectualProperty'));
 const TermsAndConditions = lazy(() => import('./Pages/TermsAndConditions'));
+const Checkout = lazy(() => import('./Pages/Checkout'));
 
 function App() {
     return (
@@ -27,6 +28,7 @@ function App() {
                         <Route path='/product/:id' element={<Product />} />
                         <Route path='/about' element={<About />} />
                         <Route path='/contact' element={<Contact />} />
+                        <Route path='/checkout' element={<Checkout />} />
                         <Route path='intellectual-property' element={<IntellectualProperty />} />
                         <Route path='terms-and-conditions' element={<TermsAndConditions />} />
                         <Route path='*' element={<NoPage />} />
