@@ -24,6 +24,10 @@ app.get('/config', (req, res) => {
 app.post('/create-checkout-session', async (req, res) => {
     try {
         const session = await stripe.checkout.sessions.create({
+            customer: {
+                email: req.body.email,
+                name: req.body.name
+            },
             payment_method_types: ['card'],
             mode: 'payment',
             line_items: req.body.items.map(item => {
