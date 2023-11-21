@@ -1,18 +1,9 @@
 import { useCart, useTotalPriceCart } from '../components/Provider/CartProvider/Hook';
 import CartCard from '../components/Cart/CartCard';
 import GoBackBtn from '../components/GoBackBtn';
-import CheckoutBtn from '../components/Cart/CheckoutBtn';
 import CheckoutForm from '../components/Cart/CheckoutForm/CheckoutForm';
-import { useState } from 'react';
 
 export default function Cart() {
-    const [data, setData] = useState({
-        email: '',
-        address: '',
-        country: ''
-    });
-    let re =
-        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const ItemCart = useCart();
     const totalPrice = useTotalPriceCart();
     const nbItem = () => {
@@ -44,19 +35,10 @@ export default function Cart() {
             </div>
 
             <div className='flex flex-col items-center justify-center bg-white p-4 m-10 h-fit gap-2 min-w-[310px] lg:max-w-md lg:w-full lg:sticky lg:top-28 lg:my-0'>
-                <CheckoutForm data={data} setData={setData} />
+                <CheckoutForm />
                 <p className='text-right text-xl whitespace-nowrap pt-8'>
                     Total ({nbItem()} {nbItem() > 1 ? 'articles' : 'article'}): {totalPrice}$
                 </p>
-                {totalPrice == 0 ||
-                data.address == '' ||
-                data.country == '' ||
-                data.email == '' ||
-                !re.test(data.email) ? (
-                    ''
-                ) : (
-                    <CheckoutBtn itemCart={ItemCart} />
-                )}
                 <GoBackBtn />
             </div>
         </section>
