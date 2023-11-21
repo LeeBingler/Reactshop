@@ -3,8 +3,9 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useCart } from '../../Provider/CartProvider/Hook';
 import { useState } from 'react';
-import CheckoutBtn from './CheckoutBtn';
+import CheckoutBtn from './components/CheckoutBtn';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function CheckoutForm() {
     const [loading, setLoading] = useState(false);
@@ -103,7 +104,9 @@ function CheckoutForm() {
                 </div>
                 <div>
                     <input type='checkbox' {...register('terms')} />
-                    <label htmlFor='terms'> Accept {' '}
+                    <label htmlFor='terms'>
+                        {' '}
+                        Accept{' '}
                         <Link to={'/terms-and-conditions'} className='underline text-blue-500'>
                             Terms & Conditions
                         </Link>

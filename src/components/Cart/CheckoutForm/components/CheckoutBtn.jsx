@@ -2,7 +2,6 @@ import { PropTypes } from 'prop-types';
 import ReactLoading from 'react-loading';
 
 function CheckoutBtn({ loading, noItemsCart }) {
-
     if (noItemsCart) return;
 
     return !loading ? (
@@ -15,13 +14,14 @@ function CheckoutBtn({ loading, noItemsCart }) {
         </button>
     ) : (
         <div className='rounded p-2 m-2 text-2xl w-[70%] h-12 bg-blue-500 flex items-center justify-center'>
-            <ReactLoading type='bubbles' color='#FFFFFF'/>
+            <ReactLoading type='bubbles' color='#FFFFFF' />
         </div>
     );
 }
 
 CheckoutBtn.propTypes = {
-    loading: PropTypes.bool.isRequired
+    loading: PropTypes.bool.isRequired,
+    noItemsCart: PropTypes.bool.isRequired
 };
 
 export default CheckoutBtn;
