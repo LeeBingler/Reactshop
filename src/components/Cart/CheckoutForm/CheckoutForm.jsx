@@ -53,7 +53,7 @@ function CheckoutForm() {
             })
             .catch((e) => {
                 console.error(e.message);
-                setLoading(false);
+                setLoading(false)
             });
     };
 
