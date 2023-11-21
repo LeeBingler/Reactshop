@@ -1,8 +1,15 @@
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useCart } from '../../Provider/CartProvider/Hook';
+import { useState } from 'react';
+import CheckoutBtn from './CheckoutBtn';
+import { Link } from 'react-router-dom';
 
 function CheckoutForm() {
+    const [loading, setLoading] = useState(false);
+    const itemCart = useCart();
+
     const MyStyle = {
         input: 'flex flex-col gap-1 lg:text-lg',
         error: 'text-xs text-red-500 mt-2 italic'
@@ -28,7 +35,26 @@ function CheckoutForm() {
         resolver: zodResolver(validationSchema)
     });
 
-    const onSubmit = (data) => console.log(data);
+    const onSubmit = async (data) => {
+        setLoading(true);
+        await axios
+            .post(`${import.meta.env.VITE_SERVER_URL}/create-checkout-session`, {
+                items: itemCart,
+                ...data
+            })
+            .then((res) => {
+                if (res.statusText == 'OK') return JSON.parse(res.request.response);
+                return res.json().then((json) => Promise.reject(json));
+            })
+            .then(({ url }) => {
+                setLoading(false);
+                window.location = url;
+            })
+            .catch((e) => {
+                console.error(e.message);
+                setLoading(true);
+            });
+    };
 
     return (
         <>
@@ -77,10 +103,14 @@ function CheckoutForm() {
                 </div>
                 <div>
                     <input type='checkbox' {...register('terms')} />
-                    <label htmlFor='terms'> Accept Terms & Conditions</label>
+                    <label htmlFor='terms'> Accept {' '}
+                        <Link to={'/terms-and-conditions'} className='underline text-blue-500'>
+                            Terms & Conditions
+                        </Link>
+                    </label>
                     {errors.terms && <p className={MyStyle.error}>{errors.terms.message}</p>}
                 </div>
-                <button className='btn-addToCart text-xl'> Checkout </button>
+                <CheckoutBtn loading={loading} noItemsCart={itemCart.length === 0} />
             </form>
         </>
     );
