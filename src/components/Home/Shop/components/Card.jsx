@@ -29,7 +29,7 @@ function Card({ item }) {
                 <p>${item.price}</p>
                 <div className='flex flex-col gap-2 md:flex-row'>
                     <button
-                        aria-label='add this item to your cart'
+                        aria-label='Add to Cart'
                         className='btn-addToCart'
                         onClick={() => {
                             onClickHandler(item, item.number + 1);
@@ -38,7 +38,7 @@ function Card({ item }) {
                         Add to Cart
                     </button>
                     <button
-                        aria-label='see more detail item'
+                        aria-label='See details'
                         className='px-4 py-1 mt-2 bg-blue-900 rounded-md text-white outline-none focus:ring-4 shadow-lg transform active:scale-75 transition-transform
                         hover:bg-blue-950'
                     >

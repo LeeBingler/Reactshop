@@ -47,6 +47,7 @@ export default function NavBar() {
                     </button>
                     <Link to='/home'>
                         <img
+                        alt='Logo'
                         src='/Logo.png'
                         className='mt-2 lg:ml-4 p-2 h-14 lg:h-16'
                         />
