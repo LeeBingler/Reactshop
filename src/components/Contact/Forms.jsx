@@ -6,7 +6,7 @@ export default function Forms() {
     return (
         <form
             method='POST'
-            action='https://formspree.io/f/xdornrqb'
+            action='You need to change this if you want to email your adress (Use Formspree)'
             className='flex flex-col w-[94%] max-w-4xl justify-center p-4 mx-4'
         >
             <div className='pb-4 w-full grid grid-cols-2 grid-rows-3 md:grid-rows-2'>
